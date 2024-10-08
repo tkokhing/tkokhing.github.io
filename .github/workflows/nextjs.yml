@@ -36,7 +36,7 @@ jobs:
         id: present-working-directory
         run: |
           echo "Present working directory: $(pwd)"
-          echo "Advance check on contents loaded onto present working directory"
+          echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
