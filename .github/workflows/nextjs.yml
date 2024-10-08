@@ -26,7 +26,6 @@ jobs:
         with:
           repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-          path: _posting
 
       - name: Verify PWD 
         id: present-working-directory
@@ -36,8 +35,8 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on workflow loaded onto ./_posting/_posts"
-          ls -lha ./_posts/_posts
+          echo "Advance check on workflow loaded onto ./_posts"
+          ls -lha ./_posts
       - name: Detect package manager
         id: detect-package-manager
         run: |
