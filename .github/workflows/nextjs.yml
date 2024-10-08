@@ -31,6 +31,7 @@ jobs:
         run: |
           mv ./_posts/_posts/*.md _posts
           rm -r ./_posts/_posts
+          rm -r ./_posts/.git
       - name: Verify PWD 
         id: present-working-directory
         run: |
