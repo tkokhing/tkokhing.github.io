@@ -24,9 +24,9 @@ jobs:
       - name: Checkout private posts repository
         uses: actions/checkout@v4
         with:
-          repository: ironweb-research/blog_post
+          repository: ironweb-research/blog_post/_posts
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-          path: .
+          path: _posts
 
       - name: Verify PWD 
         id: present-working-directory
@@ -36,7 +36,7 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on workflow loaded onto ./.github"
+          echo "Advance check on workflow loaded onto ./_posts"
           ls -lha ./_posts
       - name: Detect package manager
         id: detect-package-manager
