@@ -24,7 +24,7 @@ jobs:
       - name: Checkout private posts repository
         uses: actions/checkout@v4
         with:
-          repository: ironweb-research/blog_post/_posts
+          repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
           path: _posts
 
@@ -36,8 +36,8 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on workflow loaded onto ./_posts"
-          ls -lha ./_posts
+          echo "Advance check on workflow loaded onto ./_posts/_posts"
+          ls -lha ./_posts/_posts
       - name: Detect package manager
         id: detect-package-manager
         run: |
