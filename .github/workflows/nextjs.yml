@@ -24,8 +24,8 @@ jobs:
       - name: Checkout private posts repository
         uses: actions/checkout@v4
         with:
-          repository: your-username/private-repo-name
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ironweb-research/blog_post
+          token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
           path: _posts
 
       - name: Verify PWD 
