@@ -25,7 +25,7 @@ jobs:
         with:
           repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-          path: _post
+          path: _posts
       - name: Move blog post to correct level
         id: move_blog_post
         run: |
