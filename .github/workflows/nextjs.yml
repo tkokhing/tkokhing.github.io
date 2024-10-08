@@ -18,20 +18,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Checkout private posts repository
+      - name: Checkout folder in private repository
         uses: actions/checkout@v4
         with:
           repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-      - name: Checkout second private posts repository
+      - name: Checkout second folder in private repository
         uses: actions/checkout@v4
         with:
           repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
           path: second
+      - name: Checkout full branches
+        uses: actions/checkout@v4
       - name: Verify PWD 
         id: present-working-directory
         run: |
