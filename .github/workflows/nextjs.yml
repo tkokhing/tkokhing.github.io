@@ -36,7 +36,8 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-
+          echo "Advance check on workflow loaded onto ./.github"
+          ls -lha ./_posts
       - name: Detect package manager
         id: detect-package-manager
         run: |
