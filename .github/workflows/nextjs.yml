@@ -18,19 +18,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout folder in private repository
-        uses: actions/checkout@v4
-        with:
-          repository: ironweb-research/blog_post
-          token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-      - name: Checkout second folder in private repository
-        uses: actions/checkout@v4
-        with:
-          repository: ironweb-research/blog_post
-          token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-          path: second
       - name: Checkout full branches
         uses: actions/checkout@v4
+      - name: Checkout blog folder in private repo
+        uses: actions/checkout@v4
+        with:
+          repository: ironweb-research/blog_post
+          token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
+          path: _post
+      - name: Move blog post to correct level
+        id: move_blog_post
+        run: |
+          mv _posts/_posts/*.* _posts
+          rm -r _posts/_posts
       - name: Verify PWD 
         id: present-working-directory
         run: |
