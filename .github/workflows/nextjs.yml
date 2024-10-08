@@ -26,7 +26,12 @@ jobs:
         with:
           repository: ironweb-research/blog_post
           token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
-
+      - name: Checkout second private posts repository
+        uses: actions/checkout@v4
+        with:
+          repository: ironweb-research/blog_post
+          token: ${{ secrets.PRIVATE_POSTING_TOKEN }}
+          path: second
       - name: Verify PWD 
         id: present-working-directory
         run: |
