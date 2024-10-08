@@ -29,7 +29,7 @@ jobs:
       - name: Move blog post to correct level
         id: move_blog_post
         run: |
-          mv ./_posts/_posts/*.* _posts
+          mv ./_posts/_posts/*.md _posts
           rm -r ./_posts/_posts
       - name: Verify PWD 
         id: present-working-directory
