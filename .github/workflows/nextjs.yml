@@ -21,6 +21,7 @@ jobs:
       - name: Checkout full branches
         uses: actions/checkout@v4
       - name: Checkout blog folder in private repo
+        # separate folder from root, coz second checkout erase first checkout
         uses: actions/checkout@v4
         with:
           repository: ironweb-research/blog_post
@@ -28,12 +29,14 @@ jobs:
           path: _posts
       - name: Move blog post to correct level
         id: move_blog_post
+        # move and delete those not blog post md files
         run: |
           mv ./_posts/_posts/*.md _posts
-          rm ./_posts/README.md
+          rm ./_posts/README.md 
           find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
       - name: Verify PWD 
         id: present-working-directory
+        # useful info, use for troubleshooting
         run: |
           echo "Present working directory: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
@@ -104,4 +107,5 @@ jobs:
       - name: Verify GitHub working environment state 
         id: present-working-environment
         run: |
-          echo "Present working environment: $(process.env.GITHUB_ACTIONS)"
+          echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
+          echo "Present working environment: ${GITHUB_ENV}"
