@@ -100,3 +100,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify GitHub working environment state 
+        id: present-working-environment
+        run: |
+          echo "Present working environment: $(process.env.GITHUB_ACTIONS)"
