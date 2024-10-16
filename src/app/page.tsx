@@ -14,7 +14,7 @@ export default function Index() {
 
   if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
   {
-    heroPost.coverImage = heroPost.coverImage.startsWith(REPO_NAME) ? heroPost.coverImage : `/${REPO_NAME}${heroPost.coverImage}`;
+    heroPost.coverImage = heroPost.coverImage.startsWith(REPO_NAME) ? heroPost.coverImage : `${REPO_NAME}${heroPost.coverImage}`;
 
 
     // heroPost.coverImage = `${REPO_NAME}${heroPost.coverImage}`;

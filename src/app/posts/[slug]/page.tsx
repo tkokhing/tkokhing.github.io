@@ -21,7 +21,7 @@ export default async function Post({ params }: Params) {
   
   if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
   {
-    post.coverImage = post.coverImage.startsWith(REPO_NAME) ? post.coverImage : `/${REPO_NAME}${post.coverImage}`;
+    post.coverImage = post.coverImage.startsWith(REPO_NAME) ? post.coverImage : `${REPO_NAME}${post.coverImage}`;
     // post.coverImage = `${REPO_NAME}${post.coverImage}`;
     // post.author.picture = `${REPO_NAME}${post.author.picture}`;
     // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
@@ -64,7 +64,7 @@ export function generateMetadata({ params }: Params): Metadata {
   {
     // post.coverImage = `${REPO_NAME}${post.coverImage}`;
     // post.author.picture = `${REPO_NAME}${post.author.picture}`;
-    post.ogImage.url = post.ogImage.url.startsWith(REPO_NAME) ? post.ogImage.url : `/${REPO_NAME}${post.ogImage.url}`;
+    post.ogImage.url = post.ogImage.url.startsWith(REPO_NAME) ? post.ogImage.url : `${REPO_NAME}${post.ogImage.url}`;
     // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
   }
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
