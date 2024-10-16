@@ -16,7 +16,7 @@ export function useBasePath() {
   {
     console.log("Running in GitHub Actions CI environment");
     console.log(`${process.env.GITHUB_ACTIONS}`);
-    return `${REPO_NAME}`
+    return ''
   }
   else // Running in local environment
   {
