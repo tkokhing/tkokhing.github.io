@@ -66,7 +66,7 @@ export function getPostBySlug(slug: string) {
 
   // console.log(`data.coverImage_______>: ${data.coverImage}`)
   // console.log(`data.author.picture___>: ${data.author.picture}`)
-  console.log(`data.ogImage.url______>: ${data.ogImage.url}`)
+  // console.log(`data.ogImage.url______>: ${data.ogImage.url}`)
   return { ...data, slug: realSlug, content } as Post;
 }
 
