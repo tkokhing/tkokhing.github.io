@@ -17,6 +17,7 @@ export default async function Post({ params }: Params) {
   }
 
   const content = await markdownToHtml(post.content || "");
+  console.log(`data.author.picture___>: ${post.coverImage}`)
 
   return (
     <main>
@@ -51,7 +52,7 @@ export function generateMetadata({ params }: Params): Metadata {
   }
 
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
-
+  console.log(`data.author.picture___>: ${post.title}`)
   return {
     title,
     openGraph: {
