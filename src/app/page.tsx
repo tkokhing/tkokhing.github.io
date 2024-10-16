@@ -12,12 +12,12 @@ export default function Index() {
 
   const morePosts = allPosts.slice(1);
 
-  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
-  {
-    heroPost.coverImage = `${REPO_NAME}${heroPost.coverImage}`;
-    // heroPost.author.picture = `${REPO_NAME}${heroPost.author.picture}`;
-    // heroPost.ogImage.url = `${REPO_NAME}${heroPost.ogImage.url}`;
-  }
+  // if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  // {
+  //   heroPost.coverImage = `${REPO_NAME}${heroPost.coverImage}`;
+  //   // heroPost.author.picture = `${REPO_NAME}${heroPost.author.picture}`;
+  //   // heroPost.ogImage.url = `${REPO_NAME}${heroPost.ogImage.url}`;
+  // }
 
   return (
     <main>
