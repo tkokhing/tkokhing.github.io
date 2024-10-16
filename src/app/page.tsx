@@ -3,6 +3,7 @@ import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
+import { REPO_NAME } from '@/lib/constants';
 
 export default function Index() {
   const allPosts = getAllPosts();
@@ -10,6 +11,13 @@ export default function Index() {
   const heroPost = allPosts[0];
 
   const morePosts = allPosts.slice(1);
+
+  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  {
+    heroPost.coverImage = `${REPO_NAME}${heroPost.coverImage}`;
+    // heroPost.author.picture = `${REPO_NAME}${heroPost.author.picture}`;
+    // heroPost.ogImage.url = `${REPO_NAME}${heroPost.ogImage.url}`;
+  }
 
   return (
     <main>

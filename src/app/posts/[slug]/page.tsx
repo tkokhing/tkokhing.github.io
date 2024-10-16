@@ -8,6 +8,7 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { REPO_NAME } from '@/lib/constants';
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -18,6 +19,13 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
   console.log(`post.coverImage ~~~~~~~~~~>: ${post.coverImage}`)
+
+  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  {
+    post.coverImage = `${REPO_NAME}${post.coverImage}`;
+    // post.author.picture = `${REPO_NAME}${post.author.picture}`;
+    // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
+  }
 
   return (
     <main>
@@ -51,6 +59,12 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
+  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  {
+    // post.coverImage = `${REPO_NAME}${post.coverImage}`;
+    // post.author.picture = `${REPO_NAME}${post.author.picture}`;
+    post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
+  }
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
   console.log(`post.title ~~~~~~~~~~>: ${post.title}`)
   return {
