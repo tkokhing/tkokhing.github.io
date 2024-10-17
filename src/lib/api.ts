@@ -26,17 +26,11 @@ export function getPostBySlug(slug: string) {
   data.author.picture = data.author.picture.startsWith(BASE_PATH) ? data.author.picture : `${BASE_PATH}${data.author.picture}`;
   data.ogImage.url = data.ogImage.url.startsWith(BASE_PATH) ? data.ogImage.url : `${BASE_PATH}${data.ogImage.url}`;
   console.log(`BASE_PATH . >>>>>>>>>>>: ${BASE_PATH}`)
-  console.log(`data.coverImage_______>: ${data.coverImage}`)
-  console.log(`data.author.picture___>: ${data.author.picture}`)
-  console.log(`data.ogImage.url______>: ${data.ogImage.url}`)
   return { ...data, slug: realSlug, content } as Post;
 }
 
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
-  // console.log(`slugs are -+++++++++++++++++++++-  ______________   >: ${slugs}`)
-  // slugs are -->: bc_as_cert.md,dynamic-routing.md,hello-world.md,preview.md,vision.mdx
-  // all filenames appeared together with commas
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
