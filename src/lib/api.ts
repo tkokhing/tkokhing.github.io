@@ -1,10 +1,14 @@
 import { Post } from "@/interfaces/post";
-import { useBasePath } from "@/lib/checkenv";
+import { REPO_NAME } from '@/lib/constants';
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "_posts");
+
+function useBasePath(): string {
+  return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
+}
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);

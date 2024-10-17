@@ -1,6 +1,6 @@
 import { REPO_NAME } from '@/lib/constants';
 
-export function useBasePath(): string {
+export function backupuseBasePath(): string {
   const { GITHUB_ACTIONS, NODE_ENV } = process.env;
 
   if (GITHUB_ACTIONS) {
