@@ -19,14 +19,14 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
   
-  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
-  {
-    post.coverImage = post.coverImage.startsWith(REPO_NAME) ? post.coverImage : `${REPO_NAME}${post.coverImage}`;
-    // post.coverImage = `${REPO_NAME}${post.coverImage}`;
-    // post.author.picture = `${REPO_NAME}${post.author.picture}`;
-    // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
-  }
-  console.log(`post.coverImage ~~~~+++++~~~~~~>: ${post.coverImage}`)
+  // if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  // {
+  //   post.coverImage = post.coverImage.startsWith(REPO_NAME) ? post.coverImage : `${REPO_NAME}${post.coverImage}`;
+  //   // post.coverImage = `${REPO_NAME}${post.coverImage}`;
+  //   // post.author.picture = `${REPO_NAME}${post.author.picture}`;
+  //   // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
+  // }
+  // console.log(`post.coverImage ~~~~+++++~~~~~~>: ${post.coverImage}`)
   
   return (
     <main>
@@ -60,17 +60,17 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
-  {
-    // post.coverImage = `${REPO_NAME}${post.coverImage}`;
-    // post.author.picture = `${REPO_NAME}${post.author.picture}`;
-    post.ogImage.url = post.ogImage.url.startsWith(REPO_NAME) ? post.ogImage.url : `${REPO_NAME}${post.ogImage.url}`;
-    // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
-  }
+  // if (process.env.GITHUB_ACTIONS) // add repo name into images links if env = GitHub 
+  // {
+  //   // post.coverImage = `${REPO_NAME}${post.coverImage}`;
+  //   // post.author.picture = `${REPO_NAME}${post.author.picture}`;
+  //   post.ogImage.url = post.ogImage.url.startsWith(REPO_NAME) ? post.ogImage.url : `${REPO_NAME}${post.ogImage.url}`;
+  //   // post.ogImage.url = `${REPO_NAME}${post.ogImage.url}`;
+  // }
+  // console.log(`post.title ~~~~~~+++++~~~~>: ${post.title}`)
+  // console.log(`post.ogImage.url~~~+++++~~>: ${post.ogImage.url}`)
+  
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
-  console.log(`post.title ~~~~~~+++++~~~~>: ${post.title}`)
-  console.log(`post.ogImage.url~~~+++++~~>: ${post.ogImage.url}`)
-
   return {
     title,
     openGraph: {
