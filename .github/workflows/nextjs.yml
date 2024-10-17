@@ -29,7 +29,8 @@ jobs:
       - name: Move blog post to correct level
         id: move_blog_post
         run: |
-          find ./_posts/_posts -name '*.md' ! -name 'README.md' -exec mv {} _posts \;
+          mv ./_posts/_posts/*.md _posts
+          rm ./_posts/README.md
           find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
       - name: Verify PWD 
         id: present-working-directory
