@@ -35,7 +35,7 @@ jobs:
       - name: Verify PWD 
         id: present-working-directory
         run: |
-          echo "Present working directory: $(pwd)"
+          echo "Present working directory---->: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
@@ -93,7 +93,7 @@ jobs:
       - name: Verify artifact directory 
         id: Verify-artifacts-directory
         run: |
-            echo "Present deployment directory: $(pwd)"
+            echo "Present deployment directory---->: $(pwd)"
             echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
             ls -lha
             echo "Advance check on workflow loaded onto /home/runner/work/_temp"
@@ -109,8 +109,8 @@ jobs:
       - name: Verify deployment directory 
         id: present-deployment-directory
         run: |
-          echo "Present deployment directory: $(pwd)"
-          echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+          echo "Present deployment directory---->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present deployment directory"
           ls -lha
           echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src/internal"
           ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src/internal
@@ -122,6 +122,9 @@ jobs:
       - name: Verify GitHub working environment state 
         id: present-working-environment
         run: |
-          echo "Present working environment: $(process.env.GITHUB_ACTIONS)"
+          echo "process.env.GITHUB_ACTIONS ------>: $(process.env.GITHUB_ACTIONS)"
           echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
-          echo "Present working environment: ${GITHUB_ENV}"
+          echo "Present working environment------>: ${GITHUB_ENV}"
+          echo "Present deployment directory----->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present deployment directory"
+          ls -lha
