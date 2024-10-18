@@ -40,7 +40,7 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on workflow loaded onto ./_posts"
+          echo "Advance check on blog post loaded onto ./_posts"
           ls -lha ./_posts
       - name: Detect package manager
         id: detect-package-manager
@@ -90,6 +90,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+      - name: Verify artifact directory 
+        id: Verify-artifacts-directory
+        run: |
+            echo "Present deployment directory: $(pwd)"
+            echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+            ls -lha
+            echo "Advance check on workflow loaded onto /home/runner/work/_temp"
+            ls -lha /home/runner/work/_temp
 
   deploy:
     environment:
@@ -98,6 +106,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Verify deployment directory 
+        id: present-deployment-directory
+        run: |
+          echo "Present deployment directory: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+          ls -lha
+          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src/internal"
+          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src/internal
+          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src"
+          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -105,3 +123,5 @@ jobs:
         id: present-working-environment
         run: |
           echo "Present working environment: $(process.env.GITHUB_ACTIONS)"
+          echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
+          echo "Present working environment: ${GITHUB_ENV}"
