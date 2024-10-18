@@ -90,11 +90,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-          name: github-pages-we-are
 
   deploy:
     environment:
-      name: github-pages-we-are
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
