@@ -1,5 +1,4 @@
 import Container from "@/app/_components/container";
-import { EXAMPLE_PATH } from "@/lib/constants";
 import cn from "classnames";
 
 type Props = {
@@ -29,14 +28,14 @@ const Alert = ({ preview }: Props) => {
             </>
           ) : (
             <>
-              We appreciates the support given by {" "} 
+              We have migrated from www/[./]ironweb-research/[./]tech to here. We appreciates the support given by {" "}, 
               <a
                 href={`https://vercel.com/`}
                 className="underline hover:text-blue-600 duration-200 transition-colors"
               >
                 Vercel
               </a>
-              in building up our site.
+                in building up our site.
             </>
           )}
         </div>
