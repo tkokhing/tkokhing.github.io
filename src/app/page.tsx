@@ -1,4 +1,5 @@
 import Container from "@/app/_components/container";
+import Alert from "@/app/_components/alert";
 import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
@@ -13,6 +14,7 @@ export default function Index() {
 
   return (
     <main>
+      <Alert/>
       <Container>
         <Intro />
         <HeroPost
