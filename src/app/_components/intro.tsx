@@ -9,8 +9,8 @@ export function Intro() {
         <Image
           src={`https://ironweb-research.github.io/${REPO_NAME}/assets/blog/logo/Ironweb_github_profile.gif`}
           alt="Logo"
-          width={200} // Adjust the width as needed
-          height={200} // Adjust the height as needed
+          width={400} // Adjust the width as needed
+          height={400} // Adjust the height as needed
           className="mr-2" // Add some margin to the right of the image
         />
       </h1>
