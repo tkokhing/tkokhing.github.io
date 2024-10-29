@@ -28,7 +28,7 @@ const Alert = ({ preview }: Props) => {
             </>
           ) : (
             <>
-              We have migrated from www.ironweb-research.tech to here. We appreciates the support given by{" "}
+              We have migrated from www.ironweb-research.tech to here. We appreciate the support given by{" "}
               <a
                 href={`https://vercel.com/`}
                 className="underline hover:text-blue-600 duration-200 transition-colors"

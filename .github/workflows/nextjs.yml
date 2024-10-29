@@ -116,8 +116,6 @@ jobs:
           ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src/internal
           echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src"
           ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src
-          echo "cat api-client"
-          cat /home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js
 
       - name: Deploy to GitHub Pages
         id: deployment
