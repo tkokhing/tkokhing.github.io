@@ -13,7 +13,9 @@ const Header = () => {
           height={100} // Adjust the height as needed
           className="mr-2" // Add some margin to the right of the image
         />
-        <span>Back</span>
+      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
+        Back.
+      </h4>
       </Link>
     </h2>
   );
