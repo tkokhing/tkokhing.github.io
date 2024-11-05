@@ -1,5 +1,5 @@
 import Footer from "@/app/_components/footer";
-import { HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { IRONWEB_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Ironweb-Research ~ Future is Secure',
     description: 'Our Startup aims to integrate blockchain technology to secure networking systems.',
-    images: [HOME_OG_IMAGE_URL],
+    images: [IRONWEB_ANI_GIF_URL],
   },
 }
 
