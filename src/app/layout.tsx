@@ -51,7 +51,7 @@ export default function RootLayout({
           href="/assets/logo/safari-pinned-tab.svg"
           color="#000000"
         />
-        <link rel="shortcut icon" href="/assets/logo/ironweb_icon_32x35.ico" />
+        <link rel="shortcut icon" href="/assets/logo/ironweb_icon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"
