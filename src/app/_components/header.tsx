@@ -12,7 +12,7 @@ const Header = () => {
             alt="Logo"
             width={400} // Adjust the width as needed
             height={400} // Adjust the height as needed
-            className="mr-2" // Add some margin to the right of the image
+            className="mr-2" // Add "logo-image" class, if need to toggle logo
           />
           
         </Link>

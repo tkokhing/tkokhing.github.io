@@ -15,17 +15,16 @@
     filter: var(--logo-filter);
     transition: filter 0.3s ease-in-out;
     --logo-filter: none; /* default value */
-  }
-  
-  [data-mode="system"] .logo-image ::after {
-    --logo-filter: invert(10%) brightness(50%);
-  }
-  
-  [data-mode="light"] .logo-image {
-    --logo-filter: none;
-  }
-  
-  [data-mode="dark"] .logo-image {
-    --logo-filter: invert(100%) brightness(100%);
-  }
-  
+}
+
+[data-mode="system"] .logo-image ::after {
+  --logo-filter: invert(10%) brightness(50%);
+}
+
+[data-mode="light"] .logo-image {
+  --logo-filter: none;
+}
+
+[data-mode="dark"] .logo-image {
+  --logo-filter: invert(100%) brightness(100%);
+}
