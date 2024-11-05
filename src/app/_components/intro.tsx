@@ -11,7 +11,7 @@ export function Intro() {
           alt="Logo"
           width={400} // Adjust the width as needed
           height={400} // Adjust the height as needed
-          className="mr-2" // Add some margin to the right of the image
+          className="logo-image mr-2" // Add logo-image class
         />
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
