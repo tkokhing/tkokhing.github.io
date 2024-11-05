@@ -11,16 +11,16 @@ export function Footer() {
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
+              href="https://github.com/ironweb-research"
               className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-2 px-6 lg:px-4 duration-200 transition-colors mb-4 lg:mb-0"
             >
-              Read Documentation
+              View on our GitHub
             </a>
             <a
               href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
               className="mx-3 font-bold hover:underline"
             >
-              View on GitHub
+              Contact us for demo
             </a>
           </div>
         </div>
