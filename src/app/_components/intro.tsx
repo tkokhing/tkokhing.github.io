@@ -9,9 +9,9 @@ export function Intro() {
         <Image
           src={IRONWEB_PROFILE_LOGO_PNG_URL}
           alt="Logo"
-          width={400} // Adjust the width as needed
-          height={400} // Adjust the height as needed
-          className="logo-image mr-2" // Add logo-image class
+          width={400}
+          height={400}
+          className="mr-2" // Add "logo-image" class, if need to toggle logo
         />
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
