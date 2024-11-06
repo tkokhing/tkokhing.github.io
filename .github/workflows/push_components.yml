@@ -1,0 +1,136 @@
+name: Deploy Next.js site to Ironweb-Research's GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout receiving repo folder
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PUSH_COMPONENTS_TOKEN }}
+          repository: ironweb-research/we_are
+          sparse-checkout: |
+            src/app/_components
+      - name: Checkout _component folder
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src/app/_components
+          path: temp_components
+      # - name: Move blog post to correct level
+      #   id: move_blog_post
+      #   run: |
+      #     mv ./_posts/_posts/*.md _posts
+      #     rm ./_posts/README.md
+      #     find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
+      - name: Verify PWD 
+        id: present-working-directory
+        run: |
+          echo "Present working directory---->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+          ls -lha
+          echo "Advance check on workflow loaded onto ./.github"
+          ls -lha ./.github
+#          echo "Advance check on blog post loaded onto ./_posts"
+#          ls -lha ./_posts
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+      - name: Verify artifact directory 
+        id: Verify-artifacts-directory
+        run: |
+            echo "Present deployment directory---->: $(pwd)"
+            echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+            ls -lha
+            echo "Advance check on workflow loaded onto /home/runner/work/_temp"
+            ls -lha /home/runner/work/_temp
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Verify deployment directory 
+        id: present-deployment-directory
+        run: |
+          echo "Present deployment directory---->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present deployment directory"
+          ls -lha
+          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src/internal"
+          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src/internal
+          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src"
+          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify GitHub working environment state 
+        id: present-working-environment
+        run: |
+          echo "process.env.GITHUB_ACTIONS ------>: $(process.env.GITHUB_ACTIONS)"
+          echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
+          echo "Present working environment------>: ${GITHUB_ENV}"
+          echo "Present deployment directory----->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present deployment directory"
+          ls -lha
