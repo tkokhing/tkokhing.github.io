@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PUSH_COMPONENTS_TOKEN }}
+          path: temp_components
           repository: ironweb-research/we_are
           sparse-checkout: |
             src/app/_components
@@ -30,7 +31,6 @@ jobs:
         with:
           sparse-checkout: |
             src/app/_components
-          path: temp_components
       # - name: Move blog post to correct level
       #   id: move_blog_post
       #   run: |
@@ -43,8 +43,8 @@ jobs:
           echo "Present working directory---->: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
-          echo "Advance check on workflow loaded onto ./.github"
-          ls -lha ./.github
+#          echo "Advance check on workflow loaded onto ./.github"
+#          ls -lha ./.github
 #          echo "Advance check on blog post loaded onto ./_posts"
 #          ls -lha ./_posts
       - name: Detect package manager
