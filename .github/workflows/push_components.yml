@@ -57,6 +57,6 @@ jobs:
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
           echo "Advance check on workflow loaded onto ./temp_components"
-          ls -lha ./temp_components
+          ls -Rlha ./temp_components
 #          echo "Advance check on blog post loaded onto ./_posts"
 #          ls -lha ./_posts
