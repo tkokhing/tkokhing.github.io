@@ -49,18 +49,30 @@ jobs:
           /usr/bin/git remote remove origin          
           /usr/bin/git remote add origin https://github.com/ironweb-research/dumpster.git
           
-      - name: Upload file
-        id: upload_file
+      - name: Configure user
+        id: configure_user
         run: |
-          echo "Upload file(s)"
+          echo "Configure user"
           /usr/bin/git config --global user.email "backslash.with.n@gmail.com"
 
           /usr/bin/git config --global user.name "ironweb-research"
 
+      - name: Git add
+        id: git_add
+        run: |
+          echo "Git add"
           /usr/bin/git add src/app/_components/test.txt
-          
+
+      - name: Git commit
+        id: git_commit
+        run: |
+          echo "Git commit"
           /usr/bin/git commit -m "test upload src/app/_components/test.txt"
 
+      - name: Git push
+        id: git_push
+        run: |
+          echo "Git push"
           /usr/bin/git push -u origin main --force
 
       - name: Reset git remote
@@ -71,9 +83,10 @@ jobs:
           
           /usr/bin/git remote add origin https://github.com/ironweb-research/ironweb-research.github.io.git
 
-
-
-          echo "pwd-we_are      after upload---->: $(pwd)"
+      - name: PWD after upload
+        id: pwd_after_upload
+        run: |
+          echo "pwd-current  after upload---->: $(pwd)"
           ls -Rlha .
           echo "git remote -v  can be run?"
           /usr/bin/git remote -v
