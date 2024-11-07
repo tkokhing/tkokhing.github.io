@@ -23,6 +23,7 @@ jobs:
         id: pwd-iw_homepage_b4_checkout_we_are
         run: |
           echo "pwd-iw_homepage directory---->: $(pwd)"
+          ls -Rlha .
       - name: Checkout receiving we_are repo folder
         uses: actions/checkout@v4
         with:
@@ -37,6 +38,7 @@ jobs:
         id: pwd-iw_homepage_aft_checkout_we_are
         run: |
           echo "pwd-iw_homepage directory---->: $(pwd)"
+          ls -Rlha .
 
       - name: Checkout iw_homepage folder
         uses: actions/checkout@v4
@@ -51,6 +53,7 @@ jobs:
         id: pwd-iw_homepage_aft_checkout_iw_homepage
         run: |
           echo "pwd-iw_homepage directory---->: $(pwd)"
+          ls -Rlha .
         # - name: Move blog post to correct level
 #       - name: Verify PWD 
 #         id: pwd-iw_homepage
