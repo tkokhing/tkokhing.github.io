@@ -57,6 +57,26 @@ jobs:
 
           /usr/bin/git config --global user.name "ironweb-research"
 
+      - name: Disabling automatic garbage collection
+        id: Disabling_automatic_garbage_collection
+        run: |
+          echo "Disabling automatic garbage collection"
+          /usr/bin/git config --local gc.auto 0
+
+
+      - name: Setting up auth
+        id: Setting_up_auth
+        run: |
+          echo "Setting up auth"
+          /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+          /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+          /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+          /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+          /usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+
+
+
+
       - name: Git add
         id: git_add
         run: |
