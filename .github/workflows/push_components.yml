@@ -23,7 +23,12 @@ jobs:
         with:
           sparse-checkout: |
             src/app/_components
+
         # - name: Move blog post to correct level
+      - name: Verify PWD 
+        id: pwd-iw_homepage
+        run: |
+          echo "pwd-iw_homepage directory---->: $(pwd)"
         #   id: move_blog_post
       - name: Checkout receiving repo folder
         uses: actions/checkout@v4
@@ -33,7 +38,7 @@ jobs:
           repository: ironweb-research/we_are
           sparse-checkout: |
             src/app/_components
-
+          sparse-checkout-cone-mode: false
       #   run: |
       #     mv ./_posts/_posts/*.md _posts
       #     rm ./_posts/README.md
@@ -41,7 +46,7 @@ jobs:
       - name: Verify PWD 
         id: present-working-directory
         run: |
-          echo "Present working directory---->: $(pwd)"
+          echo "pwd-we_are      directory---->: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
           echo "Advance check on workflow loaded onto ./temp_components"
