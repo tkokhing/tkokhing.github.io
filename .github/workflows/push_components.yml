@@ -44,8 +44,11 @@ jobs:
       - name: copy logo.css to temp_components
         id: copy-logo_css
         run: |
+          echo "pwd-we_are      before Copy---->: $(pwd)"
+          ls -Rlha .
           cp -r ./src/app/logo.css ./temp_components
-  
+          echo "pwd-we_are      after  Copy---->: $(pwd)"
+          ls -Rlha .
       #   run: |
       #     mv ./_posts/_posts/*.md _posts
       #     rm ./_posts/README.md
