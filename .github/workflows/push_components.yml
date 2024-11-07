@@ -18,141 +18,112 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Verify PWD before checkout we_are
-        id: pwd-iw_homepage_b4_checkout_we_are
-        run: |
-          echo "pwd-iw_homepage directory---->: $(pwd)"
-          ls -Rlha .
-      - name: Checkout receiving we_are repo folder
+      - name: Checkout _component folder
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PUSH_COMPONENTS_TOKEN }}
-          repository: ironweb-research/we_are
-          path: temp_components
           sparse-checkout: |
             src/app/_components
-          sparse-checkout-cone-mode: false
 
-      - name: Verify PWD after checkout we_are
-        id: pwd-iw_homepage_aft_checkout_we_are
-        run: |
-          echo "pwd-iw_homepage directory---->: $(pwd)"
-          ls -Rlha .
-
-      - name: Checkout iw_homepage folder
-        uses: actions/checkout@v4
-        with:
-          path: iw_temp_components
-          sparse-checkout: |
-            src/app/_components
-          sparse-checkout-cone-mode: false
-
-
-      - name: Verify PWD after checkout iw_homepage
-        id: pwd-iw_homepage_aft_checkout_iw_homepage
-        run: |
-          echo "pwd-iw_homepage directory---->: $(pwd)"
-          ls -Rlha .
         # - name: Move blog post to correct level
-#       - name: Verify PWD 
-#         id: pwd-iw_homepage
-#         run: |
-#           echo "pwd-iw_homepage directory---->: $(pwd)"
-#           echo "git remote -v  can be run?"
-#           /usr/bin/git remote -v
-#         #   id: move_blog_post
-#       # - name: Checkout receiving repo folder
-#       #   uses: actions/checkout@v4
-#       #   with:
-#       #     token: ${{ secrets.PUSH_COMPONENTS_TOKEN }}
-#       #     path: temp_components
-#       #     repository: ironweb-research/we_are
-#       #     sparse-checkout: |
-#       #       src/app/_components
-#       #     sparse-checkout-cone-mode: false
+      - name: Verify PWD 
+        id: pwd-iw_homepage
+        run: |
+          echo "pwd-iw_homepage directory---->: $(pwd)"
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
+        #   id: move_blog_post
+      # - name: Checkout receiving repo folder
+      #   uses: actions/checkout@v4
+      #   with:
+      #     token: ${{ secrets.PUSH_COMPONENTS_TOKEN }}
+      #     path: temp_components
+      #     repository: ironweb-research/we_are
+      #     sparse-checkout: |
+      #       src/app/_components
+      #     sparse-checkout-cone-mode: false
 
-#       - name: Change git remote to dumpster
-#         id: change_git_remote_to_dumpster
-#         run: |
-#           echo "change git remote to dumpster"
-#           /usr/bin/git remote remove origin          
-#           /usr/bin/git remote add origin https://github.com/ironweb-research/dumpster.git
+      - name: Change git remote to dumpster
+        id: change_git_remote_to_dumpster
+        run: |
+          echo "change git remote to dumpster"
+          /usr/bin/git remote remove origin          
+          /usr/bin/git remote add origin https://github.com/ironweb-research/dumpster.git
           
-#       - name: Configure user
-#         id: configure_user
-#         run: |
-#           echo "Configure user"
-#           /usr/bin/git config --global user.email "backslash.with.n@gmail.com"
+      - name: Configure user
+        id: configure_user
+        run: |
+          echo "Configure user"
+          /usr/bin/git config --global user.email "backslash.with.n@gmail.com"
 
-#           /usr/bin/git config --global user.name "ironweb-research"
+          /usr/bin/git config --global user.name "ironweb-research"
 
-#       - name: Disabling automatic garbage collection
-#         id: Disabling_automatic_garbage_collection
-#         run: |
-#           echo "Disabling automatic garbage collection"
-#           /usr/bin/git config --local gc.auto 0
-
-
-#       # - name: Setting up auth
-#       #   id: Setting_up_auth
-#       #   run: |
-#       #     echo "Setting up auth"
-#       #     /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-#       #     /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-#       #     /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-#       #     /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-#       #     /usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+      - name: Disabling automatic garbage collection
+        id: Disabling_automatic_garbage_collection
+        run: |
+          echo "Disabling automatic garbage collection"
+          /usr/bin/git config --local gc.auto 0
 
 
+      # - name: Setting up auth
+      #   id: Setting_up_auth
+      #   run: |
+      #     echo "Setting up auth"
+      #     /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+      #     /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+      #     /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+      #     /usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+      #     /usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
 
 
-#       - name: Git add
-#         id: git_add
-#         run: |
-#           echo "Git add"
-#           /usr/bin/git add src/app/_components/test.txt
 
-#       - name: Git commit
-#         id: git_commit
-#         run: |
-#           echo "Git commit"
-#           /usr/bin/git commit -m "test upload src/app/_components/test.txt"
 
-#       - name: Git push
-#         id: git_push
-#         run: |
-#           echo "Git push"
-#           /usr/bin/git push -u origin main --force
+      - name: Git add
+        id: git_add
+        run: |
+          echo "Git add"
+          /usr/bin/git add src/app/_components/test.txt
 
-#       - name: Reset git remote
-#         id: reset_git_remote
-#         run: |
-#           echo "Reset git remote"
-#           /usr/bin/git remote remove origin
+      - name: Git commit
+        id: git_commit
+        run: |
+          echo "Git commit"
+          /usr/bin/git sparse-checkout set --no-sparse-index
+          /usr/bin/git commit -m "test upload src/app/_components/test.txt"
+
+      - name: Git push
+        id: git_push
+        run: |
+          echo "Git push"
+          /usr/bin/git push -u origin main --force
+
+      - name: Reset git remote
+        id: reset_git_remote
+        run: |
+          echo "Reset git remote"
+          /usr/bin/git remote remove origin
           
-#           /usr/bin/git remote add origin https://github.com/ironweb-research/ironweb-research.github.io.git
+          /usr/bin/git remote add origin https://github.com/ironweb-research/ironweb-research.github.io.git
 
-#       - name: PWD after upload
-#         id: pwd_after_upload
-#         run: |
-#           echo "pwd-current  after upload---->: $(pwd)"
-#           ls -Rlha .
-#           echo "git remote -v  can be run?"
-#           /usr/bin/git remote -v
-#       #   run: |
-#       #     mv ./_posts/_posts/*.md _posts
-#       #     rm ./_posts/README.md
-#       #     find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
-#       - name: Verify PWD 
-#         id: present-working-directory
-#         run: |
-#           echo "pwd-we_are      directory---->: $(pwd)"
-#           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
-#           ls -lha
-#           echo "git remote -v  can be run?"
-#           /usr/bin/git remote -v
-#           echo "Advance check on workflow loaded onto ./temp_components"
-#           ls -Rlha ./temp_components
-# #          echo "Advance check on blog post loaded onto ./_posts"
-# #          ls -lha ./_posts
+      - name: PWD after upload
+        id: pwd_after_upload
+        run: |
+          echo "pwd-current  after upload---->: $(pwd)"
+          ls -Rlha .
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
+      #   run: |
+      #     mv ./_posts/_posts/*.md _posts
+      #     rm ./_posts/README.md
+      #     find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
+      - name: Verify PWD 
+        id: present-working-directory
+        run: |
+          echo "pwd-we_are      directory---->: $(pwd)"
+          echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
+          ls -lha
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
+          echo "Advance check on workflow loaded onto ./temp_components"
+          ls -Rlha ./temp_components
+#          echo "Advance check on blog post loaded onto ./_posts"
+#          ls -lha ./_posts
