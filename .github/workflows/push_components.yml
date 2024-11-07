@@ -53,6 +53,10 @@ jobs:
         id: upload_file
         run: |
           echo "Upload file(s)"
+          /usr/bin/git config --global user.email "backslash.with.n@gmail.com"
+
+          /usr/bin/git config --global user.name "ironweb-research"
+
           /usr/bin/git add src/app/_components/test.txt
           
           /usr/bin/git commit -m "test upload src/app/_components/test.txt"
