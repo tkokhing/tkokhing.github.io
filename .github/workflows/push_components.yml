@@ -39,6 +39,13 @@ jobs:
           sparse-checkout: |
             src/app/_components
           sparse-checkout-cone-mode: false
+
+
+      - name: copy logo.css to temp_components
+        id: copy-logo_css
+        run: |
+          cp -r ./src/app/logo.css ./temp_components
+  
       #   run: |
       #     mv ./_posts/_posts/*.md _posts
       #     rm ./_posts/README.md
