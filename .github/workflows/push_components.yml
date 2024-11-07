@@ -31,6 +31,7 @@ jobs:
           path: temp_components
           sparse-checkout: |
             src/app/_components
+          sparse-checkout-cone-mode: false
 
       - name: Verify PWD after checkout we_are
         id: pwd-iw_homepage_aft_checkout_we_are
@@ -40,8 +41,10 @@ jobs:
       - name: Checkout iw_homepage folder
         uses: actions/checkout@v4
         with:
+          path: iw_temp_components
           sparse-checkout: |
             src/app/_components
+          sparse-checkout-cone-mode: false
 
 
       - name: Verify PWD after checkout iw_homepage
