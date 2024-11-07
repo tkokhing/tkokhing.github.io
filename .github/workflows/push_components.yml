@@ -29,6 +29,8 @@ jobs:
         id: pwd-iw_homepage
         run: |
           echo "pwd-iw_homepage directory---->: $(pwd)"
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
         #   id: move_blog_post
       - name: Checkout receiving repo folder
         uses: actions/checkout@v4
@@ -49,6 +51,8 @@ jobs:
           cp -r ./src/app/logo.css ./temp_components
           echo "pwd-we_are      after  Copy---->: $(pwd)"
           ls -Rlha .
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
       #   run: |
       #     mv ./_posts/_posts/*.md _posts
       #     rm ./_posts/README.md
@@ -59,6 +63,8 @@ jobs:
           echo "pwd-we_are      directory---->: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present working directory"
           ls -lha
+          echo "git remote -v  can be run?"
+          /usr/bin/git remote -v
           echo "Advance check on workflow loaded onto ./temp_components"
           ls -Rlha ./temp_components
 #          echo "Advance check on blog post loaded onto ./_posts"
