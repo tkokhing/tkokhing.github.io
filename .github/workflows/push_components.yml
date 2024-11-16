@@ -83,18 +83,26 @@ jobs:
           echo "Git add"
           /usr/bin/git add src/app/_components/test.txt
 
-      - name: Git commit
-        id: git_commit
+      - name: Re-verify PWD 
+        id: reverify_pwd-iw_homepage
         run: |
-          echo "Git commit"
-          /usr/bin/git sparse-checkout set --no-sparse-index
-          /usr/bin/git commit -m "test upload src/app/_components/test.txt"
+            echo "pwd-iw_homepage directory---->: $(pwd)"
+            echo "git remote -v  can really be run?"
+            /usr/bin/git remote -v
 
-      - name: Git push
-        id: git_push
-        run: |
-          echo "Git push"
-          /usr/bin/git push -u origin main --force
+# ERROR occured here
+      # - name: Git commit
+      #   id: git_commit
+      #   run: |
+      #     echo "Git commit"
+      #     /usr/bin/git sparse-checkout set --no-sparse-index
+      #     /usr/bin/git commit -m "test upload src/app/_components/test.txt"
+
+      # - name: Git push
+      #   id: git_push
+      #   run: |
+      #     echo "Git push"
+      #     /usr/bin/git push -u origin main --force
 
       - name: Reset git remote
         id: reset_git_remote
