@@ -35,7 +35,7 @@ const CoverPage: React.FC = () => {
               <h2>Our Views &rarr;</h2>
             </div>
             <div className="flip-card-back">
-              <h2>Our perspective on today’s internet security landscape is that it is disorganized and monopolized, limiting your choices but to accommodate. We are committed to changing this.</h2>
+              <h2>Our perspective on today’s internet security landscape is that it is disarrayed and monopolized, limiting your choices but to accommodate. We are committed to changing this.</h2>
             </div>
           </div>
         </div>
