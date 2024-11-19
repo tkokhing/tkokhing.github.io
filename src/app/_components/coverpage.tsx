@@ -9,40 +9,52 @@ const CoverPage: React.FC = () => {
         <div className="tile">
           <div className="flip-card">
             <div className="flip-card-front">
-              <h2>Vision</h2>
+              <h2>Our Vision &rarr;</h2>
             </div>
             <div className="flip-card-back">
-              <h2>Our vision is to...</h2>
+              <h2>We are a start-up research company where we dream about and develop the next-gen web security suite.</h2>
             </div>
           </div>
         </div>
         <div className="tile">
           <div className="flip-card">
             <div className="flip-card-front">
-              <h2>Mission</h2>
+              <h2>Our Expertise &rarr;</h2>
             </div>
             <div className="flip-card-back">
-              <h2>Our mission is to...</h2>
+              <h2>Our people are the most important assets! 
+                We bring together seasoned experts, with extensive 
+                R&D experience across industries in ICT, defense, 
+                financial and crytocurrency.</h2>
             </div>
           </div>
         </div>
         <div className="tile">
           <div className="flip-card">
             <div className="flip-card-front">
-              <h2>Security</h2>
+              <h2>Our Views &rarr;</h2>
             </div>
             <div className="flip-card-back">
-              <h2>Your security is ...</h2>
+              <h2>Our perspective on today’s internet security landscape is that it is disorganized and monopolized, limiting your choices but to accommodate. We are committed to changing this.</h2>
             </div>
           </div>
         </div>
         <div className="tile">
           <div className="flip-card">
             <div className="flip-card-front">
-              <h2>Sustainability</h2>
+              <h2>Our Blog &rarr;</h2>
             </div>
             <div className="flip-card-back">
-              <h2>Our sustainability efforts...</h2>
+              
+              <h2>Who we are defines our fields of expertise, views and research {" "}
+              <a
+                href={`https://ironweb-research.github.io/we_are/`}
+                className="underline hover:text-green-400 duration-200 transition-colors"
+              >
+              topics.
+              </a>
+                
+              </h2>
             </div>
           </div>
         </div>
