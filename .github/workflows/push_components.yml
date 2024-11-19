@@ -31,6 +31,7 @@ jobs:
           echo "pwd-iw_homepage directory---->: $(pwd)"
           echo "git remote -v  can be run?"
           /usr/bin/git remote -v
+          echo "git status               ---->: $(/usr/bin/git status)"
         #   id: move_blog_post
       # - name: Checkout receiving repo folder
       #   uses: actions/checkout@v4
@@ -48,21 +49,22 @@ jobs:
           echo "change git remote to dumpster"
           /usr/bin/git remote remove origin          
           /usr/bin/git remote add origin https://github.com/ironweb-research/dumpster.git
-          
+          echo "git status               ---->: $(/usr/bin/git status)"
       - name: Configure user
         id: configure_user
         run: |
           echo "Configure user"
           /usr/bin/git config --global user.email "backslash.with.n@gmail.com"
-
           /usr/bin/git config --global user.name "ironweb-research"
-
+          echo "git status               ---->: $(/usr/bin/git status)"
+          echo "pwd-current for dumpster ---->: $(pwd)"
+          ls -Rlha .
       - name: Disabling automatic garbage collection
         id: Disabling_automatic_garbage_collection
         run: |
           echo "Disabling automatic garbage collection"
           /usr/bin/git config --local gc.auto 0
-
+          echo "git status               ---->: $(/usr/bin/git status)"
 
       # - name: Setting up auth
       #   id: Setting_up_auth
@@ -82,14 +84,14 @@ jobs:
         run: |
           echo "Git add"
           /usr/bin/git add src/app/_components/test.txt
-
+          echo "git status               ---->: $(/usr/bin/git status)"
       - name: Re-verify PWD 
         id: reverify_pwd-iw_homepage
         run: |
             echo "pwd-iw_homepage directory---->: $(pwd)"
             echo "git remote -v  can really be run?"
             /usr/bin/git remote -v
-
+            echo "git status               ---->: $(/usr/bin/git status)"
 # ERROR occured here
       # - name: Git commit
       #   id: git_commit
@@ -111,7 +113,8 @@ jobs:
           /usr/bin/git remote remove origin
           
           /usr/bin/git remote add origin https://github.com/ironweb-research/ironweb-research.github.io.git
-
+          /usr/bin/git remote -v
+          echo "git status               ---->: $(/usr/bin/git status)"
       - name: PWD after upload
         id: pwd_after_upload
         run: |
@@ -119,6 +122,7 @@ jobs:
           ls -Rlha .
           echo "git remote -v  can be run?"
           /usr/bin/git remote -v
+          echo "git status               ---->: $(/usr/bin/git status)"
       #   run: |
       #     mv ./_posts/_posts/*.md _posts
       #     rm ./_posts/README.md
@@ -131,7 +135,8 @@ jobs:
           ls -lha
           echo "git remote -v  can be run?"
           /usr/bin/git remote -v
-          echo "Advance check on workflow loaded onto ./temp_components"
-          ls -Rlha ./temp_components
+          echo "git status               ---->: $(/usr/bin/git status)"
+#          echo "Advance check on workflow loaded onto ./temp_components"
+#          ls -Rlha ./temp_components
 #          echo "Advance check on blog post loaded onto ./_posts"
 #          ls -lha ./_posts
