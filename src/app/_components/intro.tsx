@@ -44,15 +44,7 @@ export function Intro() {
                 <div className="shrink-0">
                   <img
                     alt="My Blog"
-                    src="https://tkokhing.github.io/img/logos/tkokhing.svg"
-                    className="size-8"
-                  />
-                </div>
-
-                <div className="shrink-0">
-                  <img
-                    alt="My Blog"
-                    src="https://tkokhing.github.io/img/logos/tkokhing.svg"
+                    src="https://tkokhing.github.io/img/logo/tkokhing.svg"
                     className="size-8"
                   />
                 </div>
