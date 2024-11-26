@@ -1,0 +1,19 @@
+{
+  "name": "tkokhing",
+  "short_name": "tkokhing",
+  "icons": [
+    {
+      "src": "/img/logo/android-chrome-192x213.png",
+      "sizes": "192x213",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo/android-chrome-512x570.png",
+      "sizes": "512x570",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}
