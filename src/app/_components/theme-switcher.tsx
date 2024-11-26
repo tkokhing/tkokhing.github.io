@@ -10,7 +10,7 @@ declare global {
 
 type ColorSchemePreference = "system" | "dark" | "light";
 
-const STORAGE_KEY = "nextjs-blog-starter-theme";
+const STORAGE_KEY = "this-theme";
 const modes: ColorSchemePreference[] = ["system", "dark", "light"];
 
 /** to reuse updateDOM function defined inside injected script */
@@ -89,7 +89,25 @@ const Switch = () => {
       suppressHydrationWarning
       className={styles.switch}
       onClick={handleModeSwitch}
-    />
+    >
+      {mode === "system" && (
+        <div className={styles['system-icon']}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" className="stroke-slate-400"></path>
+            <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" className="stroke-slate-400"></path>
+          </svg>
+        </div>
+      )}
+      {mode === "light" && (
+        <div className={styles['light-icon']}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" className="stroke-orange-500"></path>
+            <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" className="stroke-orange-500"></path>
+          </svg>
+        </div>
+      )}
+    </button>
+
   );
 };
 
@@ -112,3 +130,21 @@ export const ThemeSwitcher = () => {
     </>
   );
 };
+
+// export const ThemeButton = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const togglePopup = () => setIsOpen(!isOpen);
+
+//   return (
+//     <div className="relative">
+//       <button onClick={togglePopup} className="px-4 py-2 bg-gray-800 text-white rounded-md">
+//         Theme
+//       </button>
+//       {isOpen && (
+//         <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg p-2">
+//           <ThemeSwitcher />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };

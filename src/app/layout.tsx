@@ -1,5 +1,5 @@
 import Footer from "@/app/_components/footer";
-import { IRONWEB_ANI_GIF_URL } from "@/lib/constants";
+import { TKOKHING_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -11,12 +11,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL('http://localhost:3000'),
-  title: 'Ironweb-Research ~ Future is Secure',
-  description: 'Our Startup aims to integrate blockchain technology to secure networking systems.',
+  title: 'tkokhing',
+  description: 'This is my blog.',
   openGraph: {
-    title: 'Ironweb-Research ~ Future is Secure',
-    description: 'Our Startup aims to integrate blockchain technology to secure networking systems.',
-    images: [IRONWEB_ANI_GIF_URL],
+    title: 'tkokhing',
+    description: 'This is my blog',
+    images: [TKOKHING_ANI_GIF_URL],
   },
 }
 
@@ -31,31 +31,31 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x200"
-          href="/assets/logo/apple-touch-icon.png"
+          href="/img/logo/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x35"
-          href="/assets/logo/ironweb_icon_32x35.png"
+          href="/img/logo/tkokhing_icon_32x35.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x17"
-          href="/assets/logo/ironweb_icon_16x17.png"
+          href="/img/logo/tkokhing_icon_16x17.png"
         />
-        <link rel="manifest" href="/assets/logo/site.webmanifest" />
+        <link rel="manifest" href="/img/logo/site.webmanifest" />
         <link
           rel="mask-icon"
-          href="/assets/logo/safari-pinned-tab.svg"
+          href="/img/logo/safari-pinned-tab.svg"
           color="#000000"
         />
-        <link rel="shortcut icon" href="/assets/logo/ironweb_icon.ico" />
+        <link rel="shortcut icon" href="/img/logo/tkokhing_icon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"
-          content="/assets/logo/browserconfig.xml"
+          content="/img/logo/browserconfig.xml"
         />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />

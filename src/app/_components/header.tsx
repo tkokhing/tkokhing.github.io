@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IRONWEB_PROFILE_LOGO_PNG_URL } from "@/lib/constants";
+import { TKOKHING_PROFILE_LOGO_PNG_URL } from "@/lib/constants";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
           <Image
-            src= {IRONWEB_PROFILE_LOGO_PNG_URL}
+            src= {TKOKHING_PROFILE_LOGO_PNG_URL}
             alt="Logo"
             width={400} // Adjust the width as needed
             height={400} // Adjust the height as needed
@@ -17,7 +17,7 @@ const Header = () => {
           
         </Link>
       </div>
-      <h4 className="text-lg md:text-left mt-5 md:pl-8">
+      <h4 className="text-lg md:text-left mt-5 md:pl-8 dark:text-teal-100 ">
         Future is Secure.
       </h4>
     </div>

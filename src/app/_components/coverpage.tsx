@@ -48,7 +48,7 @@ const CoverPage: React.FC = () => {
               
               <h2>Who we are defines our fields of expertise, views and research {" "}
               <a
-                href={`https://ironweb-research.github.io/we_are/`}
+                href={`https://tkokhing.github.io/`}
                 className="underline hover:text-green-400 duration-200 transition-colors"
               >
               topics.
