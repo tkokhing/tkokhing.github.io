@@ -17,11 +17,11 @@ export function Footer() {
             </a>
             <a
               href="https://github.com/tkokhing"
-              className="mx-3 bg-black hover:dark:bg-slate-500 text-white hover:text-white border border-black font-bold py-2 px-6 lg:px-4 duration-200 transition-colors mb-4 lg:mb-0 dark:bg-slate-500 dark:text-white dark:border dark:border-white dark:hover:bg-black dark:hover:text-lime-300 flex items-center"
+              className="mx-3 bg-black text-white hover:bg-slate-500 hover:text-white border border-black font-bold py-2 px-6 lg:px-4 duration-200 transition-colors mb-4 lg:mb-0 dark:bg-slate-500 dark:text-white dark:border dark:border-white dark:hover:bg-black dark:hover:text-lime-300 flex items-center"
               style={{ display: 'flex', alignItems: 'center' }}
             >
               View on
-              <svg
+              <svg 
                 viewBox="0 0 16 16"
                 className="w-5 h-5 ml-2"
                 fill="white"
