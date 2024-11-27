@@ -17,7 +17,7 @@ export function Footer() {
             </a>
             <a
               href="https://github.com/tkokhing"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-2 px-6 lg:px-4 duration-200 transition-colors mb-4 lg:mb-0 dark:bg-slate-500 dark:text-white dark:border dark:border-white dark:hover:bg-black dark:hover:text-lime-300 flex items-center hover:fill-black"
+              className="mx-3 bg-black hover:bg-white text-white hover:text-black border border-black font-bold py-2 px-6 lg:px-4 duration-200 transition-colors mb-4 lg:mb-0 dark:bg-slate-500 dark:text-white dark:border dark:border-white dark:hover:bg-black dark:hover:text-lime-300 flex items-center hover:fill-blue-500 dark:hover:fill-lime-300"
               style={{ display: 'flex', alignItems: 'center' }}
             >
               View on
