@@ -1,6 +1,6 @@
 // import Link from "next/link";
 import Image from "next/image";
-import { TKOKHING_PROFILE_LOGO_PNG_URL } from "@/lib/constants";
+import { TKOKHING_ICON_ANI_GIF_URL, TKOKHING_LOGO_PNG_URL } from "@/lib/constants";
 // import { ThemeSwitcher } from "./theme-switcher";
 
 
@@ -10,8 +10,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 const user = {
   name: 'tkokhing',
   telegram: '@tkokhing',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  imageUrl:{TKOKHING_ICON_ANI_GIF_URL}
 }
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -44,8 +43,8 @@ export function Intro() {
                 <div className="shrink-0">
                   <img
                     alt="My Blog"
-                    src="https://tkokhing.github.io/img/logo/tkokhing.svg"
-                    className="size-8"
+                    src={TKOKHING_LOGO_PNG_URL}
+                    className="size-40"
                   />
                 </div>
 
@@ -84,7 +83,7 @@ export function Intro() {
                       <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img alt="" src={user.imageUrl} className="size-8 rounded-full" />
+                        <img alt="" src={`user.imageUrl`} className="size-8 rounded-full" />
                       </MenuButton>
                     </div>
                     <MenuItems
@@ -137,7 +136,7 @@ export function Intro() {
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
                 <div className="shrink-0">
-                  <img alt="" src={user.imageUrl} className="size-10 rounded-full" />
+                  <img alt="" src={`user.imageUrl`} className="size-10 rounded-full" />
                 </div>
                 <div className="ml-3">
                   <div className="text-base/5 font-medium text-white dark:text-lime-600">{user.name}</div>

@@ -1,5 +1,5 @@
 import Footer from "@/app/_components/footer";
-import { TKOKHING_ANI_GIF_URL } from "@/lib/constants";
+import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'tkokhing',
     description: 'This is my blog',
-    images: [TKOKHING_ANI_GIF_URL],
+    images: [TKOKHING_ICON_ANI_GIF_URL],
   },
 }
 

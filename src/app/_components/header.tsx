@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { TKOKHING_PROFILE_LOGO_PNG_URL } from "@/lib/constants";
+import { TKOKHING_LOGO_PNG_URL } from "@/lib/constants";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
           <Image
-            src= {TKOKHING_PROFILE_LOGO_PNG_URL}
+            src= {TKOKHING_LOGO_PNG_URL}
             alt="Logo"
             width={400} // Adjust the width as needed
             height={400} // Adjust the height as needed

@@ -93,8 +93,8 @@ const Switch = () => {
       {mode === "system" && (
         <div className={styles['system-icon']}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" className="stroke-slate-400"></path>
-            <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" className="stroke-slate-400"></path>
+            <rect x="4" y="4" width="16" height="12" rx="2" className="stroke-gray-500"></rect>
+            <rect x="6" y="18" width="12" height="2" rx="1" className="stroke-gray-500"></rect>
           </svg>
         </div>
       )}
