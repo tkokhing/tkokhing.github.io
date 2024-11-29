@@ -1,4 +1,4 @@
-import {TesterIcon, NightMoonIcon, HoverChangeColourIcon} from "../_components/icons_svg"
+import {TesterIcon, NightMoonIcon, HoverChangeColourIcon, ProfileLogoSVG } from "../_components/icons_svg"
 export const dynamic = 'force-static';
 export default function Testerer() {
   return (
@@ -31,12 +31,18 @@ export default function Testerer() {
           <TesterIcon width={2} fill="green" />
         </div>
 
+        <div>
+          <h1>My NightMoonIcon #1 go by default, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
+          <h1>My NightMoonIcon #1 Result: ALL stars are WHITE of course </h1>
+
+          <NightMoonIcon stroke="white" />
+        </div>
 
         <div>
-          <h1>My NightMoonIcon #3 strokeColour=not provded, width=2 fill="green" </h1>
-          <h1>My TesterIcon #3 Result: WIDTH:Star 2 is 2 ok || FILL: Star is green ok, Moon not change NotOk </h1>
+          <h1>My NightMoonIcon #1 input cyan to strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
+          <h1>My NightMoonIcon #1 Result: ALL stars are cyan </h1>
 
-          <NightMoonIcon />
+          <NightMoonIcon stroke="cyan" />
         </div>
 
         <div>
@@ -45,6 +51,17 @@ export default function Testerer() {
 
           <HoverChangeColourIcon />
         </div>
+
+        <div>
+          <h1>My ProfileLogoSVG fill="#0071C1" </h1>
+          <ProfileLogoSVG fill="#0071C1" />
+          <h1>My ProfileLogoSVG fill="red":   </h1>
+          <ProfileLogoSVG fill="red" />
+          <h1>My ProfileLogoSVG fill="orange" </h1>
+          <ProfileLogoSVG fill="orange" />
+
+        </div>
+      
       </main>
 
       <style>{`

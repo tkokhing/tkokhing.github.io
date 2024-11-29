@@ -1,4 +1,4 @@
-import { TKOKHING_ICON_ANI_GIF_URL, TKOKHING_LOGO_PNG_URL } from "@/lib/constants";
+import { TKOKHING_ICON_ANI_GIF_URL, TKOKHING_LOGO_SVG_URL } from "@/lib/constants";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -35,7 +35,7 @@ export function Navbar() {
                 <div className="shrink-0">
                   <img
                     alt="My Blog"
-                    src={TKOKHING_LOGO_PNG_URL}
+                    src={TKOKHING_LOGO_SVG_URL}
                     className="size-40"
                   />
                 </div>
