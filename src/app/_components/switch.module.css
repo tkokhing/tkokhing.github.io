@@ -11,10 +11,11 @@
   --size: 24px;
   height: var(--size);
   width: var(--size);
+  background: transparent;
   transition: all 0.3s ease-in-out 0s !important;
 }
 
-.system-icon, .light-icon {
+.system-icon, .dark-icon, .light-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +23,7 @@
   width: 100%;
 }
 
-.system-icon svg, .light-icon {
+.system-icon svg, .dark-icon svg, .light-icon {
   width: 100%;
   height: 100%;
 }
@@ -31,23 +32,24 @@
   content: "";
 }
 
-/* [data-mode="light"] .switch {
+[data-mode="dark"] .switch {
   content: "";
-} */
-
-[data-mode="light"] .switch {
-  box-shadow: 0 0 50px 10px yellow;
   border: none;
-  background: transparent
 }
 
+[data-mode="light"] .switch {
+  box-shadow: 0 0 40px 10px yellow;
+  border: none;
+} /* provide sunny shading to light-icon */
+
+/* 
 [data-mode="dark"] .switch {
   box-shadow: calc(var(--size) / 4) calc(var(--size) / -4) calc(var(--size) / 8)
     inset #fff;
   border: none;
   background: transparent;
   animation: n linear 0.5s;
-}
+} */
 
 @keyframes n {
   40% {
