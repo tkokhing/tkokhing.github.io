@@ -1,4 +1,4 @@
-import {TesterIcon, NightMoonIcon} from "../_components/icons_svg"
+import {TesterIcon, NightMoonIcon, HoverChangeColourIcon} from "../_components/icons_svg"
 export const dynamic = 'force-static';
 export default function Testerer() {
   return (
@@ -37,6 +37,13 @@ export default function Testerer() {
           <h1>My TesterIcon #3 Result: WIDTH:Star 2 is 2 ok || FILL: Star is green ok, Moon not change NotOk </h1>
 
           <NightMoonIcon />
+        </div>
+
+        <div>
+          <h1>My HoverChangeColourIcon default || strokeColour=white, as default. Hover on stroke: stroke-cyan-500 </h1>
+          <h1>My HoverChangeColourIcon Result:   </h1>
+
+          <HoverChangeColourIcon />
         </div>
       </main>
 
