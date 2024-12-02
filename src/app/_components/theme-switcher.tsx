@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { NightMoonIcon, DayTimeIcon } from "./icons_svg"
+import { DayTimeIcon, DarkModeIcon } from "./icons_svg"
 
 import { memo, useEffect, useState } from "react";
 
@@ -101,7 +101,7 @@ const Switch = () => {
       )}
       {mode === "dark" && (
         <div className={styles['dark-icon']}>
-          <NightMoonIcon />
+          <DarkModeIcon />
         </div>
       )}
       {mode === "light" && (

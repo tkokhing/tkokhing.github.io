@@ -4,3 +4,8 @@
     /* fill: blue; */
     
 }
+.icon-container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-start: flex-start; /* start of the container’s main axis */
+}

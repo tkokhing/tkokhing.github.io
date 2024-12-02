@@ -1,4 +1,7 @@
-import {TesterIcon, NightMoonIcon, HoverChangeColourIcon, ProfileLogoSVG } from "../_components/icons_svg"
+"use client"
+
+import { MoonWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
+import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
 export default function Testerer() {
   return (
@@ -12,44 +15,43 @@ export default function Testerer() {
         <ul className="para_one">
           <p>Created for learning how the different programming languages and frameworks work together. To explore new concepts and create a demo to share online.</p>
         </ul>
+
         <div>
-          <h1>My TesterIcon #1 all use default || width = 3 on star 3 only, rest all 1 || strokeColour = "yellow" on star 1 hori only, rest all white || fill = "currentColour" on black side moon and star 2</h1>
-          <h1>My TesterIcon #1 Result: All is correct except "currentColour" on black side MOON is not effected </h1>
-          <TesterIcon />
+          <h1>My TestMoonIcon #0 without input at call, go by default, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
+          <h1>My TestMoonIcon #0 Result: ALL stars are WHITE of course </h1>
+
+          <TestMoonIcon  />
         </div>
 
         <div>
-          <h1>My TesterIcon #2 strokeColour="blue" width=1 fill="orange".</h1>
-          <h1>My TesterIcon #2 Result: STROKECOL: star 1 blue OK || WIDTH:Star 3 is 1 ok || FILL: Star is Orange ok, Moon not change NotOk </h1>
-          <TesterIcon strokeColour="blue" width={1} fill="orange" />
+          <h1>My TestMoonIcon #1 with white as input at call, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
+          <h1>My TestMoonIcon #1 Result: ALL stars are WHITE of course </h1>
+
+          <TestMoonIcon strokeColour="white" />
         </div>
 
         <div>
-          <h1>My TesterIcon #3 strokeColour=not provded, width=2 fill="green" </h1>
-          <h1>My TesterIcon #3 Result: WIDTH:Star 2 is 2 ok || FILL: Star is green ok, Moon not change NotOk </h1>
+          <h1>My DarkModeIcon default || strokeColour=white, Hover on stroke: yellow </h1>
+          <h1>My DarkModeIcon Result:   </h1>
 
-          <TesterIcon width={2} fill="green" />
+          <DarkModeIcon />
         </div>
 
-        <div>
-          <h1>My NightMoonIcon #1 go by default, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
-          <h1>My NightMoonIcon #1 Result: ALL stars are WHITE of course </h1>
 
-          <NightMoonIcon stroke="white" />
+        <div>
+          <h1>My DarkModeWithHoverIcon default || strokeColour=white, Hover on stroke: yellow </h1>
+          <h1>My DarkModeWithHoverIcon Result:   </h1>
+
+          <DarkModeWithHoverIcon  />
         </div>
 
-        <div>
-          <h1>My NightMoonIcon #1 input cyan to strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
-          <h1>My NightMoonIcon #1 Result: ALL stars are cyan </h1>
-
-          <NightMoonIcon stroke="cyan" />
-        </div>
-
-        <div>
-          <h1>My HoverChangeColourIcon default || strokeColour=white, as default. Hover on stroke: stroke-cyan-500 </h1>
-          <h1>My HoverChangeColourIcon Result:   </h1>
-
-          <HoverChangeColourIcon />
+        <div className={styles.switch}>
+          <h1>My MoonWithTextIcon default || strokeColour=white, Hover on stroke: yellow </h1>
+          <h1>My MoonWithTextIcon Result:   </h1>
+          <div className = {styles['icon-container']}>
+            <MoonWithTextIcon />
+            <MoonWithTextIcon />
+          </div>
         </div>
 
         <div>

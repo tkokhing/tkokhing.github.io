@@ -1,171 +1,63 @@
-import * as React from "react";
+import * as React from "react"; 
+import { useState } from "react";
 import styles from "./icon_svg.module.css"; 
 
 // Define a generalized interface for all icon components
 interface IconProps {
     width?: number;
     height?: number;
-    fill?: string;
+    fillColour?: string;
     strokeColour?: string;
 }
-  
+ 
 
-// TesterIcon component
-export const TesterIcon = ({ width = 3, strokeColour = "yellow", fill = "currentColour" }) => (
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient
-        id="fadeGradient"
-        cx="80%"
-        cy="30%"
-        r="70%"
-        fx="90%"
-        fy="20%"
-      >
-        <stop
-          offset="70%"
-          style={{
-            stopColor: `${fill}`, //fill is not working here, no matter what syntax I played with 
-            stopOpacity: 1,
-          }}
-        />
-        <stop
-          offset="100%"
-          style={{
-            stopColor: "white",
-            stopOpacity: 1,
-          }}
-        />
-      </radialGradient>
-    </defs>
-    <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" />
-    {/* star 1 */}
-    <line
-      x1={2}
-      y1={2}
-      x2={2}
-      y2={4}
-      stroke={strokeColour}
-      strokeWidth={1}
-      strokeLinecap="round"
-    />
-    <line
-      x1={1}
-      y1={3}
-      x2={3}
-      y2={3}
-      stroke="white"
-      strokeWidth={1}
-      strokeLinecap="round"
-    />
-    {/* star 2 */}
-    <line
-      x1={6}
-      y1={6}
-      x2={6}
-      y2={8}
-      stroke={fill}
-      strokeWidth={1}
-      strokeLinecap="round"
-    />
-    <line
-      x1={5}
-      y1={7}
-      x2={7}
-      y2={7}
-      stroke={fill} // fill is working here
-      strokeWidth={1}
-      strokeLinecap="round"
-    />
-    {/* star 3 */}
-    <line
-      x1={20}
-      y1={4}
-      x2={20}
-      y2={6}
-      stroke="white"
-      strokeWidth={width}
-      strokeLinecap="round"
-    />
-    <line
-      x1={19}
-      y1={5}
-      x2={21}
-      y2={5}
-      stroke="white"
-      strokeWidth={width}
-      strokeLinecap="round"
-    />
-  </svg>
-);
 
-export const HoverChangeColourIcon = () => (
-  <div className={styles.switch}>
-    <svg className = {styles['svg-hover-on']} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+
+
+// this works, except changing the moon when hover on
+export const MoonWithTextIcon = ({ stroke = "white", fill = "url(#fadeGradient)", ...props }) => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <svg
+      viewBox={hover ? "0 0 60 24" : "0 0 24 24"}
+      width={hover ? "60" : "24"}
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      {...props}
+    >
       <defs>
         <radialGradient
-          id="fadeGradient"
-          cx="80%"
-          cy="30%"
-          r="70%"
-          fx="90%"
-          fy="20%"
+          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
         >
           <stop
             offset="70%"
-            style={{
-              stopColor: "black", 
-              stopOpacity: 1,
-            }}
+            style={{ stopColor: "black", stopOpacity: 1, }}
           />
           <stop
             offset="100%"
-            style={{
-              stopColor: "white",
-              stopOpacity: 1,
-            }}
-            />
+            style={{ stopColor: hover ? "yellow": "white", stopOpacity: 1, }}
+          />
         </radialGradient>
       </defs>
       <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" strokeWidth="0.1" />
-
-      {/* star 1 */}
-      <g strokeWidth={1} strokeLinecap="round">
-        <g stroke="white" >
-          <line x1={2} y1={2} x2={2} y2={4} />
-          <line x1={1} y1={3} x2={3} y2={3} />
-        </g>
-        <g stroke="currentColour" >
-          <line x1={2} y1={2} x2={2} y2={4} />
-          <line x1={1} y1={3} x2={3} y2={3} />
-        </g>
-      </g>
-
-      {/* star 2 */}
-      <g strokeWidth={1} strokeLinecap="round">
-        <g stroke="white" >
-          <line x1={6} y1={6} x2={6} y2={8} />
-          <line x1={5} y1={7} x2={7} y2={7} />
-        </g>
-        <g stroke="currentColour">
-          <line x1={6} y1={6} x2={6} y2={8} />
-          <line x1={5} y1={7} x2={7} y2={7} />
-        </g>
-      </g>
-      {/* star 3 */}
-      <g strokeWidth={1} strokeLinecap="round">
-        <g stroke="white" >
-          <line x1={20} y1={4} x2={20} y2={6} />
-          <line x1={19} y1={5} x2={21} y2={5} />
-        </g>
-        <g stroke="currentColour">
-          <line x1={20} y1={4} x2={20} y2={6} />
-          <line x1={19} y1={5} x2={21} y2={5} />
-        </g>
-      </g>
+      <line x1={2} y1={2} x2={2} y2={4} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      <line x1={1} y1={3} x2={3} y2={3} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      <line x1={6} y1={6} x2={6} y2={8} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      <line x1={5} y1={7} x2={7} y2={7} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      <line x1={20} y1={4} x2={20} y2={6} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      <line x1={19} y1={5} x2={21} y2={5} stroke={stroke} strokeWidth={1} strokeLinecap="round" />
+      {hover && (
+        <text x={40} y={20} fill={stroke} fontSize="12" textAnchor="middle">
+          Moon
+        </text>
+      )}
     </svg>
-  </div>
-)
+  );
+};
 
 export const ProfileLogoSVG = ({fill="#0071C1"}) => (
   <div className={styles.switch}>
@@ -191,17 +83,12 @@ export const ProfileLogoSVG = ({fill="#0071C1"}) => (
   </div>
 );
 
-export const NightMoonIcon = ({stroke="white"}) => (
+export const TestMoonIcon: React.FC<IconProps> = ({fillColour="white", strokeColour="white"}) => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <radialGradient
-        id="fadeGradient"
-        cx="80%"
-        cy="30%"
-        r="70%"
-        fx="90%"
-        fy="20%"
-      >
+          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
+        >
         <stop
           offset="70%"
           style={{
@@ -212,7 +99,7 @@ export const NightMoonIcon = ({stroke="white"}) => (
         <stop
           offset="100%"
           style={{
-            stopColor: "white",
+            stopColor: fillColour,
             stopOpacity: 1,
           }}
         />
@@ -221,7 +108,7 @@ export const NightMoonIcon = ({stroke="white"}) => (
 
     <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" />
 
-    <g strokeWidth={1} strokeLinecap="round" stroke={stroke}>
+    <g strokeWidth={1} strokeLinecap="round" stroke={strokeColour}>
       {/* star 1 */}
       <line x1={2} y1={2} x2={2} y2={4} />
       <line x1={1} y1={3} x2={3} y2={3} />
@@ -247,10 +134,152 @@ export const DayTimeIcon = () => (
   </svg>
 )
 
+
+export const DarkModeWithHoverIcon: React.FC = (props) => {
+  const [hovered, setHovered] = React.useState(false);
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      {...props}
+    >
+      <defs>
+        <radialGradient
+          id="fadeGradient"
+          cx="80%"
+          cy="30%"
+          r="70%"
+          fx="90%"
+          fy="20%"
+        >
+          <stop
+            offset="30%"
+            style={{
+              stopColor: hovered ? "yellow" : "black", // change color on hover
+              stopOpacity: 1,
+            }}
+          />
+          <stop
+            offset="100%"
+            style={{
+              stopColor: hovered ? "orange" : "white", // change color on hover
+              stopOpacity: 1,
+            }}
+          />
+        </radialGradient>
+        </defs>
+        
+      <circle cx={16} cy={12} r={9} fill="url(#fadeGradient)" />
+      <line
+        x1={2}
+        y1={2}
+        x2={2}
+        y2={4}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={1}
+        y1={3}
+        x2={3}
+        y2={3}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={6}
+        y1={6}
+        x2={6}
+        y2={8}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={5}
+        y1={7}
+        x2={7}
+        y2={7}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={20}
+        y1={4}
+        x2={20}
+        y2={6}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={19}
+        y1={5}
+        x2={21}
+        y2={5}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+
+
+export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "white" }) => {
+  const [hoverON, setHovered] = React.useState(false);
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <defs>
+        <radialGradient 
+          id="fadeGradient" cx="140%" cy="10%" r="160%" fx="0" fy="0%"
+          >
+          <stop
+            offset="20%"
+            style={{ stopColor: "black", stopOpacity: 1, }}
+          />
+          <stop
+            offset="100%"
+            style={{ stopColor: "white", stopOpacity: 1, }}
+          />
+        </radialGradient>
+      </defs>
+      <circle cx="14" cy="14" r="9"  fill={hoverON ? "#D9F99D" : strokeColour} />
+      <circle cx="16" cy="12" r="8" fill="url(#fadeGradient)" />
+
+      <g strokeWidth={width} strokeLinecap="round" stroke={hoverON ? "#D9F99D" : strokeColour}>
+          {/* star 1 */}
+          <line x1="3" y1="1" x2="3" y2="5" />
+          <line x1="1" y1="3" x2="5" y2="3" />
+          {/* star 2 */}
+          <line x1="14" y1="14" x2="14" y2="10" />
+          <line x1="12" y1="12" x2="16" y2="12" />
+          {/* star 3 */}
+          <line x1="20" y1="4" x2="20" y2="8" />
+          <line x1="18" y1="6" x2="22" y2="6" />
+        </g>
+    </svg>
+  )
+}
+
 export default {
-  TesterIcon, 
-  HoverChangeColourIcon,
+  MoonWithTextIcon,
   ProfileLogoSVG,
-  NightMoonIcon,
+  TestMoonIcon,
   DayTimeIcon,
+  DarkModeWithHoverIcon,
+  DarkModeIcon,
 };
