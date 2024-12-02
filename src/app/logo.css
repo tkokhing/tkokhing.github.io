@@ -27,5 +27,5 @@
 }
 
 [data-mode="dark"] .logo-image {
-  --logo-filter: invert(100%) brightness(100%);
+  --logo-filter: invert(70%) brightness(100%);
 }

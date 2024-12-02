@@ -1,4 +1,5 @@
 import { TKOKHING_ICON_ANI_GIF_URL, TKOKHING_LOGO_SVG_URL } from "@/lib/constants";
+import { ProfileLogoSVG } from "./icons_svg";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -32,12 +33,10 @@ export function Navbar() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <div className="shrink-0">
-                  <img
-                    alt="My Blog"
-                    src={TKOKHING_LOGO_SVG_URL}
-                    className="size-40"
-                  />
+                <div className="shrink-0"> 
+                  <div className="flex size-40 logo-image" >
+                    <ProfileLogoSVG /> 
+                  </div>
                 </div>
 
                 <div className="hidden md:block">

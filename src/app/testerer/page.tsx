@@ -1,6 +1,6 @@
 "use client"
 
-import { MoonWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
+import { HomeWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
 import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
 export default function Testerer() {
@@ -46,21 +46,21 @@ export default function Testerer() {
         </div>
 
         <div className={styles.switch}>
-          <h1>My MoonWithTextIcon default || strokeColour=white, Hover on stroke: yellow </h1>
-          <h1>My MoonWithTextIcon Result:   </h1>
+          <h1>My HomeWithTextIcon default || strokeColour=white, Hover on stroke: yellow </h1>
+          <h1>My HomeWithTextIcon Result:   </h1>
           <div className = {styles['icon-container']}>
-            <MoonWithTextIcon />
-            <MoonWithTextIcon />
+            <HomeWithTextIcon />
+            <HomeWithTextIcon />
           </div>
         </div>
 
         <div>
           <h1>My ProfileLogoSVG fill="#0071C1" </h1>
-          <ProfileLogoSVG fill="#0071C1" />
-          <h1>My ProfileLogoSVG fill="red":   </h1>
-          <ProfileLogoSVG fill="red" />
-          <h1>My ProfileLogoSVG fill="orange" </h1>
-          <ProfileLogoSVG fill="orange" />
+          <ProfileLogoSVG fill="#0071C1" /> // Daymode use this
+          <h1>My ProfileLogoSVG fill="white":   </h1>
+          <ProfileLogoSVG fill="white" />  // Darkmode use this
+          <h1>My ProfileLogoSVG fill with nothing, default is red  </h1>
+          <ProfileLogoSVG />
 
         </div>
       
