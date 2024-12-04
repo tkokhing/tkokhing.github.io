@@ -1,12 +1,14 @@
 "use client"
 
 import { HomeWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
+import SvgNavBar from "../_components/svg-nav-bar"
 import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
 export default function Testerer() {
   return (
     <div className="container">
       <main>
+        <SvgNavBar />
         <h1 className="title">
           Welcome to <a href="https://tkokhing.github.io/">my technical blog!</a>
         </h1>
