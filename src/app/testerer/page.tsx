@@ -1,6 +1,6 @@
 "use client"
 
-import { HomeWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
+import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
 import SvgNavBar from "../_components/svg-nav-bar"
 import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
@@ -52,6 +52,8 @@ export default function Testerer() {
           <h1>My HomeWithTextIcon Result:   </h1>
           <div className = {styles['icon-container']}>
             <HomeWithTextIcon />
+            <BlogWithTextIcon />
+            <TopicWithTextIcon />
             <HomeWithTextIcon />
           </div>
         </div>
@@ -61,6 +63,8 @@ export default function Testerer() {
           <ProfileLogoSVG fill="#0071C1" /> // Daymode use this
           <h1>My ProfileLogoSVG fill="white":   </h1>
           <ProfileLogoSVG fill="white" />  // Darkmode use this
+          <TopicWithTextIcon />
+
           <h1>My ProfileLogoSVG fill with nothing, default is red  </h1>
           <ProfileLogoSVG />
 

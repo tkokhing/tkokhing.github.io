@@ -1,5 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "./icons_svg"
+import styles from "./icon_svg.module.css";
 
 const user = {
   name: 'Tom Cook',
@@ -41,11 +43,14 @@ export default function SvgNavBar() {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="shrink-0">
-                  <img
-                    alt="Your Company"
-                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                    className="size-8"
-                  />
+                <div className="w-48" >
+                <div className = {styles['icon-container']}>
+            <HomeWithTextIcon />
+            <BlogWithTextIcon />
+            <TopicWithTextIcon />
+            <HomeWithTextIcon />
+          </div>
+                  </div>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
