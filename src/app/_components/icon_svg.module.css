@@ -7,5 +7,5 @@
 .icon-container {
     display: flex;
     align-items: center; /* Align items vertically centered */
-    justify-start: flex-start; /* start of the container’s main axis */
+    justify-start: flex-start; /* justify-start: flex-start; start of the container’s main axis */
 }

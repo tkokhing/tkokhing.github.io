@@ -2,6 +2,7 @@
 
 import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
 import SvgNavBar from "../_components/svg-nav-bar"
+import SectionSeparator from "../_components/section-separator"
 import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
 export default function Testerer() {
@@ -57,7 +58,7 @@ export default function Testerer() {
             <HomeWithTextIcon />
           </div>
         </div>
-
+        <SectionSeparator />
         <div>
           <h1>My ProfileLogoSVG fill="#0071C1" </h1>
           <ProfileLogoSVG fill="#0071C1" /> // Daymode use this
@@ -72,85 +73,86 @@ export default function Testerer() {
       
       </main>
 
-      <style>{`
-        .container {
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        .para_one {
-          line-height: 1.0;
-          font-size: 1.0rem;
-        }
-
-      `}</style>
-
-      <style>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }
+
+{/* <style>{`
+  .container {
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .title a {
+    color: #0070f3;
+    text-decoration: none;
+  }
+
+  .title a:hover,
+  .title a:focus,
+  .title a:active {
+    text-decoration: underline;
+  }
+
+  .title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+  }
+
+  .title,
+  .description {
+    text-align: center;
+  }
+
+  .description {
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+
+  .para_one {
+    line-height: 1.0;
+    font-size: 1.0rem;
+  }
+
+`}</style>
+
+<style>{`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      Fira Sans,
+      Droid Sans,
+      Helvetica Neue,
+      sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`}</style> */}

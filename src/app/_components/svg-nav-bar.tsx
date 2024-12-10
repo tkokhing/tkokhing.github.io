@@ -45,10 +45,10 @@ export default function SvgNavBar() {
                 <div className="shrink-0">
                 <div className="w-48" >
                 <div className = {styles['icon-container']}>
-            <HomeWithTextIcon />
-            <BlogWithTextIcon />
-            <TopicWithTextIcon />
-            <HomeWithTextIcon />
+                  <HomeWithTextIcon />
+                  <BlogWithTextIcon />
+                  <TopicWithTextIcon />
+                  <HomeWithTextIcon />
           </div>
                   </div>
                 </div>

@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <section className="mt-16 mb-16 md:mb-12">
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800 dark:bg-gray-100">
+        <Disclosure as="nav" className="dark:bg-gray-800 bg-gray-100">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">  
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
@@ -47,7 +47,7 @@ export function Navbar() {
                       href={item.href}
                       aria-current={item.current ? 'page' : undefined}
                       className={classNames(
-                        item.current ? 'bg-gray-900 text-white dark:text-lime-200' : 'text-gray-300 dark:text-sky-800 hover:bg-gray-700 hover:text-white dark:hover:text-lime-200',
+                        item.current ? 'bg-gray-700 text-sky-200 dark:bg-gray-600 dark:text-lime-300' : 'text-sky-800 hover:bg-gray-500 hover:text-sky-200 dark:text-lime-100  dark:hover:text-lime-300',
                         'rounded-md px-3 py-2 text-sm font-medium',
                       )}
                       >
@@ -61,16 +61,7 @@ export function Navbar() {
                 <div className="ml-4 flex items-center md:ml-6">
                   <button
                     type="button"
-                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 dark:text-lime-200 hover:text-white dark:hover:text-lime-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="size-6" />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 dark:text-lime-200 hover:text-white dark:hover:text-lime-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="relative rounded-full text-sky-800  hover:bg-gray-500 p-1 hover:text-sky-200 dark:text-lime-100   dark:hover:text-lime-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
