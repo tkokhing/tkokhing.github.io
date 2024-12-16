@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { DayTimeIcon, DarkModeIcon } from "./icons_svg"
+import { DayModeIcon, DarkModeIcon } from "./icons_svg"
 
 import { memo, useEffect, useState } from "react";
 
@@ -106,7 +106,7 @@ const Switch = () => {
       )}
       {mode === "light" && (
         <div className={styles['light-icon']}>
-          <DayTimeIcon />
+          <DayModeIcon />
         </div>
       )}
     </button>

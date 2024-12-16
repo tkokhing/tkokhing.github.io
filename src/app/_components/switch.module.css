@@ -35,13 +35,21 @@
 [data-mode="dark"] .switch {
   content: "";
   border: none;
+  animation: n linear 0.5s;
 }
 
 [data-mode="light"] .switch {
-  box-shadow: 0 0 40px 10px yellow;
   border: none;
+  box-shadow: 0 0 40px 10px yellow;
 } /* provide sunny shading to light-icon */
 
+[data-mode="light"] .switch:hover {
+  border: none;
+  box-shadow: 0 0 40px 10px white;
+  transition: all 0s !important;
+} /* turn off light */
+
+/* // hover: shadow-2xl;  */
 /* 
 [data-mode="dark"] .switch {
   box-shadow: calc(var(--size) / 4) calc(var(--size) / -4) calc(var(--size) / 8)

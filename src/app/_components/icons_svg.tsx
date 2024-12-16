@@ -12,7 +12,123 @@ interface IconProps {
     fillColour?: string;
     strokeColour?: string;
 }
- 
+
+// below for testing only  
+
+export const TestMoonIcon: React.FC<IconProps> = ({fillColour="white", strokeColour="white"}) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient
+          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
+        >
+        <stop
+          offset="70%"
+          style={{
+            stopColor: "black",
+            stopOpacity: 1,
+          }}
+        />
+        <stop
+          offset="100%"
+          style={{
+            stopColor: fillColour,
+            stopOpacity: 1,
+          }}
+        />
+      </radialGradient>
+    </defs>
+
+    <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" />
+
+    <g strokeWidth={1} strokeLinecap="round" stroke={strokeColour}>
+      {/* star 1 */}
+      <line x1={2} y1={2} x2={2} y2={4} />
+      <line x1={1} y1={3} x2={3} y2={3} />
+      {/* star 2 */}
+      <line x1={6} y1={6} x2={6} y2={8} />
+      <line x1={5} y1={7} x2={7} y2={7} />
+      {/* star 3 */}
+      <line x1={20} y1={4} x2={20} y2={6} />
+      <line x1={19} y1={5} x2={21} y2={5} />
+      </g>
+  </svg>
+);
+
+export const DarkModeWithHoverIcon: React.FC = (props) => {
+  const [hovered, setHovered] = React.useState(false);
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      {...props}
+    >
+      <defs>
+        <radialGradient
+          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
+        >
+          <stop
+            offset="30%"
+            style={{
+              stopColor: hovered ? "yellow" : "black", // change color on hover
+              stopOpacity: 1,
+            }}
+          />
+          <stop
+            offset="100%"
+            style={{
+              stopColor: hovered ? "orange" : "white", // change color on hover
+              stopOpacity: 1,
+            }}
+          />
+        </radialGradient>
+        </defs>
+        
+      <circle cx={16} cy={12} r={9} fill="url(#fadeGradient)" />
+      <line
+        x1={2} y1={2} x2={2} y2={4} 
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={1} y1={3} x2={3} y2={3}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={6} y1={6} x2={6} y2={8}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={5} y1={7} x2={7} y2={7}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={20} y1={4} x2={20} y2={6}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <line
+        x1={19} y1={5} x2={21} y2={5}
+        stroke={hovered ? "yellow" : "white"}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+// above for testing only  
+
 export const HomeWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColour = "white" }) => {
   const [hoverOn, setHover] = useState(false);
 
@@ -102,177 +218,27 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ width = 1, height = 24,
   );
 };
 
-export const ProfileLogoSVG = ({fill="#0071C1"}) => (
-  <svg className = {styles['svg-hover-on']} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1473 416" preserveAspectRatio="xMidYMid meet">
-
-    <title>tkokhing's blog</title> <desc>Learning never stops</desc>
-
-    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" fill={fill} stroke="none">
-      <path d="M1000 3850 l0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
-      <path d="M1000 3200 l0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 -260z"/>
-      <path d="M2500 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 385 0 385 150 0 150 0 0 135 0 135 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z"/>
-      <path d="M6700 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 -150 0 -150 0 0 520 0 520 -150 0 -150 0 0 -1040 0 -1040 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z"/>
-      <path d="M9700 3330 l0 -130 -150 0 -150 0 0 -260 0 -260 150 0 150 0 0 260 0 260 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
-      <path d="M10300 2810 l0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -260 0 -260 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 300 0 300 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 260 0 260 -300 0 -300 0 0 -130z"/>
-      <path d="M13600 2810 l0 -130 -150 0 -150 0 0 -260 0 -260 150 0 150 0 0 260 0 260 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
-      <path d="M4600 2550 l0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 390 0 390 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130z m600 -260 l0 -130 150 0 150 0 0 -390 0 -390 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 300 0 300 0 0 -130z"/>
-      <path d="M11200 2550 l0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -520 0 -520 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 520 0 520 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 -520 0 -520 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 520 0 520 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130 0 -130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
-      <path d="M9400 2290 l0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 390 0 390 -150 0 -150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
-      <path d="M14200 2030 l0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -260 0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
-      <path d="M1000 1380 l0 -520 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 260 0 260 -150 0 -150 0 0 -520z"/>
-      </g>
-    </svg>
-);
-
-export const TestMoonIcon: React.FC<IconProps> = ({fillColour="white", strokeColour="white"}) => (
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient
-          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
-        >
-        <stop
-          offset="70%"
-          style={{
-            stopColor: "black",
-            stopOpacity: 1,
-          }}
-        />
-        <stop
-          offset="100%"
-          style={{
-            stopColor: fillColour,
-            stopOpacity: 1,
-          }}
-        />
-      </radialGradient>
-    </defs>
-
-    <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" />
-
-    <g strokeWidth={1} strokeLinecap="round" stroke={strokeColour}>
-      {/* star 1 */}
-      <line x1={2} y1={2} x2={2} y2={4} />
-      <line x1={1} y1={3} x2={3} y2={3} />
-      {/* star 2 */}
-      <line x1={6} y1={6} x2={6} y2={8} />
-      <line x1={5} y1={7} x2={7} y2={7} />
-      {/* star 3 */}
-      <line x1={20} y1={4} x2={20} y2={6} />
-      <line x1={19} y1={5} x2={21} y2={5} />
-      </g>
-  </svg>
-);
-
-export const DayTimeIcon = () => (
-  <svg viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round">
-    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" className="stroke-yellow-300"></path>
-    <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" className="stroke-yellow-200"></path>
-  </svg>
-)
-
-
-export const DarkModeWithHoverIcon: React.FC = (props) => {
-  const [hovered, setHovered] = React.useState(false);
+export const DayModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FDFF04" }) => {
 
   return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      {...props}
-    >
-      <defs>
-        <radialGradient
-          id="fadeGradient"
-          cx="80%"
-          cy="30%"
-          r="70%"
-          fx="90%"
-          fy="20%"
-        >
-          <stop
-            offset="30%"
-            style={{
-              stopColor: hovered ? "yellow" : "black", // change color on hover
-              stopOpacity: 1,
-            }}
-          />
-          <stop
-            offset="100%"
-            style={{
-              stopColor: hovered ? "orange" : "white", // change color on hover
-              stopOpacity: 1,
-            }}
-          />
-        </radialGradient>
-        </defs>
-        
-      <circle cx={16} cy={12} r={9} fill="url(#fadeGradient)" />
-      <line
-        x1={2}
-        y1={2}
-        x2={2}
-        y2={4}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={1}
-        y1={3}
-        x2={3}
-        y2={3}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={6}
-        y1={6}
-        x2={6}
-        y2={8}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={5}
-        y1={7}
-        x2={7}
-        y2={7}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={20}
-        y1={4}
-        x2={20}
-        y2={6}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={19}
-        y1={5}
-        x2={21}
-        y2={5}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
+  <svg 
+  viewBox="0 0 24 24" 
+  fill="none" 
+   
+  strokeWidth={width} 
+  strokeLinecap="round" 
+  strokeLinejoin="round">
+
+  <path d="M12 2v3M18.66 5.344l-1.656 1.656M22.005 12.004h-3M18.66 18.664l-1.656-1.656M12 22.01V19M5.34 18.664l1.67-1.67M2.995 12.004h3M5 5l1.67 1.67"  stroke={strokeColour}></path>
+  <circle cx="12" cy="12" r="3" stroke={strokeColour} />
+  <circle cx="12" cy="12" r="2.5" stroke="#FFFB03" />
+  <circle cx="12" cy="12" r="2" stroke="#FFF006" />
+  <circle cx="12" cy="12" r="1.5" stroke="#FFDE04" />
+  <circle cx="12" cy="12" r="1" stroke="#FFCC05" />
+  <circle cx="12" cy="12" r="0.5" fill="#FFCC03" />
+</svg>
+)
 };
-
-
 
 export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "white" }) => {
   const [hoverOn, setHovered] = React.useState(false);
@@ -316,14 +282,36 @@ export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "w
   )
 }
 
+export const ProfileLogoSVG = ({fill="#0071C1"}) => (
+  <svg className = {styles['svg-hover-on']} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1473 416" preserveAspectRatio="xMidYMid meet">
+
+    <title>tkokhing's blog</title> <desc>Learning never stops</desc>
+
+    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" fill={fill} stroke="none">
+      <path d="M1000 3850 l0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
+      <path d="M1000 3200 l0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 -260z"/>
+      <path d="M2500 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 385 0 385 150 0 150 0 0 135 0 135 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z"/>
+      <path d="M6700 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 -150 0 -150 0 0 520 0 520 -150 0 -150 0 0 -1040 0 -1040 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z"/>
+      <path d="M9700 3330 l0 -130 -150 0 -150 0 0 -260 0 -260 150 0 150 0 0 260 0 260 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
+      <path d="M10300 2810 l0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -260 0 -260 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 300 0 300 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 260 0 260 -300 0 -300 0 0 -130z"/>
+      <path d="M13600 2810 l0 -130 -150 0 -150 0 0 -260 0 -260 150 0 150 0 0 260 0 260 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
+      <path d="M4600 2550 l0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 390 0 390 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130z m600 -260 l0 -130 150 0 150 0 0 -390 0 -390 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 390 0 390 150 0 150 0 0 130 0 130 300 0 300 0 0 -130z"/>
+      <path d="M11200 2550 l0 -130 150 0 150 0 0 -130 0 -130 -150 0 -150 0 0 -520 0 -520 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 520 0 520 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 -520 0 -520 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 520 0 520 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -300 0 -300 0 0 -130 0 -130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
+      <path d="M9400 2290 l0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 390 0 390 -150 0 -150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
+      <path d="M14200 2030 l0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -260 0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130z"/>
+      <path d="M1000 1380 l0 -520 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 260 0 260 -150 0 -150 0 0 -520z"/>
+      </g>
+    </svg>
+);
 
 export default {
+  TestMoonIcon,
+  DarkModeWithHoverIcon,
+  
   HomeWithTextIcon,
   BlogWithTextIcon,
   TopicWithTextIcon,
-  ProfileLogoSVG,
-  TestMoonIcon,
-  DayTimeIcon,
-  DarkModeWithHoverIcon,
+  DayModeIcon,
   DarkModeIcon,
+  ProfileLogoSVG,
 };
