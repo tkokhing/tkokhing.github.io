@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { DayModeIcon, DarkModeIcon } from "./icons_svg"
+import { LightModeIcon, DarkModeIcon, SystemModeIcon } from "./icons_svg"
 
 import { memo, useEffect, useState } from "react";
 
@@ -93,10 +93,7 @@ const Switch = () => {
     >
       {mode === "system" && (
         <div className={styles['system-icon']}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="4" y="4" width="16" height="12" rx="2" className="stroke-gray-500"></rect>
-            <rect x="6" y="18" width="12" height="2" rx="1" className="stroke-gray-500"></rect>
-          </svg>
+          <SystemModeIcon />
         </div>
       )}
       {mode === "dark" && (
@@ -106,7 +103,7 @@ const Switch = () => {
       )}
       {mode === "light" && (
         <div className={styles['light-icon']}>
-          <DayModeIcon />
+          <LightModeIcon />
         </div>
       )}
     </button>

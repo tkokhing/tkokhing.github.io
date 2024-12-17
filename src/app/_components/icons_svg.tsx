@@ -218,25 +218,23 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ width = 1, height = 24,
   );
 };
 
-export const DayModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FDFF04" }) => {
-
+export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#6b7280" }) => {
+  const [hoverOn, setHovered] = React.useState(false);
   return (
-  <svg 
-  viewBox="0 0 24 24" 
-  fill="none" 
-   
-  strokeWidth={width} 
-  strokeLinecap="round" 
-  strokeLinejoin="round">
-
-  <path d="M12 2v3M18.66 5.344l-1.656 1.656M22.005 12.004h-3M18.66 18.664l-1.656-1.656M12 22.01V19M5.34 18.664l1.67-1.67M2.995 12.004h3M5 5l1.67 1.67"  stroke={strokeColour}></path>
-  <circle cx="12" cy="12" r="3" stroke={strokeColour} />
-  <circle cx="12" cy="12" r="2.5" stroke="#FFFB03" />
-  <circle cx="12" cy="12" r="2" stroke="#FFF006" />
-  <circle cx="12" cy="12" r="1.5" stroke="#FFDE04" />
-  <circle cx="12" cy="12" r="1" stroke="#FFCC05" />
-  <circle cx="12" cy="12" r="0.5" fill="#FFCC03" />
-</svg>
+    <svg 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth={width} 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+    <rect x="4" y="4" width="16" height="12" rx="2" stroke={strokeColour} fill={hoverOn ? "#1e1b4b" : "none"}></rect>
+    <rect x="6" y="18" width="12" height="2" rx="1" stroke={strokeColour}></rect>
+  </svg>
 )
 };
 
@@ -282,6 +280,29 @@ export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "w
   )
 }
 
+
+export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FDFF04" }) => {
+
+  return (
+  <svg 
+  viewBox="0 0 24 24" 
+  fill="none" 
+   
+  strokeWidth={width} 
+  strokeLinecap="round" 
+  strokeLinejoin="round">
+
+  <path d="M12 2v3M18.66 5.344l-1.656 1.656M22.005 12.004h-3M18.66 18.664l-1.656-1.656M12 22.01V19M5.34 18.664l1.67-1.67M2.995 12.004h3M5 5l1.67 1.67"  stroke={strokeColour}></path>
+  <circle cx="12" cy="12" r="3" stroke={strokeColour} />
+  <circle cx="12" cy="12" r="2.5" stroke="#FFFB03" />
+  <circle cx="12" cy="12" r="2" stroke="#FFF006" />
+  <circle cx="12" cy="12" r="1.5" stroke="#FFDE04" />
+  <circle cx="12" cy="12" r="1" stroke="#FFCC05" />
+  <circle cx="12" cy="12" r="0.5" fill="#FFCC03" />
+</svg>
+)
+};
+
 export const ProfileLogoSVG = ({fill="#0071C1"}) => (
   <svg className = {styles['svg-hover-on']} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1473 416" preserveAspectRatio="xMidYMid meet">
 
@@ -311,7 +332,8 @@ export default {
   HomeWithTextIcon,
   BlogWithTextIcon,
   TopicWithTextIcon,
-  DayModeIcon,
+  SystemModeIcon,
   DarkModeIcon,
+  LightModeIcon,
   ProfileLogoSVG,
 };
