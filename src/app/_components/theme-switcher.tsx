@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { LightModeIcon, DarkModeIcon, SystemModeIcon } from "./icons_svg"
+import { SystemModeIcon, DarkModeIcon, LightModeIcon } from "./icons_svg"
 
 import { memo, useEffect, useState } from "react";
 
