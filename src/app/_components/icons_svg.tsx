@@ -16,7 +16,10 @@ interface IconProps {
 // below for testing only  
 
 export const TestMoonIcon: React.FC<IconProps> = ({fillColour="white", strokeColour="white"}) => (
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg 
+    viewBox="0 0 24 24" 
+    xmlns="http://www.w3.org/2000/svg"
+    >
     <defs>
       <radialGradient
           id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
@@ -134,8 +137,8 @@ export const HomeWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColou
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       viewBox={hoverOn ? "0 0 68 24" : "0 0 24 24"}
+      xmlns="http://www.w3.org/2000/svg"
       width={hoverOn ? "68" : "24"}
       height={height}
       overflow="hidden"
@@ -164,9 +167,9 @@ export const BlogWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColou
   return (
     <svg
       viewBox={hoverOn ? "0 0 68 24" : "0 0 24 24"}
+      xmlns="http://www.w3.org/2000/svg"
       width={hoverOn ? "68" : "24"}
       height={height}
-      xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -189,15 +192,15 @@ export const BlogWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColou
   );
 };
 
-export const TopicWithTextIcon: React.FC<IconProps> = ({ width = 1, height = 24, strokeColour = "white" }) => {
+export const TopicWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColour = "white" }) => {
   const [hoverOn, setHover] = useState(false);
 
   return (
     <svg
       viewBox={hoverOn ? "0 0 68 24" : "0 0 24 24"}
+      xmlns="http://www.w3.org/2000/svg"
       width={hoverOn ? "68" : "24"}
       height={height}
-      xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -218,7 +221,7 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ width = 1, height = 24,
   );
 };
 
-export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#6b7280" }) => {
+export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour="#1e1b4b", strokeColour = "#6b7280" }) => {
   const [hoverOn, setHovered] = React.useState(false);
   return (
     <svg 
@@ -232,11 +235,11 @@ export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = 
       strokeLinecap="round" 
       strokeLinejoin="round"
     >
-    <rect x="4" y="4" width="16" height="12" rx="2" stroke={strokeColour} fill={hoverOn ? "#1e1b4b" : "none"}></rect>
+    <rect x="4" y="4" width="16" height="12" rx="2" stroke={strokeColour} fill={hoverOn ? fillColour : "none"}></rect>
     <rect x="6" y="18" width="12" height="2" rx="1" stroke={strokeColour}></rect>
   </svg>
 )
-};
+}
 
 export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "white" }) => {
   const [hoverOn, setHovered] = React.useState(false);
@@ -281,30 +284,37 @@ export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "w
 }
 
 
-export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FDFF04" }) => {
+export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FFBE03" }) => {
 
   return (
-  <svg 
-  viewBox="0 0 24 24" 
-  fill="none" 
-   
-  strokeWidth={width} 
-  strokeLinecap="round" 
-  strokeLinejoin="round">
+    <svg 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none" 
+      
+      strokeWidth={width} 
+      strokeLinecap="round" 
+      strokeLinejoin="round">
 
-  <path d="M12 2v3M18.66 5.344l-1.656 1.656M22.005 12.004h-3M18.66 18.664l-1.656-1.656M12 22.01V19M5.34 18.664l1.67-1.67M2.995 12.004h3M5 5l1.67 1.67"  stroke={strokeColour}></path>
-  <circle cx="12" cy="12" r="3" stroke={strokeColour} />
-  <circle cx="12" cy="12" r="2.5" stroke="#FFFB03" />
-  <circle cx="12" cy="12" r="2" stroke="#FFF006" />
-  <circle cx="12" cy="12" r="1.5" stroke="#FFDE04" />
-  <circle cx="12" cy="12" r="1" stroke="#FFCC05" />
-  <circle cx="12" cy="12" r="0.5" fill="#FFCC03" />
-</svg>
-)
-};
+      <path d="M12 2v3M18.66 5.344l-1.656 1.656M22.005 12.004h-3M18.66 18.664l-1.656-1.656M12 22.01V19M5.34 18.664l1.67-1.67M2.995 12.004h3M5 5l1.67 1.67"  stroke={strokeColour}></path>
+      <circle cx="12" cy="12" r="3" stroke={strokeColour} />
+      <circle cx="12" cy="12" r="2.5" stroke="#FFCB03" />
+      <circle cx="12" cy="12" r="2" stroke="#FFD303" />
+      <circle cx="12" cy="12" r="1.5" stroke="#FFDB03" />
+      <circle cx="12" cy="12" r="1" stroke="#FFE403" />
+      <circle cx="12" cy="12" r="0.5" fill="#FFF003" />
+    </svg>
+  )
+}
 
 export const ProfileLogoSVG = ({fill="#0071C1"}) => (
-  <svg className = {styles['svg-hover-on']} fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1473 416" preserveAspectRatio="xMidYMid meet">
+  <svg 
+    viewBox="0 0 1473 416" 
+    xmlns="http://www.w3.org/2000/svg" 
+    className = {styles['svg-hover-on']} 
+    fill="none" 
+    preserveAspectRatio="xMidYMid meet"
+    >
 
     <title>tkokhing's blog</title> <desc>Learning never stops</desc>
 
@@ -323,7 +333,7 @@ export const ProfileLogoSVG = ({fill="#0071C1"}) => (
       <path d="M1000 1380 l0 -520 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 260 0 260 -150 0 -150 0 0 -520z"/>
       </g>
     </svg>
-);
+)
 
 export default {
   TestMoonIcon,

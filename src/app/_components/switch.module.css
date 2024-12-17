@@ -46,7 +46,7 @@
 [data-mode="light"] .switch:hover {
   border: none;
   box-shadow: 0 0 40px 10px white;
-  transition: all 0s !important;
+  transition: all 0s;
 } /* turn off light */
 
 /* // hover: shadow-2xl;  */
