@@ -38,14 +38,14 @@ export default function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          sizes="32x35"
-          href="/img/logo/tkokhing_icon_32x35.png"
+          sizes="32x32"
+          href="/img/logo/favicon_32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
-          sizes="16x17"
-          href="/img/logo/tkokhing_icon_16x17.png"
+          sizes="16x16"
+          href="/img/logo/favicon_16x16.png"
         />
         <link rel="manifest" href="/img/logo/site.webmanifest" />
         <link
@@ -53,13 +53,13 @@ export default function RootLayout({
           href="/img/logo/safari-pinned-tab.svg"
           color="#000000"
         />
-        <link rel="shortcut icon" href="/img/logo/tkokhing_icon.ico" />
+        <link rel="icon" href="/img/logo/favicon.ico" type="image/x-icon"/>
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"
           content="/img/logo/browserconfig.xml"
         />
-        <meta name="theme-color" content="#000" />
+        <meta name="theme-color" content="#000000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body
