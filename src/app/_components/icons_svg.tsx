@@ -13,125 +13,6 @@ interface IconProps {
     strokeColour?: string;
 }
 
-// below for testing only  
-
-export const TestMoonIcon: React.FC<IconProps> = ({fillColour="white", strokeColour="white"}) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    xmlns="http://www.w3.org/2000/svg"
-    >
-    <defs>
-      <radialGradient
-          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
-        >
-        <stop
-          offset="70%"
-          style={{
-            stopColor: "black",
-            stopOpacity: 1,
-          }}
-        />
-        <stop
-          offset="100%"
-          style={{
-            stopColor: fillColour,
-            stopOpacity: 1,
-          }}
-        />
-      </radialGradient>
-    </defs>
-
-    <circle cx="14" cy="14" r="9" fill="url(#fadeGradient)" />
-
-    <g strokeWidth={1} strokeLinecap="round" stroke={strokeColour}>
-      {/* star 1 */}
-      <line x1={2} y1={2} x2={2} y2={4} />
-      <line x1={1} y1={3} x2={3} y2={3} />
-      {/* star 2 */}
-      <line x1={6} y1={6} x2={6} y2={8} />
-      <line x1={5} y1={7} x2={7} y2={7} />
-      {/* star 3 */}
-      <line x1={20} y1={4} x2={20} y2={6} />
-      <line x1={19} y1={5} x2={21} y2={5} />
-      </g>
-  </svg>
-);
-
-export const DarkModeWithHoverIcon: React.FC = (props) => {
-  const [hovered, setHovered] = React.useState(false);
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      {...props}
-    >
-      <defs>
-        <radialGradient
-          id="fadeGradient" cx="80%" cy="30%" r="70%" fx="90%" fy="20%"
-        >
-          <stop
-            offset="30%"
-            style={{
-              stopColor: hovered ? "yellow" : "black", // change color on hover
-              stopOpacity: 1,
-            }}
-          />
-          <stop
-            offset="100%"
-            style={{
-              stopColor: hovered ? "orange" : "white", // change color on hover
-              stopOpacity: 1,
-            }}
-          />
-        </radialGradient>
-        </defs>
-        
-      <circle cx={16} cy={12} r={9} fill="url(#fadeGradient)" />
-      <line
-        x1={2} y1={2} x2={2} y2={4} 
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={1} y1={3} x2={3} y2={3}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={6} y1={6} x2={6} y2={8}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={5} y1={7} x2={7} y2={7}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={20} y1={4} x2={20} y2={6}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-      <line
-        x1={19} y1={5} x2={21} y2={5}
-        stroke={hovered ? "yellow" : "white"}
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};
-
-// above for testing only  
-
 export const HomeWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColour = "white" }) => {
   const [hoverOn, setHover] = useState(false);
 
@@ -145,15 +26,14 @@ export const HomeWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColou
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-    <g stroke={hoverOn ? "#D9F99D" : strokeColour} fill="none" >
-      <path d={hoverOn ? "M1 1 67 1 67 23 1 23Z" : "M1 1 23 1 23 23 1 23Z"}  
-        fillRule="evenodd"/>
-      <path fill={hoverOn ? "#D9F99D" : strokeColour} strokeWidth="0.3" d="M5.3024 12.8025 5.3024 19.495 18.6976 19.5 18.6976 12.7938 19.8069 13.7703 21.25 12.4274 12 4.25 2.75 12.4273 4.1987 13.7752ZM18.251 19.0845 5.749 19.0797 5.749 12.4089 12 6.8998 18.251 12.4009ZM4.2069 13.1956 3.3898 12.4359 12 4.8226 20.6102 12.4359 19.7982 13.1906 12 6.3276Z" fillRule="evenodd"/>
-      <path strokeWidth="0.3" d="M14.0066 19.0728 14.0066 12.25 9.9934 12.25 9.9934 19.0728 8.5 19.0728 8.5 19.25 9.9211 19.25 9.9211 12.4272 14.0789 12.4272 14.0789 19.25 15.5 19.25 15.5 19.0728Z" fillRule="evenodd"/>
-      <path strokeWidth="0.3" d="M10.25 19.25 13 18.8687 13 13.1313 10.25 12.75 10.25 19.25ZM10.4274 12.9539 12.8226 13.2821 12.8226 18.7179 10.4274 19.0461 10.4274 12.9539Z" fillRule="evenodd"/>
-    </g>
+      <g stroke={hoverOn ? "#D9F99D" : strokeColour} fill="none">
+        <path d={hoverOn ? "M1 1 67 1 67 23 1 23Z" : "M1 1 23 1 23 23 1 23Z"} fillRule="evenodd" />
+        <path fill={hoverOn ? "#D9F99D" : strokeColour} strokeWidth="0.3" d="M5.3024 12.8025 5.3024 19.495 18.6976 19.5 18.6976 12.7938 19.8069 13.7703 21.25 12.4274 12 4.25 2.75 12.4273 4.1987 13.7752ZM18.251 19.0845 5.749 19.0797 5.749 12.4089 12 6.8998 18.251 12.4009ZM4.2069 13.1956 3.3898 12.4359 12 4.8226 20.6102 12.4359 19.7982 13.1906 12 6.3276Z" fillRule="evenodd" />
+        <path strokeWidth="0.3" d="M14.0066 19.0728 14.0066 12.25 9.9934 12.25 9.9934 19.0728 8.5 19.0728 8.5 19.25 9.9211 19.25 9.9211 12.4272 14.0789 12.4272 14.0789 19.25 15.5 19.25 15.5 19.0728Z" fillRule="evenodd" />
+        <path strokeWidth="0.3" d="M10.25 19.25 13 18.8687 13 13.1313 10.25 12.75 10.25 19.25ZM10.4274 12.9539 12.8226 13.2821 12.8226 18.7179 10.4274 19.0461 10.4274 12.9539Z" fillRule="evenodd" />
+      </g>
       {hoverOn && (
-        <text x={height*2} y={height-(height/4)} fill={hoverOn ? "#D9F99D" : strokeColour} fontSize="12" textAnchor="middle">
+        <text x={height * 2} y={height - height / 4} fill={hoverOn ? "#D9F99D" : strokeColour} fontSize="12" textAnchor="middle">
           Home
         </text>
       )}
@@ -221,25 +101,25 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ height = 24, strokeColo
   );
 };
 
-export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour="#1e1b4b", strokeColour = "#6b7280" }) => {
+export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour = "#1e1b4b", strokeColour = "#6b7280" }) => {
   const [hoverOn, setHovered] = React.useState(false);
   return (
-    <svg 
-      viewBox="0 0 24 24" 
+    <svg
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth={width} 
-      strokeLinecap="round" 
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={width}
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
-    <rect x="4" y="4" width="16" height="12" rx="2" stroke={strokeColour} fill={hoverOn ? fillColour : "none"}></rect>
-    <rect x="6" y="18" width="12" height="2" rx="1" stroke={strokeColour}></rect>
-  </svg>
-)
-}
+      <rect x="4" y="4" width="16" height="12" rx="2" stroke={strokeColour} fill={hoverOn ? fillColour : "none"}></rect>
+      <rect x="6" y="18" width="12" height="2" rx="1" stroke={strokeColour}></rect>
+    </svg>
+  );
+};
 
 export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "white" }) => {
   const [hoverOn, setHovered] = React.useState(false);
@@ -307,16 +187,16 @@ export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "
   )
 }
 
-export const ProfileLogoSVG = ({fill="#0071C1"}) => (
-  <svg 
-    viewBox="0 0 1473 416" 
-    xmlns="http://www.w3.org/2000/svg" 
-    className = {styles['svg-hover-on']} 
-    fill="none" 
+export const ProfileLogoSVG = ({ fill = "#0071C1" }) => (
+  <svg
+    viewBox="0 0 1473 416"
+    xmlns="http://www.w3.org/2000/svg"
+    className={styles['svg-hover-on']}
+    fill="none"
     preserveAspectRatio="xMidYMid meet"
-    >
-
-    <title>tkokhing's blog</title> <desc>Learning never stops</desc>
+  >
+    <title>tkokhing's blog</title>
+    <desc>Learning never stops</desc>
 
     <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" fill={fill} stroke="none">
       <path d="M1000 3850 l0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
@@ -336,9 +216,6 @@ export const ProfileLogoSVG = ({fill="#0071C1"}) => (
 )
 
 export default {
-  TestMoonIcon,
-  DarkModeWithHoverIcon,
-  
   HomeWithTextIcon,
   BlogWithTextIcon,
   TopicWithTextIcon,

@@ -1,28 +1,30 @@
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
 import { ProfileLogoSVG } from "./icons_svg";
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const user = {
   name: 'tkokhing',
   telegram: '@tkokhing',
-  imageUrl:{TKOKHING_ICON_ANI_GIF_URL}
-}
+  imageUrl: TKOKHING_ICON_ANI_GIF_URL,
+};
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
   { name: 'Reports', href: '#', current: false },
-]
+];
+
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
   { name: 'Sign out', href: '#' },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export function Navbar() {
@@ -30,26 +32,25 @@ export function Navbar() {
     <section className="mt-16 mb-16 md:mb-12">
       <div className="min-h-full">
         <Disclosure as="nav" className="dark:bg-gray-800 bg-gray-100">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">  
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <div className="shrink-0"> 
-                  <div className="flex size-40 logo-image" >
-                    <ProfileLogoSVG /> 
+                <div className="shrink-0">
+                  <div className="flex size-40 logo-image">
+                    <ProfileLogoSVG />
                   </div>
                 </div>
-
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
                       <a
-                      key={item.name}
-                      href={item.href}
-                      aria-current={item.current ? 'page' : undefined}
-                      className={classNames(
-                        item.current ? 'bg-gray-700 text-sky-200 dark:bg-gray-600 dark:text-lime-300' : 'text-sky-800 hover:bg-gray-500 hover:text-sky-200 dark:text-lime-100  dark:hover:text-lime-300',
-                        'rounded-md px-3 py-2 text-sm font-medium',
-                      )}
+                        key={item.name}
+                        href={item.href}
+                        aria-current={item.current ? 'page' : undefined}
+                        className={classNames(
+                          item.current ? 'bg-gray-700 text-sky-200 dark:bg-gray-600 dark:text-lime-300' : 'text-sky-800 hover:bg-gray-500 hover:text-sky-200 dark:text-lime-100 dark:hover:text-lime-300',
+                          'rounded-md px-3 py-2 text-sm font-medium'
+                        )}
                       >
                         {item.name}
                       </a>
@@ -61,13 +62,12 @@ export function Navbar() {
                 <div className="ml-4 flex items-center md:ml-6">
                   <button
                     type="button"
-                    className="relative rounded-full text-sky-800  hover:bg-gray-500 p-1 hover:text-sky-200 dark:text-lime-100   dark:hover:text-lime-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    className="relative rounded-full text-sky-800 hover:bg-gray-500 p-1 hover:text-sky-200 dark:text-lime-100 dark:hover:text-lime-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
                     <BellIcon aria-hidden="true" className="size-6" />
                   </button>
-
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div>
@@ -85,7 +85,7 @@ export function Navbar() {
                         <MenuItem key={item.name}>
                           <a
                             href={item.href}
-                            className="block px-4 py-2 text-sm text-gray-700  dark:text-sky-800 data-[focus]:bg-gray-100 data-[focus]:outline-none"
+                            className="block px-4 py-2 text-sm text-gray-700 dark:text-sky-800 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                           >
                             {item.name}
                           </a>
@@ -106,7 +106,6 @@ export function Navbar() {
               </div>
             </div>
           </div>
-
           <DisclosurePanel className="md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
@@ -117,7 +116,7 @@ export function Navbar() {
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white dark:text-lime-200' : 'text-gray-300 dark:text-sky-800 hover:bg-gray-700 hover:text-white dark:hover:text-lime-200',
-                    'block rounded-md px-3 py-2 text-base font-medium',
+                    'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                 >
                   {item.name}
@@ -151,14 +150,13 @@ export function Navbar() {
                   <BellIcon aria-hidden="true" className="size-6" />
                 </button>
               </div>
-
               <div className="mt-3 space-y-1 px-2">
                 {userNavigation.map((item) => (
                   <DisclosureButton
                     key={item.name}
                     as="a"
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400  dark:text-sky-800 hover:bg-gray-700 hover:text-white dark:hover:text-lime-200"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 dark:text-sky-800 hover:bg-gray-700 hover:text-white dark:hover:text-lime-200"
                   >
                     {item.name}
                   </DisclosureButton>
@@ -167,7 +165,6 @@ export function Navbar() {
             </div>
           </DisclosurePanel>
         </Disclosure>
-
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
@@ -177,7 +174,6 @@ export function Navbar() {
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
         </main>
       </div>
-
     </section>
   );
 }

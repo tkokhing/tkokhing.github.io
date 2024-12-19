@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { SystemModeIcon, DarkModeIcon, LightModeIcon } from "./icons_svg"
-
+import { SystemModeIcon, DarkModeIcon, LightModeIcon } from "./icons_svg";
 import { memo, useEffect, useState } from "react";
 
 declare global {
@@ -85,6 +84,7 @@ const Switch = () => {
     const index = modes.indexOf(mode);
     setMode(modes[(index + 1) % modes.length]);
   };
+
   return (
     <button
       suppressHydrationWarning
@@ -107,7 +107,6 @@ const Switch = () => {
         </div>
       )}
     </button>
-
   );
 };
 
@@ -120,7 +119,7 @@ const Script = memo(() => (
 ));
 
 /**
- * This component wich applies classes and transitions.
+ * This component applies classes and transitions.
  */
 export const ThemeSwitcher = () => {
   return (

@@ -1,6 +1,4 @@
 // _components/CoverPage.tsx goodie one
-import Container from "@/app/_components/container";
-
 const CoverPage: React.FC = () => {
   return (
     <section>
