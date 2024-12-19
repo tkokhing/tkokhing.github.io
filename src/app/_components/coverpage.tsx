@@ -4,9 +4,9 @@ import Container from "@/app/_components/container";
 const CoverPage: React.FC = () => {
   return (
     <section>
-      <div className="logo">
+      {/* <div className="logo">
         <video src="/logo.mp4" autoPlay playsInline muted></video>
-      </div>
+      </div> */}
       <div className="box_container">
         <div className="tile">
           <div className="flip-card">
