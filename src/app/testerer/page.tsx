@@ -1,15 +1,16 @@
 "use client"
 
-import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "../_components/icons_svg"
-import SvgNavBar from "../_components/svg-nav-bar"
-import SectionSeparator from "../_components/section-separator"
+import { ProfileLogoSVG } from "../_components/icons_svg";
+import HomeWithTextIcon from "@/app/_components/HomeWithTextIcon";
+// import SvgNavBar from "../_components/svg-nav-bar";
+import SectionSeparator from "../_components/section-separator";
 import styles from "../_components/icon_svg.module.css";
 export const dynamic = 'force-static';
 export default function Testerer() {
   return (
     <div className="container">
       <main>
-        <SvgNavBar />
+        {/* <SvgNavBar /> */}
         <h1 className="title">
           Welcome to <a href="https://tkokhing.github.io/">my technical blog!</a>
         </h1>
@@ -19,42 +20,11 @@ export default function Testerer() {
           <p>Created for learning how the different programming languages and frameworks work together. To explore new concepts and create a demo to share online.</p>
         </ul>
 
-        <div>
-          <h1>My TestMoonIcon #0 without input at call, go by default, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
-          <h1>My TestMoonIcon #0 Result: ALL stars are WHITE of course </h1>
-
-          <TestMoonIcon  />
-        </div>
-
-        <div>
-          <h1>My TestMoonIcon #1 with white as input at call, with strokeWidth={1} strokeLinecap="round" stroke="white"</h1>
-          <h1>My TestMoonIcon #1 Result: ALL stars are WHITE of course </h1>
-
-          <TestMoonIcon strokeColour="white" />
-        </div>
-
-        <div>
-          <h1>My DarkModeIcon default || strokeColour=white, Hover on stroke: yellow </h1>
-          <h1>My DarkModeIcon Result:   </h1>
-
-          <DarkModeIcon />
-        </div>
-
-
-        <div>
-          <h1>My DarkModeWithHoverIcon default || strokeColour=white, Hover on stroke: yellow </h1>
-          <h1>My DarkModeWithHoverIcon Result:   </h1>
-
-          <DarkModeWithHoverIcon  />
-        </div>
-
         <div className={styles.switch}>
           <h1>My HomeWithTextIcon default || strokeColour=white, Hover on stroke: yellow </h1>
           <h1>My HomeWithTextIcon Result:   </h1>
           <div className = {styles['icon-container']}>
             <HomeWithTextIcon />
-            <BlogWithTextIcon />
-            <TopicWithTextIcon />
             <HomeWithTextIcon />
           </div>
         </div>
@@ -64,7 +34,6 @@ export default function Testerer() {
           <ProfileLogoSVG fill="#0071C1" /> // Daymode use this
           <h1>My ProfileLogoSVG fill="white":   </h1>
           <ProfileLogoSVG fill="white" />  // Darkmode use this
-          <TopicWithTextIcon />
 
           <h1>My ProfileLogoSVG fill with nothing, default is red  </h1>
           <ProfileLogoSVG />

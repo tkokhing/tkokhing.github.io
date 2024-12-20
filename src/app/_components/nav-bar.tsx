@@ -1,5 +1,7 @@
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
 import { ProfileLogoSVG } from "./icons_svg";
+import HomeWithTextIcon from "@/app/_components/HomeWithTextIcon";
+
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -39,7 +41,9 @@ export function Navbar() {
                   <div className="flex size-40 logo-image">
                     <ProfileLogoSVG />
                   </div>
-                </div>
+                  <div className="flex size-40 logo-image">
+                    <HomeWithTextIcon />
+                  </div>                </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
