@@ -1,4 +1,4 @@
-// import Alert from "@/app/_components/alert";
+import Alert from "@/app/_components/alert";
 import Footer from "@/app/_components/footer";
 import { Navbar } from "./_components/nav-bar";
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
@@ -65,6 +65,7 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50	text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
+        <Alert/>
         <Navbar/>
         <ThemeSwitcher />
         <div className="min-h-screen">{children}</div>
@@ -73,5 +74,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-//  <Alert/>
