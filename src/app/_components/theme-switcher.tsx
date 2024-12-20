@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./switch.module.css";
-import { SystemModeIcon, DarkModeIcon, LightModeIcon } from "./icons_svg";
 import { memo, useEffect, useState } from "react";
 
 declare global {
@@ -10,7 +9,7 @@ declare global {
 
 type ColorSchemePreference = "system" | "dark" | "light";
 
-const STORAGE_KEY = "this-theme";
+const STORAGE_KEY = "nextjs-blog-starter-theme";
 const modes: ColorSchemePreference[] = ["system", "dark", "light"];
 
 /** to reuse updateDOM function defined inside injected script */
@@ -84,29 +83,12 @@ const Switch = () => {
     const index = modes.indexOf(mode);
     setMode(modes[(index + 1) % modes.length]);
   };
-
   return (
     <button
       suppressHydrationWarning
       className={styles.switch}
       onClick={handleModeSwitch}
-    >
-      {mode === "system" && (
-        <div className={styles['system-icon']}>
-          <SystemModeIcon />
-        </div>
-      )}
-      {mode === "dark" && (
-        <div className={styles['dark-icon']}>
-          <DarkModeIcon />
-        </div>
-      )}
-      {mode === "light" && (
-        <div className={styles['light-icon']}>
-          <LightModeIcon />
-        </div>
-      )}
-    </button>
+    />
   );
 };
 
@@ -119,7 +101,7 @@ const Script = memo(() => (
 ));
 
 /**
- * This component applies classes and transitions.
+ * This component wich applies classes and transitions.
  */
 export const ThemeSwitcher = () => {
   return (
@@ -129,21 +111,3 @@ export const ThemeSwitcher = () => {
     </>
   );
 };
-
-// export const ThemeButton = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const togglePopup = () => setIsOpen(!isOpen);
-
-//   return (
-//     <div className="relative">
-//       <button onClick={togglePopup} className="px-4 py-2 bg-gray-800 text-white rounded-md">
-//         Theme
-//       </button>
-//       {isOpen && (
-//         <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg p-2">
-//           <ThemeSwitcher />
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
