@@ -1,62 +1,30 @@
-// _components/CoverPage.tsx goodie one
-const CoverPage: React.FC = () => {
-  return (
-    <section>
-      {/* <div className="logo">
-        <video src="/logo.mp4" autoPlay playsInline muted></video>
-      </div> */}
-      <div className="box_container">
-        <div className="tile">
-          <div className="flip-card">
-            <div className="flip-card-front">
-              <h2>Our Vision &rarr;</h2>
-            </div>
-            <div className="flip-card-back">
-              <p>We are a start-up research company where we dream about and develop the next-gen web security suite.</p>
-            </div>
-          </div>
-        </div>
-        <div className="tile">
-          <div className="flip-card">
-            <div className="flip-card-front">
-              <h2>Our Expertise &rarr;</h2>
-            </div>
-            <div className="flip-card-back">
-              <p>Our people are the most important assets! We bring together seasoned experts, with extensive R&D experience across industries in ICT, defense, financial and cryptocurrency.</p>
-            </div>
-          </div>
-        </div>
-        <div className="tile">
-          <div className="flip-card">
-            <div className="flip-card-front">
-              <h2>Our Views &rarr;</h2>
-            </div>
-            <div className="flip-card-back">
-              <p>Our perspective on today’s internet security landscape is that it is disarrayed and monopolized, limiting your choices but to accommodate. We are committed to changing this.</p>
-            </div>
-          </div>
-        </div>
-        <div className="tile">
-          <div className="flip-card">
-            <div className="flip-card-front">
-              <h2>Our Blog &rarr;</h2>
-            </div>
-            <div className="flip-card-back">
-              <p>
-                Who we are defines our fields of expertise, views and research{" "}
-                <a
-                  href="https://tkokhing.github.io/"
-                  className="underline hover:text-green-400 duration-200 transition-colors"
-                >
-                  topics.
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+import Container from "@/app/_components/container";
 
-export default CoverPage;
+export default function Index() {
+  return (
+    <main>
+      <Container>
+        <header>
+          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-600 dark:text-inherit">My Story</h1>
+          </div>
+        </header>
+        <div className="space-y-6 py-8 text-base leading-7 text-gray-600 dark:text-inherit">
+          <p>Fell in love in programming when I first crosspath with it back in polytechnic during the 90s. Had fair amount of chances to nurture it, during Uni and some projects in the military. Now that I retired after serving for more than two decades, so here I come...</p>
+          <h1><strong>Changes that I observed</strong></h1>	
+          <h1>Well ...</h1>	
+          <ul className="space-y-4 ml-4">
+          <p>1. Programming or coding - Nobody called it coding back then, or at least not where I am from LOL.</p>
+          <p>2. Good program is called "strong algorithm" then.</p>
+          <p>3. Scripts are owned - You can even sell it and definitely there isn't GitHub, GitLab, Bitbucket or ...</p>
+          <p>4. Learning has becomes a breeze - besides the above, there are YouTube and more! You even need to pay to get a IDE!</p>
+          <p>5. Colourful IDE - Simply love this. It was all plaintext mono-colour. Missing a bracket, GBY!</p>
+          <p>6. Syntax - Learned python on my own and I simply wonder why do we still need to end with a ";" these days?!?</p>
+          </ul>
+        </div>
+        <p>Learning never stops 🏃!</p>
+
+      </Container>
+    </main>
+  );
+}

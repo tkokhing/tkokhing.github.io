@@ -1,11 +1,11 @@
-import Alert from "@/app/_components/alert";
-import Footer from "@/app/_components/footer";
-import { Navbar } from "./_components/nav-bar";
+import Alert from "@/app/_components/main_frame/alert";
+import Footer from "@/app/_components/main_frame/footer";
+import { Navbar } from "@/app/_components/main_frame/nav-bar";
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 
 import "./globals.css";
 

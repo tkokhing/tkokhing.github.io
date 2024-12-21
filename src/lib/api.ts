@@ -4,19 +4,23 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "_posts");
+// const postsDirectory = join(process.cwd(), "_posts");
 
 function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
 
+export function postsDirectory(): string{
+  return join(process.cwd(), "_posts");
+}
+
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(postsDirectory());
 } // synchronously read the contents of a given directory
 
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(postsDirectory(), `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const BASE_PATH = useBasePath();

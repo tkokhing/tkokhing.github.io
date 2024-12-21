@@ -1,7 +1,7 @@
 .svg-hover-on:hover {
     stroke-width: 5;
     stroke: yellow;
-    /* fill: blue; */
+    /* for future use */
     
 }
 .icon-container {

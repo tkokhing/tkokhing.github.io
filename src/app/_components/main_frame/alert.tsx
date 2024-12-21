@@ -55,7 +55,7 @@ const Alert = ({ preview }: Props) => {
               <div
                 ref={marqueeRef}
                 className="inline-block animate-marquee"
-              > Learning never stops. Your comments, encouragement and criticism to my blog{" "}
+              > Learning never stops. Your comments, encouragement or criticism to my blog{" "}
                 <a
                   href={`https://tkokhing.github.io/`}
                   className="underline hover:text-blue-500 duration-100 transition-colors"

@@ -1,5 +1,5 @@
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
-import { ProfileLogoSVG } from "./icons_svg";
+import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import HomeWithTextIcon from "@/app/_components/HomeWithTextIcon";
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
@@ -41,9 +41,7 @@ export function Navbar() {
                   <div className="flex size-40 logo-image">
                     <ProfileLogoSVG />
                   </div>
-                  <div className="flex size-40 logo-image">
-                    <HomeWithTextIcon />
-                  </div>                </div>
+                  </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
@@ -169,14 +167,6 @@ export function Navbar() {
             </div>
           </DisclosurePanel>
         </Disclosure>
-        <header className="bg-white shadow">
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
-          </div>
-        </header>
-        <main>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
-        </main>
       </div>
     </section>
   );

@@ -198,18 +198,17 @@ export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "
   )
 }
 
-export const ProfileLogoSVG = ({ fill = "#0071C1" }) => (
+export const ProfileLogoSVG = () => (
   <svg
     viewBox="0 0 1473 416"
     xmlns="http://www.w3.org/2000/svg"
-    className={styles['svg-hover-on']}
     fill="none"
     preserveAspectRatio="xMidYMid meet"
   >
-    <title>tkokhing's blog</title>
-    <desc>Learning never stops</desc>
+    <title>Learning never stops</title>
+    <desc>tkokhing svg icon</desc>
 
-    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" fill={fill} stroke="none">
+    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" stroke="none" className="fill-tkokhing-blue dark:fill-rose-950">
       <path d="M1000 3850 l0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 -130z"/>
       <path d="M1000 3200 l0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 -260z"/>
       <path d="M2500 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 385 0 385 150 0 150 0 0 135 0 135 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z"/>
