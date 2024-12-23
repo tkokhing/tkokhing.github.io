@@ -1,5 +1,5 @@
 
-# My story
+# [My story](https://tkokhing.github.io/)
 
 Fell in love in programming when I first crosspath with it back in polytechnic during the 90s. Had fair amount of chances to nurture it, during Uni and some projects in the military. Now that I retired after serving for more than two decades, so here I come...
 

@@ -23,15 +23,14 @@ jobs:
       - name: Checkout blog folder in private repo
         uses: actions/checkout@v4
         with:
-          repository: tkokhing/blog_post
-          token: ${{ secrets.PULL_POST_TOKEN }}
-          path: _posts
-      - name: Move blog post to correct level
-        id: move_blog_post
+          repository: tkokhing/topic_post
+          token: ${{ secrets.PULL_TOPIC_TOKEN }}
+          path: temp_topic
+      - name: Move [_topics] folder post to correct level
+        id: move_topics_post
         run: |
-          mv ./_posts/_posts/*.md _posts
-          rm ./_posts/README.md
-          find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
+          mv ./temp_topic/_topics/*.md _topics
+          rm -rf ./temp_topic
       - name: Verify PWD 
         id: present-working-directory
         run: |
@@ -40,8 +39,8 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on blog post loaded onto ./_posts"
-          ls -lha ./_posts
+          echo "Advance check on posts loaded onto ./_topics"
+          ls -lha ./_topics
       - name: Detect package manager
         id: detect-package-manager
         run: |

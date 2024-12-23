@@ -10,17 +10,17 @@ function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
 
-export function postsDirectory(): string{
-  return join(process.cwd(), "_posts");
+export function postsDirectory(subPath: string): string {
+  return join(process.cwd(), subPath);
 }
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory());
+export function getPostSlugs(subPath: string) {
+  return fs.readdirSync(postsDirectory(subPath));
 } // synchronously read the contents of a given directory
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string, subPath: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory(), `${realSlug}.md`);
+  const fullPath = join(postsDirectory(subPath), `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const BASE_PATH = useBasePath();
@@ -29,14 +29,13 @@ export function getPostBySlug(slug: string) {
   data.coverImage = data.coverImage.startsWith(BASE_PATH) ? data.coverImage : `${BASE_PATH}${data.coverImage}`;
   data.author.picture = data.author.picture.startsWith(BASE_PATH) ? data.author.picture : `${BASE_PATH}${data.author.picture}`;
   data.ogImage.url = data.ogImage.url.startsWith(BASE_PATH) ? data.ogImage.url : `${BASE_PATH}${data.ogImage.url}`;
-
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
+export function getAllPosts(subPath: string): Post[] {
+  const slugs = getPostSlugs(subPath);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug))
+    .map((slug) => getPostBySlug(slug, subPath))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;

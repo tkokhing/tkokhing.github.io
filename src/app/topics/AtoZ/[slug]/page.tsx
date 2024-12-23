@@ -8,8 +8,7 @@ import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 
 export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
-
+  const post = getPostBySlug(params.slug, "_topics");
   if (!post) {
     return notFound();
   }
@@ -25,6 +24,7 @@ export default async function Post({ params }: Params) {
             coverImage={post.coverImage}
             date={post.date}
             author={post.author}
+            subPath={post.subPath} 
           />
           <PostBody content={content} />
         </article>
@@ -40,13 +40,13 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug, "_topics");
 
   if (!post) {
     return notFound();
   }
  
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Built with Next.js Blog using ${CMS_NAME}`;
   return {
     title,
     openGraph: {
@@ -57,7 +57,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts("_topics");
 
   return posts.map((post) => ({
     slug: post.slug,
