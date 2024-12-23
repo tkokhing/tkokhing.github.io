@@ -29,7 +29,10 @@ jobs:
       - name: Move [_topics] folder post to correct level
         id: move_topics_post
         run: |
-          mv ./temp_topic/_topics/*.md _topics
+          echo "Present working directory---->: $(pwd)"
+          echo "ls -lha ---->:"
+          ls -lha .
+          mv ./temp_topic/_topics/*.md ./_topics
           rm -rf ./temp_topic
       - name: Verify PWD 
         id: present-working-directory
