@@ -32,6 +32,7 @@ jobs:
           echo "Present working directory---->: $(pwd)"
           echo "ls -lha ---->:"
           ls -lha .
+          mkdir _topics
           mv ./temp_topic/_topics/*.md ./_topics
           rm -rf ./temp_topic
       - name: Verify PWD 
