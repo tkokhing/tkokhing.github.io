@@ -1,5 +1,4 @@
 import Container from "@/app/_components/container";
-import Alert from "@/app/_components/main_frame/alert";
 import { HeroPost } from "@/app/_components/hero-post";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
@@ -13,7 +12,6 @@ export default function Index() {
 
   return (
     <main>
-      <Alert/>
       <Container>
         <HeroPost
           title={heroPost.title}
@@ -22,6 +20,7 @@ export default function Index() {
           author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
+          subPath={heroPost.subPath}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
