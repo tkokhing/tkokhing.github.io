@@ -11,7 +11,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'),
   title: 'tkokhing',
   description: 'This is my blog.',
