@@ -33,7 +33,7 @@ jobs:
           echo "ls -lha ---->:"
           ls -lha .
           mkdir _topics
-          mv ./temp_topic/_topics/*.md ./_topics
+          mv ./temp_topic/_topics/*.mdx ./_topics
           rm -rf ./temp_topic
       - name: Checkout blog folder in private repo
         uses: actions/checkout@v4
@@ -44,9 +44,9 @@ jobs:
       - name: Move blog post to correct level
         id: move_blog_post
         run: |
-          mv ./_posts/_posts/*.md _posts
+          mv ./_posts/_posts/*.mdx _posts
           rm ./_posts/README.md
-          find ./_posts -mindepth 1 -depth -type d ! -name "*.md" -exec rm -r {} +
+          find ./_posts -mindepth 1 -depth -type d ! -name "*.mdx" -exec rm -r {} +
       - name: Verify PWD 
         id: present-working-directory
         run: |

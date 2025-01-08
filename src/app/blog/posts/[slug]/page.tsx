@@ -1,3 +1,4 @@
+// pull from private repo: [tkokhing/blog_post]
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
