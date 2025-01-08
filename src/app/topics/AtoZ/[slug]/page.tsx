@@ -21,7 +21,6 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <Alert preview={post.preview} />
         <Header />
         <article className="mb-32">
           <PostHeader
