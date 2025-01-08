@@ -15,7 +15,7 @@ const modes: ColorSchemePreference[] = ["system", "dark", "light"];
 /** to reuse updateDOM function defined inside injected script */
 
 /** function to be injected in script tag for avoiding FOUC (Flash of Unstyled Content) */
-export const NoFOUCScript = (storageKey: string) => {
+const NoFOUCScript = (storageKey: string) => {
   /* can not use outside constants or function as this script will be injected in a different context */
   const [SYSTEM, DARK, LIGHT] = ["system", "dark", "light"];
 

@@ -5,14 +5,13 @@ import { getAllPosts } from "@/lib/api";
 
 export default function Index() {
   const allPosts = getAllPosts("_posts");
-
   const heroPost = allPosts[0];
-
   const morePosts = allPosts.slice(1);
 
   return (
     <main>
       <Container>
+        Blog Main Page
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}

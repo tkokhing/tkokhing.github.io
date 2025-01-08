@@ -5,7 +5,6 @@ import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import SectionSeparator from "@/app/_components/section-separator";
 import styles from "@/app/_components/main_frame/icon_svg.module.css";
 // import SvgNavBar from "../_components/svg-nav-bar";
-export const dynamic = 'force-static';
 export default function Testerer() {
   return (
     <main>

@@ -29,15 +29,24 @@ export function PostPreview({
       <div className="mb-5">
         <CoverImage subPath={subPath} slug={slug} title={title} src={coverImage} /> 
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link href={`/${subPath}/${slug}`} className="hover:underline">
-          {title}
+        <h3 className="text-3xl mb-3 leading-snug">
+          <Link href={`/${subPath}/${slug}`} className="hover:underline">
+            {title}
+            <p className="text-right text-sm mb-4">
+              <DateFormatter dateString={date} />
+            </p>
+          </Link>
+        </h3>
+      <div className="shadow-sm w-full shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4">
+        <Link href={`/${subPath}/${slug}`}>
+          <h4
+          className="font-semibold italic text-lg hover:underline text-sky-950 dark:text-slate-100"> 
+            Excerpt:
+          </h4>
+          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
         </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
     </div>
   );

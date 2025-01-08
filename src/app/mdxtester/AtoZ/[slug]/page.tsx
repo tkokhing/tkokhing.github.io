@@ -13,7 +13,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const post = getPostBySlug(params.slug, "_topics");
+  const post = getPostBySlug(params.slug, "_mdxposts");
   if (!post) {
     return notFound();
   }
@@ -49,7 +49,7 @@ type Params = {
 
 export async function generateMetadata(props: Params): Promise<Metadata> {
   const params = await props.params;
-  const post = getPostBySlug(params.slug, "_topics");
+  const post = getPostBySlug(params.slug, "_mdxposts");
 
   if (!post) {
     return notFound();
@@ -67,7 +67,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts("_topics");
+  const posts = getAllPosts("_mdxposts");
 
   return posts.map((post) => ({
     slug: post.slug,

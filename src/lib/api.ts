@@ -4,8 +4,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-// const postsDirectory = join(process.cwd(), "_posts");
-
 function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
@@ -16,15 +14,15 @@ export function postsDirectory(subPath: string): string {
 
 export function getPostSlugs(subPath: string) {
   return fs.readdirSync(postsDirectory(subPath));
-} // synchronously read the contents of a given directory
+}
 
-export function getPostBySlug(slug: string, subPath: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory(subPath), `${realSlug}.md`);
+export function getPostBySlug(slug: string, subPath: string){
+  const realSlug = slug.replace(/\.mdx?$/, "");
+  const fullPath = join(postsDirectory(subPath), `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const BASE_PATH = useBasePath();
-
+  
   // Update URLs based on the environment
   data.coverImage = data.coverImage.startsWith(BASE_PATH) ? data.coverImage : `${BASE_PATH}${data.coverImage}`;
   data.author.picture = data.author.picture.startsWith(BASE_PATH) ? data.author.picture : `${BASE_PATH}${data.author.picture}`;
@@ -34,9 +32,6 @@ export function getPostBySlug(slug: string, subPath: string) {
 
 export function getAllPosts(subPath: string): Post[] {
   const slugs = getPostSlugs(subPath);
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, subPath))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  const posts = slugs.map((slug) => getPostBySlug(slug, subPath));
+  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
