@@ -30,9 +30,10 @@ export default async function Post(props: Params) {
             author={post.author} 
             subPath={post.subPath}
           />
-            <div className="prose prose-lg md:prose-lg lg:prose-lg mx-auto">
-              <MDXRemote source={post.content || ""}  />
-
+            <div className="prose prose-lg md:prose-lg lg:prose-lg mx-auto prose-headings:text-indigo-900">
+              <div className="prose-a:text-blue-600">
+                <MDXRemote source={post.content || ""}  />
+              </div>
             </div>
             {/* <PostBody content={content} /> */}
         </article>
