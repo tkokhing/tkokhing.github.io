@@ -22,6 +22,7 @@ export function MoreStories({ posts }: Props) {
             slug={post.slug}
             excerpt={post.excerpt}
             subPath={post.subPath}
+            postStatus={post.postStatus}
           />
         ))}
       </div>

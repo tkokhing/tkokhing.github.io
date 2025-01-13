@@ -13,4 +13,6 @@ export type Post = {
   subPath: string;
   content: string;
   preview?: boolean;
+  remarks?: string;
+  postStatus: string;
 };

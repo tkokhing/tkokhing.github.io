@@ -12,6 +12,7 @@ type Props = {
   author: Author;
   slug: string;
   subPath: string;
+  postStatus: string;
 };
 
 export function HeroPost(
@@ -23,6 +24,7 @@ export function HeroPost(
     author,
     slug,
     subPath,
+    postStatus,
   }: Props) 
   {
   return (
@@ -36,7 +38,7 @@ export function HeroPost(
             <Link href={`/${subPath}/${slug}`} className="hover:underline">
               {title}
               <p className="mb-4 md:mb-0 text-lg">
-                <DateFormatter dateString={date} />
+                {postStatus} < DateFormatter dateString={date} />
               </p>
             </Link>
           </h3>

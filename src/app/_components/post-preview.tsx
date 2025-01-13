@@ -12,6 +12,7 @@ type Props = {
   author: Author;
   slug: string;
   subPath: string;
+  postStatus: string;
 };
 
 export function PostPreview({
@@ -22,6 +23,7 @@ export function PostPreview({
   author,
   slug,
   subPath,
+  postStatus,
   }: Props) 
   {
   return (
@@ -33,7 +35,7 @@ export function PostPreview({
           <Link href={`/${subPath}/${slug}`} className="hover:underline">
             {title}
             <p className="text-right text-sm mb-4">
-              <DateFormatter dateString={date} />
+              {postStatus} <DateFormatter dateString={date} />
             </p>
           </Link>
         </h3>

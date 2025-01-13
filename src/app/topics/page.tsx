@@ -19,6 +19,7 @@ export default function Index() {
           author={heroPost.author}
           excerpt={heroPost.excerpt}
           subPath={heroPost.subPath}
+          postStatus={heroPost.postStatus}
           />
       
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}

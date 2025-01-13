@@ -29,6 +29,7 @@ export default async function Post(props: Params) {
             date={post.date}
             author={post.author} 
             subPath={post.subPath}
+            postStatus={post.postStatus}
           />
             <div className="prose prose-lg md:prose-lg lg:prose-lg mx-auto prose-headings:text-indigo-900">
               <div className="prose-a:text-blue-600">

@@ -20,6 +20,7 @@ export default function Index() {
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
           subPath={heroPost.subPath}
+          postStatus={heroPost.postStatus}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
