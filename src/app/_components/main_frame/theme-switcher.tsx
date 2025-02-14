@@ -85,7 +85,7 @@ const Switch = () => {
   };
   return (
     <button
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
       className={styles.switch}
       onClick={handleModeSwitch}
     >
