@@ -39,7 +39,7 @@ export function PostPreview({
             </p>
           </Link>
         </h3>
-      <div className="shadow-sm w-full shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4">
+      <div className="shadow-sm w-full dark:shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4">
         <Link href={`/${subPath}/${slug}`}>
           <h4
           className="font-semibold italic text-lg hover:underline text-sky-950 dark:text-slate-100"> 

@@ -8,9 +8,7 @@ import Container from "@/app/_components/container";
 import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import { PostHeader } from "@/app/_components/post-header";
 import { MDXRemote } from "next-mdx-remote/rsc";
-// import markdownToHtml from "@/lib/markdownToHtml";
-// import { PostBody } from "@/app/_components/post-body";
-// import markdownStyles from "@/app/_components/markdown-styles.module.css";
+import { PostBody } from "@/app/_components/post-body";
 
 export default async function Post(props: Params) {
   const params = await props.params;
@@ -31,12 +29,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-            <div className="prose prose-lg md:prose-lg lg:prose-lg mx-auto prose-headings:text-indigo-900">
-              <div className="prose-a:text-blue-600">
-                <MDXRemote source={post.content || ""}  />
-              </div>
-            </div>
-            {/* <PostBody content={content} /> */}
+          <PostBody content={post.content} />
         </article>
       </Container>
     </main>

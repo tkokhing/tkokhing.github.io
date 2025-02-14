@@ -11,12 +11,13 @@ type Props = {
 
 const CoverImage = ( { title, src, slug, subPath }: Props) => {
   const image = (
-    <Image
+    <Image 
+      className={cn("shadow-sm w-full", {
+      "dark:shadow-sky-900 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg transition-shadow duration-200": slug,
+      })}
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("shadow-sm w-full", "shadow-sky-900/50", {
-        "hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg transition-shadow duration-200": slug,
-      })}
+
       width={1300}
       height={630}
     />
