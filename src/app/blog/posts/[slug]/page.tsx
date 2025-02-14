@@ -5,7 +5,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import Alert from "@/app/_components/main_frame/alert";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/main_frame/subpage-header";
+import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import { PostHeader } from "@/app/_components/post-header";
 import { MDXRemote } from "next-mdx-remote/rsc";
 // import markdownToHtml from "@/lib/markdownToHtml";
@@ -21,7 +21,7 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <Header />
+        <SubpageHeader subPath={post.subPath} title={post.title}/>
         <article className="mb-32">
           <PostHeader
             title={post.title}
