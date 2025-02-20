@@ -11,7 +11,7 @@
     max-width: 150px; /* Adjust max size as needed */
     height: auto; /* Maintain aspect ratio */
 }
-/* for logo image day/night switching */
+/* Reserved, for logo image day/night switching. */
 .logo-image {
     filter: var(--logo-filter);
     transition: filter 0.3s ease-in-out;

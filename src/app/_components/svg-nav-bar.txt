@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-// import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "./icons_svg"
+// import { BlogWithTextIcon, TopicWithTextIcon, TestMoonIcon, DarkModeIcon, DarkModeWithHoverIcon,  ProfileLogoSVG } from "./icons_svg"
 import styles from "./icon_svg.module.css";
 
 const user = {
@@ -45,10 +45,8 @@ export default function SvgNavBar() {
                 <div className="shrink-0">
                 <div className="w-48" >
                 <div className = {styles['icon-container']}>
-                  <HomeWithTextIcon />
                   <BlogWithTextIcon />
                   <TopicWithTextIcon />
-                  <HomeWithTextIcon />
           </div>
                   </div>
                 </div>

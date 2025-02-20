@@ -46,6 +46,12 @@
   animation: n linear 0.5s;
 }
 
+[data-mode="dark"] .switch:hover {
+  border: 1.5px solid #1e1b4b;
+  box-shadow: 0 0 5px 5px orange;
+
+} 
+
 [data-mode="light"] .switch {
   box-shadow: 0 0 30px 10px yellow;
   border: none;

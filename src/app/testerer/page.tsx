@@ -1,6 +1,6 @@
 "use client"
 import Container from "@/app/_components/container";
-import HomeWithTextIcon from "@/app/_components/HomeWithTextIcon";
+import { SquareBoxIcon, RectangleBoxIcon, HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, SystemModeIcon, DarkModeIcon, LightModeIcon } from "@/app/_components/main_frame/icons_svg";
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import SectionSeparator from "@/app/_components/section-separator";
 import styles from "@/app/_components/main_frame/icon_svg.module.css";
@@ -29,23 +29,32 @@ export default function Testerer() {
       </ul>
 
       <div className={styles.switch}>
-        <h1>My HomeWithTextIcon default || strokeColour=white, Hover on stroke: yellow </h1>
-        <h1>My HomeWithTextIcon Result:   </h1>
+        <h1>My Testing SVG Icons default || strokeColour=white, Hover on stroke: yellow </h1>
+        <h1>My Icon Result:   </h1>
         <div className = {styles['icon-container']}>
-          <HomeWithTextIcon />
-          <HomeWithTextIcon />
+          <BlogWithTextIcon />
+          <TopicWithTextIcon />
+          <SystemModeIcon />
+          <DarkModeIcon />
+          <LightModeIcon />
+          <LightModeIcon />
+
         </div>
       </div>
       <SectionSeparator />
       <div>
-        <h1>My ProfileLogoSVG fill="#0071C1" </h1>
-        <ProfileLogoSVG /> // Daymode use this
-        <h1>My ProfileLogoSVG fill="white":   </h1>
-        <ProfileLogoSVG />  // Darkmode use this
+        // Daymode use this
+        
+        <h1>Testing HomeWithTextIcon using size-XX":   </h1>
 
-        <h1>My ProfileLogoSVG fill with nothing, default is red  </h1>
-        <ProfileLogoSVG />
+        <HomeWithTextIcon height = {50}/>
 
+        <h1>Testing HomeWithTextIcon using size-XX":   </h1>
+
+        <div className="flex flex-" style={{ height: '10', width: 'auto' }}>
+          <SquareBoxIcon />
+          <RectangleBoxIcon />
+        </div>
       </div>
     </Container>
     </main>
