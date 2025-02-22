@@ -22,40 +22,26 @@ export default function Navigationbar() {
 
   const [selected, setSelected] = useState(() => {
     const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
-
     if (!currentNavItem) {
-      let index = -1;
-      navigation.map((item, i) => {
-        if (pathname.includes(item.href + '/'))
-          index = i;
-        if (index < 0)
-          index = 0;
-        return (navigation[index].name);
-      })
+      const presentNavItem = navigation.find(item => pathname.includes(item.href));
+      return presentNavItem ? presentNavItem.name : navigation[0].name;
     }
-    else
-      return (currentNavItem.name);
-
+    return currentNavItem.name;
   });
 
   useEffect(() => {
     const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
-
     if (!currentNavItem) {
-      let index = -1;
-      navigation.map((item, i) => {
-        if (pathname.includes(item.href + '/'))
-          index = i;
-        if (index < 0)
-          index = 0;
-        setSelected(navigation[index].name);
-      })
-    }
-    else
+      const presentNavItem = navigation.find(item => pathname.includes(item.href));
+      if (presentNavItem) {
+        setSelected(presentNavItem.name);
+      } else {
+        setSelected(navigation[0].name);
+      }
+    } else {
       setSelected(currentNavItem.name);
-
+    }
   }, [pathname]);
-
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">
       <Disclosure as="nav">
