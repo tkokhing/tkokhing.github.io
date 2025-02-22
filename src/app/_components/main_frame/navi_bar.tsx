@@ -1,21 +1,61 @@
-import React, { FC } from "react";
-import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
+"use client";
+
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon } from "@/app/_components/main_frame/icons_svg";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true, icon: HomeWithTextIcon },
-  { name: 'Blog', href: '/blog', current: false, icon: BlogWithTextIcon },
-  { name: 'Topics', href: '/topics', current: false, icon: TopicWithTextIcon },
+  { name: 'Home', href: '/', icon: HomeWithTextIcon },
+  { name: 'Blog', href: '/blog', icon: BlogWithTextIcon },
+  { name: 'Topics', href: '/topics', icon: TopicWithTextIcon },
 ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
-}
+};
 
-export function Navbar() {
+export default function Navigationbar() {
+  const pathname = usePathname();
+
+  const [selected, setSelected] = useState(() => {
+    const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
+
+    if (!currentNavItem) {
+      let index = -1;
+      navigation.map((item, i) => {
+        if (pathname.includes(item.href + '/'))
+          index = i;
+        if (index < 0)
+          index = 0;
+        return (navigation[index].name);
+      })
+    }
+    else
+      return (currentNavItem.name);
+
+  });
+
+  useEffect(() => {
+    const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
+
+    if (!currentNavItem) {
+      let index = -1;
+      navigation.map((item, i) => {
+        if (pathname.includes(item.href + '/'))
+          index = i;
+        if (index < 0)
+          index = 0;
+        setSelected(navigation[index].name);
+      })
+    }
+    else
+      setSelected(currentNavItem.name);
+
+  }, [pathname]);
+
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">
       <Disclosure as="nav">
@@ -30,11 +70,12 @@ export function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
+                    aria-current={selected === item.name ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-700 dark:bg-gray-600' : 'text-sky-800 hover:bg-gray-500',
+                      selected === item.name ? 'bg-gray-700 dark:bg-gray-600' : 'text-sky-800 hover:bg-gray-500',
                       'rounded-md px-3 py-2'
                     )}
+                    onClick={() => setSelected(item.name)}
                   >
                     <item.icon aria-hidden="true" />
                   </a>
@@ -60,9 +101,9 @@ export function Navbar() {
                 key={item.name}
                 as="a"
                 href={item.href}
-                aria-current={item.current ? 'page' : undefined}
+                aria-current={selected === item.name ? 'page' : undefined}
                 className={classNames(
-                  item.current ? 'bg-gray-900' : 'hover:bg-gray-700',
+                  selected === item.name ? 'bg-gray-900' : 'hover:bg-gray-700',
                   'block rounded-md px-3 py-2'
                 )}
               >
@@ -75,4 +116,4 @@ export function Navbar() {
       </Disclosure>
     </section>
   );
-}
+};

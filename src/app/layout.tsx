@@ -1,6 +1,9 @@
+
+
 import Alert from "@/app/_components/main_frame/alert";
+import Navigationbar from "@/app/_components/main_frame/navi_bar"
 import Footer from "@/app/_components/main_frame/footer";
-import { Navbar } from "@/app/_components/main_frame/nav-bar";
+// import Navbar from "@/app/_components/main_frame/nav-bar";
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -65,8 +68,9 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50	text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
-        <Alert/>
-        <Navbar/>
+        <Alert />
+        <Navigationbar />
+        {/* <Navbar /> */}
         <ThemeSwitcher />
         <div className="min-h-screen">{children}</div>
         <Footer />

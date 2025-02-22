@@ -1,7 +1,6 @@
 "use client"
 
-import * as React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Define a generalized interface for all icon components
 interface IconProps {
@@ -152,8 +151,8 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ height = "50", fillColo
       <g fill={fillColour} opacity={hoverOn ? "0.000000" : "1.000000"}>
         <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="translate(52.9587 139)">A</text>
         <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="translate(234.959 293)">Z</text>
-        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" font-style="italic" fontWeight="400" fontSize="53" transform="translate(155.371 192)">to</text>
-        <rect x="27" y="15" width="304" height="304" stroke={fillColour} stroke-width="7.66667" strokeMiterlimit="8" fill="none" />
+        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontStyle="italic" fontWeight="400" fontSize="53" transform="translate(155.371 192)">to</text>
+        <rect x="27" y="15" width="304" height="304" stroke={fillColour} strokeWidth="7.66667" strokeMiterlimit="8" fill="none" />
       </g>
       {hoverOn && (
         <g fill={hoverColour} opacity="1.000000">
@@ -162,7 +161,7 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ height = "50", fillColo
           <text fontFamily="Georgia,Georgia_MSFontService,sans-serif" fontWeight="400" fontSize="184" transform="matrix(1 0 0 0.999576 487.858 233)">Topics</text>
           <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="matrix(1 0 0 0.999576 52.9812 139)">A</text>
           <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="matrix(1 0 0 0.999576 235.058 293)">Z</text>
-          <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" font-style="italic" fontWeight="400" fontSize="53" transform="matrix(1 0 0 0.999576 155.437 192)">to</text>
+          <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontStyle="italic" fontWeight="400" fontSize="53" transform="matrix(1 0 0 0.999576 155.437 192)">to</text>
         </g>
       )}
     </svg>
