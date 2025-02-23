@@ -10,6 +10,9 @@ import { Inter } from "next/font/google";
 import cn from "classnames";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 
+import MyTest2 from "@/app/_components/mytest2";
+
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -70,8 +73,11 @@ export default function RootLayout({
       >
         <Alert />
         <Navigationbar />
+
         {/* <Navbar /> */}
         <ThemeSwitcher />
+        <p> Hello </p>
+        <MyTest2 />
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
