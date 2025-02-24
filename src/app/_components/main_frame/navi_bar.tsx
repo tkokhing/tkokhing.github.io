@@ -57,32 +57,64 @@ export default function Navigationbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const handlePopState = (event: PopStateEvent) => {
-      if (event.state) {
-        const pathnamechange = usePathname();
-        const currentNavItem = navigation.find(item => pathnamechange.endsWith(item.href));
+    // const handlePopState = (event: PopStateEvent) => {
+    //   if (event.state) {
+    //     setMessage('Forward button was clicked!');
+    //     setIndex(1);
+    //   } else {
+    //     setMessage('Back button was clicked!');
+    //     setIndex(0);
+    //   }
+    // };
 
-        if (!currentNavItem) {
-          let index = -1;
-          navigation.map((item, i) => {
-            if (pathnamechange.includes(item.href + '/'))
-              index = i;
-            if (index < 0)
-              index = 0;
-            setSelected(navigation[index].name);
-          })
-        }
-        else
-          setSelected(currentNavItem.name);
-      } 
-    };
+    window.addEventListener('beforeunload', () => {
 
-    window.addEventListener('popstate', handlePopState);
+      const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
 
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
+      if (!currentNavItem) {
+        let index = -1;
+        navigation.map((item, i) => {
+          if (pathname.includes(item.href + '/'))
+            index = i;
+          if (index < 0)
+            index = 0;
+          setSelected(navigation[index].name);
+        })
+      }
+      else
+        setSelected(currentNavItem.name);
+
+
+
+    });
+  }, [pathname]);
+  // const pathnamechange = usePathname();
+  // useEffect(() => {
+  //   const handlePopState = (event: PopStateEvent) => {
+  //     if (event.state) {
+  //       const currentNavItem = navigation.find(item => pathnamechange.endsWith(item.href));
+
+  //       if (!currentNavItem) {
+  //         let index = -1;
+  //         navigation.map((item, i) => {
+  //           if (pathnamechange.includes(item.href + '/'))
+  //             index = i;
+  //           if (index < 0)
+  //             index = 0;
+  //           setSelected(navigation[index].name);
+  //         })
+  //       }
+  //       else
+  //         setSelected(currentNavItem.name);
+  //     } 
+  //   };
+
+  //   window.addEventListener('popstate', handlePopState);
+
+  //   return () => {
+  //     window.removeEventListener('popstate', handlePopState);
+  //   };
+  // }, []);
 
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">

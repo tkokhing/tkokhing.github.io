@@ -7,21 +7,21 @@ const Home = () => {
   const [index, setIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const handlePopState = (event: PopStateEvent) => {
-      if (event.state) {
-        setMessage('Forward button was clicked!');
-        setIndex(1);
-      } else {
-        setMessage('Back button was clicked!');
-        setIndex(0);
-      }
-    };
+    // const handlePopState = (event: PopStateEvent) => {
+    //   if (event.state) {
+    //     setMessage('Forward button was clicked!');
+    //     setIndex(1);
+    //   } else {
+    //     setMessage('Back button was clicked!');
+    //     setIndex(0);
+    //   }
+    // };
 
-    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('beforeunload', () => {
+      setMessage('beforeunload  is working!');
+      setIndex(1);
+    });
 
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
   }, []);
 
   const load = index;
