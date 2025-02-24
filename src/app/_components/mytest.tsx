@@ -19,7 +19,7 @@ const pathname = 'https://tkokhing.github.io/bloag/posts/Rise_of_Supply-chain_At
 
 export default function Index() {
   const [first, setFirst] = useState<number | null>(null);
-
+  first !== null ?navigation[first]:navigation[0] ;
   useEffect(() => {
     let index = -1;
     navigation.map((item, i) => {
@@ -47,7 +47,7 @@ export default function Index() {
                     <h1>JavaScript Arrays</h1>
                     <h2>The find() Method</h2>
                     <p>First number over 18 is index is {load}</p>
-                    {/* <p>First number over 18 is {load !== null ? navigation[load].name : 'not found'} index is {load}</p> */}
+                    <p>First number over 18 is {load !== null ? navigation[load].name : 'not found'} index is {load}</p>
                 </div>
                 <p>Test ends here!</p>
 

@@ -56,6 +56,34 @@ export default function Navigationbar() {
 
   }, [pathname]);
 
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state) {
+        const pathnamechange = usePathname();
+        const currentNavItem = navigation.find(item => pathnamechange.endsWith(item.href));
+
+        if (!currentNavItem) {
+          let index = -1;
+          navigation.map((item, i) => {
+            if (pathnamechange.includes(item.href + '/'))
+              index = i;
+            if (index < 0)
+              index = 0;
+            setSelected(navigation[index].name);
+          })
+        }
+        else
+          setSelected(currentNavItem.name);
+      } 
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">
       <Disclosure as="nav">

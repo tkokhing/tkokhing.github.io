@@ -24,11 +24,13 @@ const Home = () => {
     };
   }, []);
 
+  const load = index;
+  const displayMessage = message;
   return (
     <div>
       <h1>MyTest2</h1>
-      {message && <p>{message}</p>}
-      {index !== null && <p>Index: {index}</p>}
+      <p>{displayMessage}</p>
+      {load !== null && <p>Index: {load}</p>}
     </div>
   );
 };
