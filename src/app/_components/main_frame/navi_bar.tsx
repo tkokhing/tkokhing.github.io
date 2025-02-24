@@ -38,23 +38,23 @@ export default function Navigationbar() {
 
   });
 
-  useEffect(() => {
-    const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
+  // useEffect(() => {
+  //   const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
 
-    if (!currentNavItem) {
-      let index = -1;
-      navigation.map((item, i) => {
-        if (pathname.includes(item.href + '/'))
-          index = i;
-        if (index < 0)
-          index = 0;
-        setSelected(navigation[index].name);
-      })
-    }
-    else
-      setSelected(currentNavItem.name);
+  //   if (!currentNavItem) {
+  //     let index = -1;
+  //     navigation.map((item, i) => {
+  //       if (pathname.includes(item.href + '/'))
+  //         index = i;
+  //       if (index < 0)
+  //         index = 0;
+  //       setSelected(navigation[index].name);
+  //     })
+  //   }
+  //   else
+  //     setSelected(currentNavItem.name);
 
-  }, [pathname]);
+  // }, [pathname]);
 
   useEffect(() => {
     // const handlePopState = (event: PopStateEvent) => {

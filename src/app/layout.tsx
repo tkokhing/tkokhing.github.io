@@ -11,6 +11,7 @@ import cn from "classnames";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 
 import MyTest2 from "@/app/_components/mytest2";
+import MyTest3 from "@/app/_components/mytest3";
 
 
 import "./globals.css";
@@ -78,6 +79,7 @@ export default function RootLayout({
         <ThemeSwitcher />
         <p> Hello </p>
         <MyTest2 />
+        <MyTest3 />
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

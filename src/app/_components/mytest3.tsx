@@ -17,8 +17,8 @@ const Home = () => {
     //   }
     // };
 
-    window.addEventListener('beforeunload', () => {
-      setMessage('beforeunload  is working!');
+    window.addEventListener('popstate', () => {
+      setMessage('popstate          is working!');
       setIndex(1);
     });
 
@@ -28,10 +28,10 @@ const Home = () => {
   const displayMessage = message;
   return (
     <div>
-      <h1>MyTest2</h1>
+      <h1>MyTest3</h1>
       <p>{displayMessage}</p>
       {load !== null && <p>Index: {load}</p>}
-      <h2>MyTest2 end</h2>
+      <h2>MyTest3 end</h2>
 
     </div>
   );
