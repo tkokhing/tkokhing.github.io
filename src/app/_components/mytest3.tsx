@@ -18,7 +18,7 @@ const Home = () => {
     // };
 
     window.addEventListener('popstate', () => {
-      setMessage('popstate          is working!');
+      setMessage('popstate popstate popstate ____________________________popstate working________________popstate working________________!');
       setIndex(1);
     });
 

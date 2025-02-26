@@ -18,7 +18,7 @@ const Home = () => {
     // };
 
     window.addEventListener('beforeunload', () => {
-      setMessage('beforeunload  is working!');
+      setMessage('beforeunload  is working! BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB beforeunload');
       setIndex(1);
     });
 

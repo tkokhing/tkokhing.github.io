@@ -19,102 +19,22 @@ function classNames(...classes: string[]) {
 
 export default function Navigationbar() {
   const pathname = usePathname();
+  const findNavigationIndex = (pathName: string, navigation: { name: string; href: string; icon: any }[]) => {
+    const index = navigation.findIndex(navItem => pathName.endsWith(navItem.href) || pathName.includes(navItem.href + '/'));
+    return index !== -1 ? index : 0;
+  };
 
   const [selected, setSelected] = useState(() => {
-    const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
-
-    if (!currentNavItem) {
-      let index = -1;
-      navigation.map((item, i) => {
-        if (pathname.includes(item.href + '/'))
-          index = i;
-        if (index < 0)
-          index = 0;
-        return (navigation[index].name);
-      })
-    }
-    else
-      return (currentNavItem.name);
-
+    const navIndex = findNavigationIndex(pathname, navigation);
+    return navigation[navIndex].name;
   });
 
-  // useEffect(() => {
-  //   const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
-
-  //   if (!currentNavItem) {
-  //     let index = -1;
-  //     navigation.map((item, i) => {
-  //       if (pathname.includes(item.href + '/'))
-  //         index = i;
-  //       if (index < 0)
-  //         index = 0;
-  //       setSelected(navigation[index].name);
-  //     })
-  //   }
-  //   else
-  //     setSelected(currentNavItem.name);
-
-  // }, [pathname]);
-
   useEffect(() => {
-    // const handlePopState = (event: PopStateEvent) => {
-    //   if (event.state) {
-    //     setMessage('Forward button was clicked!');
-    //     setIndex(1);
-    //   } else {
-    //     setMessage('Back button was clicked!');
-    //     setIndex(0);
-    //   }
-    // };
-
     window.addEventListener('beforeunload', () => {
-
-      const currentNavItem = navigation.find(item => pathname.endsWith(item.href));
-
-      if (!currentNavItem) {
-        let index = -1;
-        navigation.map((item, i) => {
-          if (pathname.includes(item.href + '/'))
-            index = i;
-          if (index < 0)
-            index = 0;
-          setSelected(navigation[index].name);
-        })
-      }
-      else
-        setSelected(currentNavItem.name);
-
-
-
+      const navIndex = findNavigationIndex(pathname, navigation);
+      setSelected(navigation[navIndex].name);
     });
-  }, [pathname]);
-  // const pathnamechange = usePathname();
-  // useEffect(() => {
-  //   const handlePopState = (event: PopStateEvent) => {
-  //     if (event.state) {
-  //       const currentNavItem = navigation.find(item => pathnamechange.endsWith(item.href));
-
-  //       if (!currentNavItem) {
-  //         let index = -1;
-  //         navigation.map((item, i) => {
-  //           if (pathnamechange.includes(item.href + '/'))
-  //             index = i;
-  //           if (index < 0)
-  //             index = 0;
-  //           setSelected(navigation[index].name);
-  //         })
-  //       }
-  //       else
-  //         setSelected(currentNavItem.name);
-  //     } 
-  //   };
-
-  //   window.addEventListener('popstate', handlePopState);
-
-  //   return () => {
-  //     window.removeEventListener('popstate', handlePopState);
-  //   };
-  // }, []);
+    }, [pathname]);
 
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">
