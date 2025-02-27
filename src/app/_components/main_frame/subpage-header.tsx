@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import { Home } from "@/lib/constants"
 import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
 
 type Props = {

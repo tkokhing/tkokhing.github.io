@@ -8,7 +8,6 @@ import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import { PostHeader } from "@/app/_components/post-header";
 import { PostBody } from "@/app/_components/post-body";
 
-
 export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug, "_topics");
