@@ -54,12 +54,19 @@ export default function Navigationbar() {
   
 
 
-  useEffect(() => {
-    const navIndex = findNavigationIndex(pathname, navigation);
-    setSelected(navigation[navIndex].name);
-  // }, [pathname, setSelected]);
-    }, [pathname]);
+  // useEffect(() => {
+  //   const navIndex = findNavigationIndex(pathname, navigation);
+  //   setSelected(navigation[navIndex].name);
+  // // }, [pathname, setSelected]);
+  //   }, [pathname]);
 
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', () => {
+      const navIndex = findNavigationIndex(pathname, navigation);
+      setSelected(navigation[navIndex].name);  
+    });
+    }, [pathname]);
 
   // useEffect(() => {
   //   window.addEventListener('beforeunload', () => {
