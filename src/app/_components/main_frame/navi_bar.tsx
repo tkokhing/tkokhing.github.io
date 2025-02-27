@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
@@ -44,6 +44,39 @@ export default function Navigationbar() {
   const pathname = usePathname();
   const { selected, setSelected } = useNavigation();
 
+  useEffect(() => {
+    const navIndex = findNavigationIndex(pathname, navigation);
+    setSelected(navigation[navIndex].name);
+
+    const handlePopState = () => {
+      const navIndex = findNavigationIndex(pathname, navigation);
+      setSelected(navigation[navIndex].name);
+    };
+
+    const handleBeforeUnload = () => {
+      const navIndex = findNavigationIndex(pathname, navigation);
+      setSelected(navigation[navIndex].name);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [pathname, setSelected]);
+
+
+
+
+
+
+
+
+
+
+
 
   // const [selected, setSelected] = useState(() => {
   //   const navIndex = findNavigationIndex(pathname, navigation);
@@ -54,11 +87,11 @@ export default function Navigationbar() {
   
 
 
-  useEffect(() => {
-    const navIndex = findNavigationIndex(pathname, navigation);
-    setSelected(navigation[navIndex].name);
-  }, [pathname, setSelected]);
-  //   }, [pathname]);
+  // useEffect(() => {
+  //   const navIndex = findNavigationIndex(pathname, navigation);
+  //   setSelected(navigation[navIndex].name);
+  // }, [pathname, setSelected]);
+  // //   }, [pathname]);
 
 
   // useEffect(() => {
