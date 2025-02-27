@@ -2,6 +2,7 @@
 
 import Alert from "@/app/_components/main_frame/alert";
 import Navigationbar from "@/app/_components/main_frame/navi_bar"
+import { NavigationProvider } from "./_components/main_frame/NavigationContext";
 import Footer from "@/app/_components/main_frame/footer";
 // import Navbar from "@/app/_components/main_frame/nav-bar";
 import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
@@ -73,15 +74,17 @@ export default function RootLayout({
         className={cn(inter.className, "bg-slate-50	text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
         <Alert />
-        <Navigationbar />
+        {/* <NavigationProvider> */}
+          <Navigationbar />
 
-        {/* <Navbar /> */}
-        <ThemeSwitcher />
-        <p> Hello </p>
-        <MyTest2 />
-        <MyTest3 />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+          {/* <Navbar /> */}
+          <ThemeSwitcher />
+          <p> Hello </p>
+          <MyTest2 />
+          <MyTest3 />
+          <div className="min-h-screen">{children}</div>
+          <Footer />
+        {/* </NavigationProvider> */}
       </body>
     </html>
   );

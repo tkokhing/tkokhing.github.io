@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
-import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon } from "@/app/_components/main_frame/icons_svg";
+import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
+import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon } from "@/app/_components/main_frame/icons_svg";
+import Container from "@/app/_components/container";
 
 const navigation = [
   { name: 'Home', href: '/', icon: HomeWithTextIcon },
@@ -13,28 +15,68 @@ const navigation = [
   { name: 'Topics', href: '/topics', icon: TopicWithTextIcon },
 ];
 
+const findNavigationIndex = (pathName: string, navigation: { name: string; href: string; icon: any }[]) => {
+  const index = navigation.findIndex(navItem => pathName.endsWith(navItem.href) || pathName.includes(navItem.href + '/'));
+  return index !== -1 ? index : 0;
+};
+
+// const generateBreadcrumb = (pathName: string, navigation: { name: string; href: string; icon: any }[]) => {
+//   const pathSegments = pathName.split('/').filter(segment => segment);
+//   const breadcrumb = ['Home'];
+
+//   pathSegments.forEach(segment => {
+//     const navItem = navigation.find(navItem => navItem.href.includes(segment));
+//     if (navItem) {
+//       breadcrumb.push(navItem.name, navItem.name);
+//     } else {
+//       breadcrumb.push(segment);
+//     }
+//   });
+
+//   return breadcrumb.join(' / ');
+// };
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 };
 
 export default function Navigationbar() {
   const pathname = usePathname();
-  const findNavigationIndex = (pathName: string, navigation: { name: string; href: string; icon: any }[]) => {
-    const index = navigation.findIndex(navItem => pathName.endsWith(navItem.href) || pathName.includes(navItem.href + '/'));
-    return index !== -1 ? index : 0;
-  };
+  // const { selected, setSelected } = useNavigation();
+
 
   const [selected, setSelected] = useState(() => {
     const navIndex = findNavigationIndex(pathname, navigation);
     return navigation[navIndex].name;
   });
 
+  // const [breadcrumb, setBreadcrumb] = useState(() => generateBreadcrumb(pathname, navigation));
+  
+
+
   useEffect(() => {
-    window.addEventListener('beforeunload', () => {
-      const navIndex = findNavigationIndex(pathname, navigation);
-      setSelected(navigation[navIndex].name);
-    });
+    const navIndex = findNavigationIndex(pathname, navigation);
+    setSelected(navigation[navIndex].name);
+  // }, [pathname, setSelected]);
     }, [pathname]);
+
+
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', () => {
+  //     const navIndex = findNavigationIndex(pathname, navigation);
+  //     setSelected(navigation[navIndex].name);  
+  //   });
+  //   }, [pathname, setSelected]);
+
+
+  // useEffect(() => {
+  //   window.addEventListener('popstate', () => {
+  //     const navIndex = findNavigationIndex(pathname, navigation);
+  //     setSelected(navigation[navIndex].name);
+  //     setBreadcrumb(generateBreadcrumb(pathname, navigation));
+
+  //   });
+  //   }, [pathname]);
 
   return (
     <section className="mt-1 mb-16 md:mb-12 min-h-full">
@@ -94,6 +136,12 @@ export default function Navigationbar() {
           </div>
         </DisclosurePanel>
       </Disclosure>
+      <Container>
+
+      <p>this is the end of navi-bar {pathname}</p>
+      {/* <p>{breadcrumb}</p> */}
+      </Container>
+
     </section>
   );
 };
