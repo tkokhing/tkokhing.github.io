@@ -42,31 +42,31 @@ function classNames(...classes: string[]) {
 
 export default function Navigationbar() {
   const pathname = usePathname();
-  // const { selected, setSelected } = useNavigation();
+  const { selected, setSelected } = useNavigation();
 
 
-  const [selected, setSelected] = useState(() => {
-    const navIndex = findNavigationIndex(pathname, navigation);
-    return navigation[navIndex].name;
-  });
+  // const [selected, setSelected] = useState(() => {
+  //   const navIndex = findNavigationIndex(pathname, navigation);
+  //   return navigation[navIndex].name;
+  // });
 
   // const [breadcrumb, setBreadcrumb] = useState(() => generateBreadcrumb(pathname, navigation));
   
 
 
-  // useEffect(() => {
-  //   const navIndex = findNavigationIndex(pathname, navigation);
-  //   setSelected(navigation[navIndex].name);
-  // // }, [pathname, setSelected]);
+  useEffect(() => {
+    const navIndex = findNavigationIndex(pathname, navigation);
+    setSelected(navigation[navIndex].name);
+  }, [pathname, setSelected]);
   //   }, [pathname]);
 
 
-  useEffect(() => {
-    window.addEventListener('beforeunload', () => {
-      const navIndex = findNavigationIndex(pathname, navigation);
-      setSelected(navigation[navIndex].name);  
-    });
-    }, [pathname]);
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', () => {
+  //     const navIndex = findNavigationIndex(pathname, navigation);
+  //     setSelected(navigation[navIndex].name);  
+  //   });
+  //   }, [pathname]);
 
   // useEffect(() => {
   //   window.addEventListener('beforeunload', () => {
