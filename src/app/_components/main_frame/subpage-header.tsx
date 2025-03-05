@@ -18,19 +18,21 @@ const SubpageHeader = ({
     const modifiedSubPath = subPath.substring(0, subPath.indexOf('/'));
     const endsWithModifiedSubPath = usePathname().endsWith('/'+ modifiedSubPath);
   return (
-    <h2 className="truncate text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
-      <Link href="../../" className="hover:underline" onClick={() => setSelected('Home')}>
-        Home
-      </Link>
-      &nbsp;/&nbsp;
-      {endsWithModifiedSubPath ? (
-        <span>{modifiedSubPath}</span>
-      ) : (
-        <Link href="../" className="hover:underline" onClick={() => setSelected(modifiedSubPath)}>
-        {modifiedSubPath}
+    <h2 className="text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
+      <div className="truncate">
+        <Link href="../../" className="hover:underline" onClick={() => setSelected('Home')}>
+          Home
         </Link>
-      )}
-      &nbsp;/&nbsp;{title}
+        &nbsp;/&nbsp;
+        {endsWithModifiedSubPath ? (
+          <span>{modifiedSubPath}</span>
+        ) : (
+          <Link href="../" className="hover:underline" onClick={() => setSelected(modifiedSubPath)}>
+          {modifiedSubPath}
+          </Link>
+        )}
+        &nbsp;/&nbsp;{title}
+      </div>
     </h2>
   );
 };
