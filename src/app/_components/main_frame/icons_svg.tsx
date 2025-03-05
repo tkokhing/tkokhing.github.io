@@ -157,11 +157,51 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ height = "50", fillColo
       {hoverOn && (
         <g fill={hoverColour} opacity="1.000000">
           <rect x="27" y="14.9936" width="1127" height="303.871" stroke={hoverColour} strokeWidth="7.66992" strokeMiterlimit="8" fill="none" />
-          <path d="M331.5 36.4845 331.5 298.085" stroke={hoverColour} strokeWidth="6.6695" strokeMiterlimit="8" fill="none" fill-rule="evenodd" />
+          <path d="M331.5 36.4845 331.5 298.085" stroke={hoverColour} strokeWidth="6.6695" strokeMiterlimit="8" fill="none" fillRule="evenodd" />
           <text fontFamily="Georgia,Georgia_MSFontService,sans-serif" fontWeight="400" fontSize="184" transform="matrix(1 0 0 0.999576 487.858 233)">Topics</text>
           <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="matrix(1 0 0 0.999576 52.9812 139)">A</text>
           <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="128" transform="matrix(1 0 0 0.999576 235.058 293)">Z</text>
           <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontStyle="italic" fontWeight="400" fontSize="53" transform="matrix(1 0 0 0.999576 155.437 192)">to</text>
+        </g>
+      )}
+    </svg>
+  );
+};
+
+export const ResearchWithTextIcon: React.FC<IconProps> = ({ height = "50", fillColour = "#0071C1", hoverColour = "#D9F99D" }) => {
+  const [hoverOn, setHover] = useState(false);
+
+  return (
+    <svg
+      version="1.1"
+      viewBox={hoverOn ? "0 0 1179 333" : "0 0 359 333"}
+      xmlns="http://www.w3.org/2000/svg"
+      x="0" y="0"
+      width="100%"
+      height={height}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <g fill={fillColour} fillRule="evenodd" opacity={hoverOn ? "0.000000" : "1.000000"}>
+        <rect x="27" y="15" width="304" height="304" stroke={fillColour} strokeWidth="7.66667" strokeMiterlimit="8" fill="none"/>
+        <path d="M82.0795 43.8114 200.429 72.4958C215.932 76.2532 220.034 51.9874 210.775 91.1439 201.516 130.3 208.542 106.743 193.04 102.986L74.6897 74.3016C59.187 70.5442 48.2711 60.6726 50.3118 52.2525 52.3526 43.8324 66.5769 40.0541 82.0795 43.8114Z" stroke={fillColour} strokeWidth="4" strokeMiterlimit="8" fill="none"/>
+        <path d="M174 294.228 202.951 139.089C202.951 126.943 164.14 128.259 227.75 128.089 291.361 127.918 252.55 126.943 252.55 139.089 252.55 169.994 281 261.734 281 292.639 281 304.785 245.085 304.57 227.252 304.835 209.419 305.101 174 306.373 174 294.228Z" stroke={fillColour} strokeWidth="4" strokeMiterlimit="8" fill="none"/>
+        <path d="M174 294.212 192.864 201.998C192.864 189.835 217.254 203.513 229.011 192.243 240.768 180.974 260.403 170.199 260.403 182.362 265.027 212.893 281 261.672 281 292.621 281 304.784 245.085 304.569 227.252 304.835 209.419 305.101 174 306.375 174 294.212Z"/>
+        <path d="M0 14C-1.59142e-15 6.26801 5.59644-1.78239e-15 12.5-3.56477e-15 19.4036-7.12955e-15 25 6.26801 25 14 25 21.732 19.4036 28 12.5 28 5.59644 28-7.95708e-15 21.732 0 14Z" transform="matrix(1.83697e-16 1 1 -1.83697e-16 220 93.0001)"/>
+        <path d="M0 7.5C-9.5485e-16 3.35786 3.35786 -9.5485e-16 7.5-1.9097e-15 11.6421-3.8194e-15 15 3.35786 15 7.5 15 11.6421 11.6421 15 7.5 15 3.35786 15-4.77425e-15 11.6421 0 7.5Z" transform="matrix(1.83697e-16 1 1 -1.83697e-16 233 53)"/>
+        <path d="M0 8C-9.5485e-16 3.58172 3.35786-1.01851e-15 7.5-2.03701e-15 11.6421-4.07403e-15 15 3.58172 15 8 15 12.4183 11.6421 16 7.5 16 3.35786 16-4.77425e-15 12.4183 0 8Z" transform="matrix(1.83697e-16 1 1 -1.83697e-16 252 78.0001)"/>      
+      </g>
+      {hoverOn && (
+        <g fill={hoverColour} opacity="1.000000">
+          <rect x="27" y="14.9936" width="1127" height="303.871" stroke={hoverColour} strokeWidth="7.66992" strokeMiterlimit="8" fill="none"/>
+          <path d="M331.5 36.4845 331.5 298.085" stroke={hoverColour} strokeWidth="6.6695" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
+          <path d="M82.1144 43.8114 200.515 72.4958C216.024 76.2532 220.128 51.9874 210.864 91.1439 201.601 130.3 208.631 106.743 193.121 102.986L74.7213 74.3016C59.2121 70.5442 48.2915 60.6726 50.3332 52.2525 52.3748 43.8324 66.6051 40.0541 82.1144 43.8114Z" stroke={hoverColour} strokeWidth="4" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
+          <path d="M174 294.103 202.951 139.03C202.951 126.889 164.14 128.205 227.75 128.034 291.361 127.863 252.55 126.889 252.55 139.03 252.55 169.922 281 261.623 281 292.515 281 304.656 245.085 304.44 227.252 304.706 209.419 304.972 174 306.243 174 294.103Z" stroke={hoverColour} strokeWidth="4" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
+          <text font-family="Georgia,Georgia_MSFontService,sans-serif" font-weight="400" font-size="184" transform="matrix(1 0 0 0.999576 369.991 233)">Research</text>
+          <path d="M174 294.088 192.864 201.912C192.864 189.754 217.254 203.426 229.011 192.162 240.768 180.897 260.403 170.127 260.403 182.285 265.027 212.803 281 261.561 281 292.497 281 304.655 245.085 304.44 227.252 304.706 209.419 304.972 174 306.245 174 294.088Z" fillRule="evenodd"/>
+          <path d="M0 13.9941C-1.59074e-15 6.26536 5.59407-1.78163e-15 12.4947-3.56326e-15 19.3953-7.12653e-15 24.9894 6.26536 24.9894 13.9941 24.9894 21.7228 19.3953 27.9881 12.4947 27.9881 5.59407 27.9881-7.95371e-15 21.7228 0 13.9941Z" fillRule="evenodd" transform="matrix(1.83775e-16 1 1.00042 -1.83697e-16 220 92.9606)"/>
+          <path d="M0 7.99659C-9.54442e-16 3.58019 3.35643-1.01807e-15 7.4968-2.03614e-15 11.6372-4.07229e-15 14.9936 3.58019 14.9936 7.99659 14.9936 12.413 11.6372 15.9932 7.4968 15.9932 3.35643 15.9932-4.77221e-15 12.413 0 7.99659Z" fillRule="evenodd" transform="matrix(1.83775e-16 1 1.00042 -1.83697e-16 233 52.9776)"/>
+          <path d="M0 7.99659C-9.54442e-16 3.58019 3.35643-1.01807e-15 7.4968-2.03614e-15 11.6372-4.07229e-15 14.9936 3.58019 14.9936 7.99659 14.9936 12.413 11.6372 15.9932 7.4968 15.9932 3.35643 15.9932-4.77221e-15 12.413 0 7.99659Z" fillRule="evenodd" transform="matrix(1.83775e-16 1 1.00042 -1.83697e-16 252 77.967)"/>
         </g>
       )}
     </svg>
@@ -300,6 +340,7 @@ export default {
   HomeWithTextIcon,
   BlogWithTextIcon,
   TopicWithTextIcon,
+  ResearchWithTextIcon,
   SystemModeIcon,
   DarkModeIcon,
   LightModeIcon,

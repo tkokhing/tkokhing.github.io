@@ -6,12 +6,13 @@ import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
-import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon } from "@/app/_components/main_frame/icons_svg";
+import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, ResearchWithTextIcon } from "@/app/_components/main_frame/icons_svg";
 
 const navigation = [
   { name: 'Home', href: '/', icon: HomeWithTextIcon },
   { name: 'Blog', href: '/blog', icon: BlogWithTextIcon },
   { name: 'Topics', href: '/topics', icon: TopicWithTextIcon },
+  { name: 'Research', href: '/research', icon: ResearchWithTextIcon },
 ];
 
 const findNavigationIndex = (pathName: string, navigation: { name: string; href: string; icon: any }[]) => {
