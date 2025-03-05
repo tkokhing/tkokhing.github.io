@@ -18,7 +18,7 @@ const SubpageHeader = ({
     const modifiedSubPath = subPath.substring(0, subPath.indexOf('/'));
     const endsWithModifiedSubPath = usePathname().endsWith('/'+ modifiedSubPath);
   return (
-    <h2 className="text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
+    <h2 className="truncate text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
       <Link href="../../" className="hover:underline" onClick={() => setSelected('Home')}>
         Home
       </Link>
