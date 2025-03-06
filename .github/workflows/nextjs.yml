@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout full branches
         uses: actions/checkout@v4
-      - name: Checkout blog folder in private repo
+      - name: Checkout [topic_post] private repo
         uses: actions/checkout@v4
         with:
           repository: tkokhing/topic_post
@@ -30,23 +30,38 @@ jobs:
         id: move_topics_post
         run: |
           echo "Present working directory---->: $(pwd)"
-          echo "ls -lha ---->:"
-          ls -lha .
           mkdir _topics
           mv ./temp_topic/_topics/*.mdx ./_topics
           rm -rf ./temp_topic
-      - name: Checkout blog folder in private repo
+          echo "ls -lha ---->:"
+          ls -lha .
+      - name: Checkout [blog_post] private repo
         uses: actions/checkout@v4
         with:
           repository: tkokhing/blog_post
           token: ${{ secrets.PULL_POST_TOKEN }}
           path: _posts
-      - name: Move blog post to correct level
+      - name: Move [_posts] to correct level
         id: move_blog_post
         run: |
           mv ./_posts/_posts/*.mdx _posts
           rm ./_posts/README.md
           find ./_posts -mindepth 1 -depth -type d ! -name "*.mdx" -exec rm -r {} +
+      - name: Checkout [linux_post] private repo
+        uses: actions/checkout@v4
+        with:
+          repository: tkokhing/linux_post
+          token: ${{ secrets.PULL_LINUX_TOKEN }}
+          path: temp_linux
+      - name: Move [_linux] folder to correct level
+        id: move_linux_post
+        run: |
+          echo "Present working directory---->: $(pwd)"
+          mkdir _linux
+          mv ./temp_linux/_linux/*.mdx ./_linux
+          rm -rf ./temp_linux
+          echo "ls -lha ---->:"
+          ls -lha .
       - name: Verify PWD 
         id: present-working-directory
         run: |
@@ -59,6 +74,8 @@ jobs:
           ls -lha ./_topics
           echo "Advance check on blog post loaded onto ./_posts"
           ls -lha ./_posts
+          echo "Advance check on linux post loaded onto ./_linux"
+          ls -lha ./_linux
       - name: Detect package manager
         id: detect-package-manager
         run: |
