@@ -8,11 +8,16 @@ function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
 
-export function postsDirectory(subPath: string): string {
+function postsDirectory(subPath: string): string{
+  fs.readdir((join(process.cwd(), subPath)), (err) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+    }
+  })
   return join(process.cwd(), subPath);
 }
 
-export function getPostSlugs(subPath: string) {
+function getPostSlugs(subPath: string) {
   return fs.readdirSync(postsDirectory(subPath));
 }
 

@@ -37,7 +37,7 @@ export function HeroPost(
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link href={`/${subPath}/${slug}`} className="hover:underline">
               {title}
-              <p className="mb-4 md:mb-0 text-lg">
+              <p className="mb-4 md:mb-0 text-lg italic">
                 {postStatus} < DateFormatter dateString={date} />
               </p>
             </Link>

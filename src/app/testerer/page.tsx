@@ -5,19 +5,19 @@ import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import SectionSeparator from "@/app/_components/section-separator";
 import styles from "@/app/_components/main_frame/icon_svg.module.css";
 // import SvgNavBar from "../_components/svg-nav-bar";
-import Navber from "@/app/_components/navbar"
-import Navber1 from "@/app/_components/navbar1"
-import Navber2 from "@/app/_components/navbar2"
+// import Navber from "@/app/_components/navbar"
+// import Navber1 from "@/app/_components/navbar1"
+// import Navber2 from "@/app/_components/navbar2"
 
 export default function Testerer() {
   return (
     <main>
-      <Navber />
+      {/* <Navber />
       Above is Navbar
       <Navber1 />
       Above is Navbar1
       <Navber2 />
-      Above is Navbar2
+      Above is Navbar2 */}
       <Container>
       <h1 className="title">
         Welcome to <a href="https://tkokhing.github.io/">my technical blog!</a>

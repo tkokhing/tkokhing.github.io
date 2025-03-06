@@ -1,14 +1,15 @@
 import Container from "@/app/_components/container";
-import MyTest from "@/app/_components/mytest";
-import MyTest2 from "@/app/_components/mytest2";
+// import MyTest from "@/app/_components/mytest";
+// import MyTest2 from "@/app/_components/mytest2";
 
 export default function Index() {
 
   return (
     <main>
       <Container>
-        <MyTest />
-        <MyTest2 />
+        <h1> This page is for logic testing only...</h1>
+        {/* <MyTest />
+        <MyTest2 /> */}
 
       </Container>
     </main>
