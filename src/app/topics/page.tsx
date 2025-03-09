@@ -11,8 +11,8 @@ export default function Index() {
   return (
     <main>
       <Container>
-        <SubpageHeader subPath={heroPost.subPath} title={""}/>
-        <HeroPost
+      <SubpageHeader />
+      <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
           date={heroPost.date}

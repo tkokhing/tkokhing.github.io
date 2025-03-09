@@ -5,7 +5,7 @@ export default function Research() {
   return (
     <main>
       <Container>
-      <SubpageHeader subPath={"research/title"} title={""}/>
+      <SubpageHeader />
 
       <h1 className="title">
         Welcome to <a href="https://tkokhing.github.io/">my technical blog!</a>

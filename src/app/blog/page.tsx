@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <main>
       <Container>
-        <SubpageHeader subPath={heroPost.subPath} title={""}/>
+        <SubpageHeader />
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}

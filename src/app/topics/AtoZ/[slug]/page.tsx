@@ -17,8 +17,8 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <SubpageHeader subPath={post.subPath} title={post.title}/>
-        <article className="mb-32">
+      <SubpageHeader />
+      <article className="mb-32">
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}

@@ -4,53 +4,43 @@ import Link from "next/link";
 import {usePathname} from "next/navigation";
 import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
 
-type Props = {
-  title: string;
-  subPath: string;
-};
-
-const SubpageHeader = ({
-  title,
-  subPath,
-}:Props) => 
+const SubpageHeader = () => 
   {
     const { setSelected } = useNavigation();
-
-    const segments = subPath.split('/');
+    const pathname = usePathname();
+    const segments = pathname.split('/').filter(segment => segment);
     const generateBreadcrumbs = () => {
       const breadcrumbs: JSX.Element[] = [];
       let path = '';
-  
+      
+      breadcrumbs.push(
+        <Link key="home" href={'/'} className="hover:underline">
+          Home
+        </Link>
+      );
       segments.forEach((segment, index) => {
         path += `/${segment}`;
-        breadcrumbs.push(
-          <span key={index}>&nbsp;/&nbsp;</span>,
-          <Link key={path} href={path} className="hover:underline" onClick={() => setSelected(segment)} >
-            {segment}
-          </Link>
-        );
+        if (index < segments.length - 1) {
+          breadcrumbs.push(
+            <span key={`separator-${index}`}>&nbsp;/&nbsp;</span>,
+            <Link key={path} href={path} className="hover:underline">
+              {segment}
+            </Link>
+          );
+        } else {
+          breadcrumbs.push(
+            <span key={`separator-${index}`}>&nbsp;/&nbsp;</span>,
+            <span key={path}>{segment}</span>
+          );
+        }
       });
-      const subheader = breadcrumbs.slice(1);
-      return subheader;
-    };
-  
+      return breadcrumbs;
+      };
 
-    const modifiedSubPath = subPath.substring(0, subPath.indexOf('/'));
-    const endsWithModifiedSubPath = usePathname().endsWith('/'+ modifiedSubPath);
   return (
     <h2 className="uppercase text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
       <div className="truncate">
-        <Link href="../../" className="hover:underline" onClick={() => setSelected('Home')}>
-          HOME
-        </Link>
-        &nbsp;/&nbsp;
-        {endsWithModifiedSubPath ? (
-          <span>{modifiedSubPath}</span>
-        ) : (
-          <span>{generateBreadcrumbs()}</span>
-
-        )}
-      &nbsp;/&nbsp;{title}
+        {generateBreadcrumbs()}
       </div>
     </h2>
   );
