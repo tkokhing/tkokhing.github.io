@@ -33,6 +33,7 @@ const config: Config = {
         "accent-2": "#EAEAEA",
         "accent-7": "#333",
         "tkokhing-blue": "#0071C1",
+        "tkokhing-dark":"#D9F99D",
         success: "#0070f3",
         cyan: "#79FFE1",
       },

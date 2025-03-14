@@ -4,7 +4,7 @@ import Alert from "@/app/_components/main_frame/alert";
 import Navigationbar from "@/app/_components/main_frame/navi_bar"
 import { NavigationProvider } from "./_components/main_frame/NavigationContext";
 import Footer from "@/app/_components/main_frame/footer";
-import { TKOKHING_ICON_ANI_GIF_URL } from "@/lib/constants";
+import { T_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'tkokhing',
     description: 'This is my blog',
-    images: [TKOKHING_ICON_ANI_GIF_URL],
+    images: [T_ANI_GIF_URL],
   },
 }
 

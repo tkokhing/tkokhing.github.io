@@ -1,7 +1,12 @@
 "use client"
+import Image from "next/image";
 import Container from "@/app/_components/container";
 import { SquareBoxIcon, RectangleBoxIcon, HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, SystemModeIcon, DarkModeIcon, LightModeIcon } from "@/app/_components/main_frame/icons_svg";
+// import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
+
+import { T_ANI_GIF_URL } from "@/lib/constants";
+
 import SectionSeparator from "@/app/_components/section-separator";
 import styles from "@/app/_components/main_frame/icon_svg.module.css";
 // import SvgNavBar from "../_components/svg-nav-bar";
@@ -27,7 +32,15 @@ export default function Testerer() {
       <ul className="para_one">
         <p>Created for learning how the different programming languages and frameworks work together. To explore new concepts and create a demo to share online.</p>
       </ul>
-
+        <ProfileLogoSVG />
+        
+    <Image 
+      className=""
+      src={T_ANI_GIF_URL}
+      alt={`Cover Image for`}
+      width={80}
+      height={80}
+    />
       <div className={styles.switch}>
         <h1>My Testing SVG Icons default || strokeColour=white, Hover on stroke: yellow </h1>
         <h1>My Icon Result:   </h1>

@@ -23,7 +23,7 @@ export const SquareBoxIcon = ({ fillColour = "#0071C1" }) => {
     >
       {/* display square box */}
       <g>
-        <rect x="0" y="0" width="359" height="333" fill="#FFFFFF" />
+        <rect x="0" y="0" width="359" height="333" fill={fillColour} />
       </g>
     </svg>
   );
@@ -197,7 +197,7 @@ export const ResearchWithTextIcon: React.FC<IconProps> = ({ height = "50", fillC
           <path d="M331.5 36.4845 331.5 298.085" stroke={hoverColour} strokeWidth="6.6695" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
           <path d="M82.1144 43.8114 200.515 72.4958C216.024 76.2532 220.128 51.9874 210.864 91.1439 201.601 130.3 208.631 106.743 193.121 102.986L74.7213 74.3016C59.2121 70.5442 48.2915 60.6726 50.3332 52.2525 52.3748 43.8324 66.6051 40.0541 82.1144 43.8114Z" stroke={hoverColour} strokeWidth="4" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
           <path d="M174 294.103 202.951 139.03C202.951 126.889 164.14 128.205 227.75 128.034 291.361 127.863 252.55 126.889 252.55 139.03 252.55 169.922 281 261.623 281 292.515 281 304.656 245.085 304.44 227.252 304.706 209.419 304.972 174 306.243 174 294.103Z" stroke={hoverColour} strokeWidth="4" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
-          <text font-family="Georgia,Georgia_MSFontService,sans-serif" font-weight="400" font-size="184" transform="matrix(1 0 0 0.999576 369.991 233)">Research</text>
+          <text fontFamily="Georgia,Georgia_MSFontService,sans-serif" fontWeight="400" fontSize="184" transform="matrix(1 0 0 0.999576 369.991 233)">Research</text>
           <path d="M174 294.088 192.864 201.912C192.864 189.754 217.254 203.426 229.011 192.162 240.768 180.897 260.403 170.127 260.403 182.285 265.027 212.803 281 261.561 281 292.497 281 304.655 245.085 304.44 227.252 304.706 209.419 304.972 174 306.245 174 294.088Z" fillRule="evenodd"/>
           <path d="M0 13.9941C-1.59074e-15 6.26536 5.59407-1.78163e-15 12.4947-3.56326e-15 19.3953-7.12653e-15 24.9894 6.26536 24.9894 13.9941 24.9894 21.7228 19.3953 27.9881 12.4947 27.9881 5.59407 27.9881-7.95371e-15 21.7228 0 13.9941Z" fillRule="evenodd" transform="matrix(1.83775e-16 1 1.00042 -1.83697e-16 220 92.9606)"/>
           <path d="M0 7.99659C-9.54442e-16 3.58019 3.35643-1.01807e-15 7.4968-2.03614e-15 11.6372-4.07229e-15 14.9936 3.58019 14.9936 7.99659 14.9936 12.413 11.6372 15.9932 7.4968 15.9932 3.35643 15.9932-4.77221e-15 12.413 0 7.99659Z" fillRule="evenodd" transform="matrix(1.83775e-16 1 1.00042 -1.83697e-16 233 52.9776)"/>
@@ -309,6 +309,7 @@ export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "
 
 export const ProfileLogoSVG = () => (
   <svg
+    className="svg-element"
     viewBox="0 0 1473 416"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -317,7 +318,7 @@ export const ProfileLogoSVG = () => (
     <title>Learning never stops</title>
     <desc>tkokhing svg icon</desc>
 
-    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" stroke="none" className="fill-tkokhing-blue dark:fill-lime-100">
+    <g transform="translate(0.000000,416) scale(0.100000,-0.100000)" stroke="none" className="fill-tkokhing-blue dark:fill-tkokhing-dark">
       <path d="M1000 3850 l0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 -130z" />
       <path d="M1000 3200 l0 -260 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 150 0 150 0 0 130 0 130 300 0 300 0 0 -130 0 -130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -300 0 -300 0 0 130 0 130 150 0 150 0 0 260 0 260 -150 0 -150 0 0 -260z" />
       <path d="M2500 3330 l0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 -130 0 -130 -300 0 -300 0 0 -130 0 -130 300 0 300 0 0 -130 0 -130 -150 0 -150 0 0 -390 0 -390 150 0 150 0 0 390 0 390 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 150 0 150 0 0 -130 0 -130 300 0 300 0 0 130 0 130 -300 0 -300 0 0 130 0 130 -150 0 -150 0 0 130 0 130 -150 0 -150 0 0 130 0 130 450 0 450 0 0 130 0 130 -450 0 -450 0 0 130 0 130 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 -130 0 -130 -150 0 -150 0 0 385 0 385 150 0 150 0 0 135 0 135 -150 0 -150 0 0 -130z m300 -1300 l0 -130 -150 0 -150 0 0 130 0 130 150 0 150 0 0 -130z" />

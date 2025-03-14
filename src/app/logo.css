@@ -29,3 +29,19 @@
 [data-mode="dark"] .logo-image {
   --logo-filter: invert(70%) brightness(100%);
 }
+
+@keyframes contrast {
+  0% {
+    filter: contrast(100%);
+  }
+  50% {
+    filter: contrast(200%);
+  }
+  100% {
+    filter: contrast(100%);
+  }
+}
+
+.svg-element {
+  animation: contrast 3s ease-in-out infinite;
+}
