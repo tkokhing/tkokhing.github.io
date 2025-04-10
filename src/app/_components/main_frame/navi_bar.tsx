@@ -56,7 +56,7 @@ export default function Navigationbar() {
       <Disclosure as="nav">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-30 items-center">
-            <div className="shrink-0 flex size-4 md:size-6">
+            <div className="shrink-0 flex size-48">
               <ProfileLogoSVG />
             </div>
             <div className="hidden md:block">
