@@ -20,6 +20,21 @@ jobs:
     steps:
       - name: Checkout full branches
         uses: actions/checkout@v4
+      - name: Checkout [public] private repo
+        uses: actions/checkout@v4
+        with:
+          repository: tkokhing/tkokhing_public
+          token: ${{ secrets.PULL_SUB_FOLDERS_OF_PUBLIC_TOKEN }}
+          path: temp_public
+      - name: Copy and move [public] folder to correct level
+        id: move_public_images
+        run: |
+          echo "Present working directory---->: $(pwd)"
+          mkdir public
+          mv ./temp_public/*.* ./public
+          rm -rf ./temp_public ./public/README.md
+          echo "ls -lha ---->:"
+          ls -lha .
       - name: Checkout [topic_post] private repo
         uses: actions/checkout@v4
         with:
