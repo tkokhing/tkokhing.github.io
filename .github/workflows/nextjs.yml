@@ -30,6 +30,8 @@ jobs:
         id: move_public_images
         run: |
           echo "Present working directory---->: $(pwd)"
+          echo "Present working directory---->: $(ls ./)"
+          rm -rf public
           mkdir public
           mv ./temp_public/*.* ./public
           rm -rf ./temp_public ./public/README.md
