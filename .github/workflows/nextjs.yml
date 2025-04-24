@@ -29,14 +29,20 @@ jobs:
       - name: Copy and move [public] folder to correct level
         id: move_public_images
         run: |
-          echo "Present working directory---->: $(pwd)"
-          echo "Present working directory---->: $(ls ./)"
+          echo "Present working directory---->:"
+          pwd
+          echo "list ---->:" 
+          ls ./
+          echo "ls ./temp_public ---->:"
+          ls ./temp_public
           rm -rf public
           mkdir public
           mv ./temp_public/*.* ./public
           rm -rf ./temp_public ./public/README.md
           echo "ls -lha ---->:"
           ls -lha .
+          echo "ls ./public ---->: $(ls ./public)"
+
       - name: Checkout [topic_post] private repo
         uses: actions/checkout@v4
         with:
