@@ -1,0 +1,10 @@
+.svg-hover-on:hover {
+    stroke-width: 5;
+    stroke: yellow;
+    /* for future use */
+}
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-start: flex-start;
+}

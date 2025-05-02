@@ -1,6 +1,6 @@
 
 
-import Alert from "@/app/_components/main_frame/alert";
+import AlertBar from "@/app/_components/main_frame/alert-bar";
 import Navigationbar from "@/app/_components/main_frame/navi_bar"
 import { NavigationProvider } from "./_components/main_frame/NavigationContext";
 import Footer from "@/app/_components/main_frame/footer";
@@ -10,7 +10,7 @@ import { Inter } from "next/font/google";
 import cn from "classnames";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 
-import "./globals.css";
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,7 +68,7 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50	text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
-        <Alert />
+        <AlertBar />
         <NavigationProvider>
           <Navigationbar />
           <ThemeSwitcher />

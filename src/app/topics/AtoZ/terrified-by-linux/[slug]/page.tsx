@@ -8,9 +8,20 @@ import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import { PostHeader } from "@/app/_components/post-header";
 import { PostBody } from "@/app/_components/post-body";
 
+import Alert from "@/app/_components/blog_frame/alert";
+import Note from "@/app/_components/blog_frame/note";
+import Tip from "@/app/_components/blog_frame/tip";
+
+
 export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug, "_linux");
+  const LinuxBlogComponents = {
+    Tip,
+    Note,
+    Alert,
+  };
+
   if (!post) {
     return notFound();
   }
@@ -27,7 +38,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-          <PostBody content={post.content} />
+          <PostBody content={post.content} components={LinuxBlogComponents} />
         </article>
       </Container>
     </main>

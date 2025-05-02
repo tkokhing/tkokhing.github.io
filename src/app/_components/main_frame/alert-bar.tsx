@@ -8,7 +8,7 @@ type Props = {
   preview?: boolean;
 };
 
-const Alert = ({ preview }: Props) => {
+const AlertBar = ({ preview }: Props) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -72,4 +72,4 @@ const Alert = ({ preview }: Props) => {
   );
 };
 
-export default Alert;
+export default AlertBar;

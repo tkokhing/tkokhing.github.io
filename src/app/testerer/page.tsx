@@ -8,7 +8,7 @@ import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import { T_ANI_GIF_URL } from "@/lib/constants";
 
 import SectionSeparator from "@/app/_components/section-separator";
-import styles from "@/app/_components/main_frame/icon_svg.module.css";
+import styles from "@/styles/icon_svg.module.css";
 // import SvgNavBar from "../_components/svg-nav-bar";
 // import Navber from "@/app/_components/navbar"
 // import Navber1 from "@/app/_components/navbar1"

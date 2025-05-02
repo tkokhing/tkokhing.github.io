@@ -1,0 +1,57 @@
+.alert, .note, .tip {
+  padding: 1em;
+  margin: 1.5em 0;
+  border-left: 8px solid;
+  border-radius: 6px;
+}
+
+.alert {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+}
+
+[data-mode="system"] .alert {
+  background-color: #f59e0b;
+  border-color: #fef3c7;
+  color: black;
+}
+
+[data-mode="dark"] .alert {
+  background-color: #f59e0b;
+  border-color: #fef3c7;
+  color: black;
+}
+
+.note {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+}
+
+[data-mode="system"] .note {
+  background-color: #10b981;
+  border-color: #ecfccb;
+  color: black;
+}
+
+[data-mode="dark"] .note {
+  background-color: #10b981;
+  border-color: #ecfccb;
+  color: black;
+}
+
+.tip {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+}
+
+[data-mode="system"] .tip {
+  background-color: #3b82f6;
+  border-color: #cffafe;
+  color: black;
+}
+
+[data-mode="dark"] .tip {
+  background-color: #3b82f6;
+  border-color: #cffafe;
+  color: black;
+}
