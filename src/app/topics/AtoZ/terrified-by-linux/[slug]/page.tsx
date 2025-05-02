@@ -1,4 +1,4 @@
-// pull from private repo: [tkokhing/topic_post]
+// pull from private repo: [tkokhing/linux_post]
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
