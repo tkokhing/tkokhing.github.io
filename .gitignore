@@ -22,7 +22,7 @@
 /_linux
 /_mdxposts
 /mytest
-# /public
+/public
 
 # production
 /build
