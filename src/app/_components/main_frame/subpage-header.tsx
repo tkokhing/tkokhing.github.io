@@ -44,11 +44,11 @@ const SubpageHeader = () => {
 
   return (
     <div className="sticky top-0 z-30 bg-slate-50 dark:bg-slate-900">
-      <div className="h-1 bg-sky-500 transition-all" style={{ width: `${scroll}%` }} />
       <Container>
         <h2 className="uppercase text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight py-4 flex items-center">
           <div className="truncate">{generateBreadcrumbs()}</div>
         </h2>
+      <div className="h-1 bg-sky-500 transition-all" style={{ width: `${scroll}%` }} />
         <hr className="w-full border-gray-400" />
       </Container>
     </div>
