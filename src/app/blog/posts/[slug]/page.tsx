@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import Container from "@/app/_components/container";
-import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import { PostHeader } from "@/app/_components/post-header";
 import { PostBody } from "@/app/_components/post-body";
 
@@ -17,7 +16,6 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-      <SubpageHeader />
       <article className="mb-32">
           <PostHeader
             title={post.title}

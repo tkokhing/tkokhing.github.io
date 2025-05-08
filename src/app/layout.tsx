@@ -3,6 +3,7 @@
 import AlertBar from "@/app/_components/main_frame/alert-bar";
 import Navigationbar from "@/app/_components/main_frame/navi_bar"
 import { NavigationProvider } from "./_components/main_frame/NavigationContext";
+import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import Footer from "@/app/_components/main_frame/footer";
 import { T_ANI_GIF_URL } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -72,7 +73,8 @@ export default function RootLayout({
         <NavigationProvider>
           <Navigationbar />
           <ThemeSwitcher />
-          <div className="min-h-screen">{children}</div>
+          <SubpageHeader />
+            <div className="min-h-screen">{children}</div>
           <Footer />
         </NavigationProvider>
       </body>

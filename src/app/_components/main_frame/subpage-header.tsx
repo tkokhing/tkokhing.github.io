@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
+import Container from "@/app/_components/container";
 
 const SubpageHeader = () => 
   {
@@ -38,11 +39,13 @@ const SubpageHeader = () =>
       };
 
   return (
+    <Container>
     <h2 className="uppercase text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
       <div className="truncate">
         {generateBreadcrumbs()}
       </div>
     </h2>
+    </Container>
   );
 };
 

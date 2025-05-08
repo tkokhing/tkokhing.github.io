@@ -1,12 +1,9 @@
 import Container from "@/app/_components/container";
-import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 
 export default function Research() {
   return (
     <main>
       <Container>
-      <SubpageHeader />
-
       <h1 className="title">
         Welcome to <a href="https://tkokhing.github.io/">my technical blog!</a>
       </h1>

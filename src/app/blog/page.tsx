@@ -2,7 +2,6 @@ import Container from "@/app/_components/container";
 import { getAllPosts } from "@/lib/api";
 import { HeroPost } from "@/app/_components/hero-post";
 import { MoreStories } from "@/app/_components/more-stories";
-import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 
 export default function Index() {
   const allPosts = getAllPosts("_posts");
@@ -12,7 +11,6 @@ export default function Index() {
   return (
     <main>
       <Container>
-        <SubpageHeader />
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
