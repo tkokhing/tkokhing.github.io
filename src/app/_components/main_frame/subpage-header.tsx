@@ -1,51 +1,57 @@
 "use client"
 
-import Link from "next/link";
-import {usePathname} from "next/navigation";
-import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
-import Container from "@/app/_components/container";
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { useNavigation } from '@/app/_components/main_frame/NavigationContext';
+import Container from '@/app/_components/container';
 
-const SubpageHeader = () => 
-  {
-    const { setSelected } = useNavigation();
-    const pathname = usePathname();
-    const segments = pathname.split('/').filter(segment => segment);
-    const generateBreadcrumbs = () => {
-      const breadcrumbs: JSX.Element[] = [];
-      let path = '';
-      
-      breadcrumbs.push(
-        <Link key="home" href={'/'} className="hover:underline">
-          Home
-        </Link>
-      );
-      segments.forEach((segment, index) => {
+const SubpageHeader = () => {
+  const [scroll, setScroll] = useState(0);
+  const pathname = usePathname();
+  const { setSelected } = useNavigation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      setScroll(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const segments = pathname.split('/').filter(Boolean);
+  const generateBreadcrumbs = () => {
+    let path = '';
+    return [
+      <Link key="home" href="/" className="hover:underline">Home</Link>,
+      ...segments.flatMap((segment, index) => {
         path += `/${segment}`;
-        if (index < segments.length - 1) {
-          breadcrumbs.push(
-            <span key={`separator-${index}`}>&nbsp;/&nbsp;</span>,
-            <Link key={path} href={path} className="hover:underline">
-              {segment}
-            </Link>
-          );
-        } else {
-          breadcrumbs.push(
-            <span key={`separator-${index}`}>&nbsp;/&nbsp;</span>,
+        return [
+          <span key={`sep-${index}`}>&nbsp;/&nbsp;</span>,
+          index < segments.length - 1 ? (
+            <Link key={path} href={path} className="hover:underline">{segment}</Link>
+          ) : (
             <span key={path}>{segment}</span>
-          );
-        }
-      });
-      return breadcrumbs;
-      };
+          ),
+        ];
+      }),
+    ];
+  };
 
   return (
-    <Container>
-    <h2 className="uppercase text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight mb-20 mt-8 flex items-center">
-      <div className="truncate">
-        {generateBreadcrumbs()}
-      </div>
-    </h2>
-    </Container>
+    <div className="sticky top-0 z-30 bg-slate-50 dark:bg-slate-900">
+      <div className="h-1 bg-sky-500 transition-all" style={{ width: `${scroll}%` }} />
+      <Container>
+        <h2 className="uppercase text-1xl md:text-2xl font-light tracking-tight md:tracking-tighter leading-tight py-4 flex items-center">
+          <div className="truncate">{generateBreadcrumbs()}</div>
+        </h2>
+        <hr className="w-full border-gray-400" />
+      </Container>
+    </div>
   );
 };
 
