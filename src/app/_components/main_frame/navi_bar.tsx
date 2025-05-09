@@ -65,6 +65,7 @@ export default function Navigationbar() {
                   <a
                     key={item.name}
                     href={item.href}
+                    aria-label="NavigationBar"
                     aria-current={selected === item.name ? 'page' : undefined}
                     className={classNames(
                       selected === item.name ? 'bg-gray-700 dark:bg-gray-600' : 'text-sky-800 hover:bg-gray-500',
