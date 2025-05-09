@@ -8,22 +8,22 @@ function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
 
-function postsDirectory(subPath: string): string{
-  fs.readdir((join(process.cwd(), subPath)), (err) => {
+function postsDirectory(mdx_folder: string): string{
+  fs.readdir((join(process.cwd(), mdx_folder)), (err) => {
     if (err) {
       console.error('Error reading directory:', err);
     }
   })
-  return join(process.cwd(), subPath);
+  return join(process.cwd(), mdx_folder);
 }
 
-function getPostSlugs(subPath: string) {
-  return fs.readdirSync(postsDirectory(subPath));
+function getPostSlugs(mdx_folder: string) {
+  return fs.readdirSync(postsDirectory(mdx_folder));
 }
 
-export function getPostBySlug(slug: string, subPath: string){
+export function getPostBySlug(slug: string, mdx_folder: string){
   const realSlug = slug.replace(/\.mdx?$/, "");
-  const fullPath = join(postsDirectory(subPath), `${realSlug}.mdx`);
+  const fullPath = join(postsDirectory(mdx_folder), `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const BASE_PATH = useBasePath();
@@ -35,8 +35,8 @@ export function getPostBySlug(slug: string, subPath: string){
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts(subPath: string): Post[] {
-  const slugs = getPostSlugs(subPath);
-  const posts = slugs.map((slug) => getPostBySlug(slug, subPath));
+export function getAllPosts(mdx_folder: string): Post[] {
+  const slugs = getPostSlugs(mdx_folder);
+  const posts = slugs.map((slug) => getPostBySlug(slug, mdx_folder));
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
