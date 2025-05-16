@@ -1,4 +1,5 @@
 // pull from private repo: [tkokhing/topic_post/_topics] MDX_FOLDER
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/container";
 import { PostHeader } from "@/app/_components/post-header";
@@ -9,8 +10,14 @@ import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
 
 const MDX_FOLDER = "_topics"; 
 
-export default async function Post({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug, MDX_FOLDER);
+type Params = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+export default async function Post(props: Params) {
+  const params = await props.params;  const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post) return notFound();
  
   return (
@@ -32,7 +39,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
   );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(props: Params): Promise<Metadata> {
+  const params = await props.params;
   return generatePageMetadata(params.slug, MDX_FOLDER);
 }
 

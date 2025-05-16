@@ -49,14 +49,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
-        <AlertBar />
+        <ThemeSwitcher />
         <NavigationProvider>
+        <AlertBar />
           <Navigationbar />
-          <ThemeSwitcher />
           <SubpageHeader />
           <div className="min-h-screen">{children}</div>
           <Footer />
