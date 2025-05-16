@@ -6,7 +6,7 @@
   display: inline-block;
   color: currentColor;
   border-radius: 50%;
-  border: 1.5px dashed currentColor;
+  border: 1.6px dashed currentColor;
   cursor: pointer;
   --size: 24px;
   height: var(--size);
