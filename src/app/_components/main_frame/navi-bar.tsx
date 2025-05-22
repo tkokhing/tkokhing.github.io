@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useNavigation } from "@/app/_components/main_frame/NavigationContext";
+import { useNavigation } from "@/app/_components/main_frame/navigation-context";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";

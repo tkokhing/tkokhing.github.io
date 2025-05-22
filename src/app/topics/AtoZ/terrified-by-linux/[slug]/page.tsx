@@ -11,6 +11,7 @@ import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
 import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
+import CodeLine from "@/app/_components/blog_frame/codeline";
 
 const MDX_FOLDER = "_linux"; 
 
@@ -27,6 +28,7 @@ export default async function Post(props: Params) {
     Tip,
     Note,
     Alert,
+    CodeLine,
   };
   if (!post) return notFound();
  

@@ -5,8 +5,9 @@ import type { Metadata } from "next";
 import type { Viewport } from 'next'
 
 import AlertBar from "@/app/_components/main_frame/alert-bar";
-import Navigationbar from "@/app/_components/main_frame/navi_bar";
-import { NavigationProvider } from "./_components/main_frame/NavigationContext";
+import Navigationbar from "@/app/_components/main_frame/navi-bar";
+import { NavigationProvider } from "@/app/_components/main_frame/navigation-context";
+import { FontSizeProvider } from "@/app/_components/main_frame/font-size-ctrl";
 import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import Footer from "@/app/_components/main_frame/footer";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
@@ -55,11 +56,13 @@ export default function RootLayout({
       >
         <ThemeSwitcher />
         <NavigationProvider>
+        <FontSizeProvider >
         <AlertBar />
-          <Navigationbar />
-          <SubpageHeader />
-          <div className="min-h-screen">{children}</div>
-          <Footer />
+        <Navigationbar />
+        <SubpageHeader />
+        <div className="min-h-screen">{children}</div>
+        <Footer />
+        </FontSizeProvider>
         </NavigationProvider>
       </body>
     </html>
