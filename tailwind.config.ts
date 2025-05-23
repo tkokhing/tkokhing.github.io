@@ -58,5 +58,12 @@ const config: Config = {
   plugins: [
     require("@tailwindcss/typography"),
   ],
+  safelist: [
+    'prose-sm',
+    'prose-base',
+    'prose-lg',
+    'prose-xl',
+    'prose-2xl',
+  ],
 };
 export default config;

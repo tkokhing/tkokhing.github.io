@@ -54,7 +54,7 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
         <NavigationProvider>
         <FontSizeProvider >
         <AlertBar />

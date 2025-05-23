@@ -1,49 +1,59 @@
+//new
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-const FontSizeContext = createContext({
+const sizes = ['sm', 'base', 'lg', 'xl', '2xl'];
+
+type FontSizeType = typeof sizes[number];
+
+interface FontSizeContextType {
+  fontSize: FontSizeType;
+  setFontSize: (size: FontSizeType) => void;
+  increaseFont: () => void;
+  decreaseFont: () => void;
+}
+
+const FontSizeContext = createContext<FontSizeContextType>({
   fontSize: 'base',
+  setFontSize: () => {},
   increaseFont: () => {},
   decreaseFont: () => {},
 });
 
 export const FontSizeProvider = ({ children }: { children: ReactNode }) => {
-  const [fontSize, setFontSize] = useState('base');
-  const sizes = ['sm', 'base', 'lg', 'xl', '2xl'];
-  const currentIndex = sizes.indexOf(fontSize);
+  const [fontSize, setFontSize] = useState<FontSizeType>('base');
 
   const increaseFont = () => {
-    if (currentIndex < sizes.length - 1) {
-      setFontSize(sizes[currentIndex + 1]);
+    const index = sizes.indexOf(fontSize);
+    if (index < sizes.length - 1) {
+      setFontSize(sizes[index + 1]);
     }
   };
 
   const decreaseFont = () => {
-    if (currentIndex > 0) {
-      setFontSize(sizes[currentIndex - 1]);
+    const index = sizes.indexOf(fontSize);
+    if (index > 0) {
+      setFontSize(sizes[index - 1]);
     }
   };
 
-  // Keyboard shortcuts: Alt + = or Alt + -
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.altKey && e.key === '=') {
         e.preventDefault();
         increaseFont();
-      }
-      if (e.altKey && e.key === '-') {
+      } else if (e.altKey && e.key === '-') {
         e.preventDefault();
         decreaseFont();
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex]);
+  }, [fontSize]);
 
   return (
-    <FontSizeContext.Provider value={{ fontSize, increaseFont, decreaseFont }}>
+    <FontSizeContext.Provider value={{ fontSize, setFontSize, increaseFont, decreaseFont }}>
       {children}
     </FontSizeContext.Provider>
   );
