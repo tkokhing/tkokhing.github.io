@@ -96,13 +96,9 @@ export default function Navigationbar() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="space-x-10 items-center px-4 md:ml-6 flex flex-row">
-                <div className="flex justify-evenly">
-                  <FontSizeDropdown />
-                </div>
-                <div className="flex justify-evenly">
-                  <ThemeSwitcher />
-                </div>
+              <div className="space-x-10 items-center px-4 md:ml-6 flex flex-row justify-evenly">
+                <FontSizeDropdown />
+                <ThemeSwitcher />
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
@@ -119,13 +115,9 @@ export default function Navigationbar() {
           </div>
         </div>
         <DisclosurePanel className="md:hidden">
-          <div className="border-t border-gray-700 pb-3 pt-4 flex flex-row">
-            <div className="flex justify-evenly w-1/2">
-              <FontSizeDropdown />
-            </div>
-            <div className="flex justify-evenly w-1/2">
-              <ThemeSwitcher />
-            </div>
+          <div className="border-t border-gray-700 pb-3 pt-4 items-center flex flex-row justify-around">
+            <FontSizeDropdown />
+            <ThemeSwitcher />
           </div>
           <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             {navigation.map((item) => (

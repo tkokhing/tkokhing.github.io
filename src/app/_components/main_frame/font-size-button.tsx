@@ -25,7 +25,7 @@ export default function FontSizeDropdown() {
     <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <MenuButton 
-          className="p-2 h-15 w-15 relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+          className="p-2 h-15 w-15 relative flex max-w-xs items-center rounded-full text-tkokhing-blue hover:text-tkokhing-dark bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           aria-label="Open font size menu"
           >
           <span className="absolute -inset-1.5" />
@@ -52,7 +52,7 @@ export default function FontSizeDropdown() {
                   <button
                     onClick={() => setFontSize(size as typeof fontSize)}
                     className={classNames(
-                      focus ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-300',
+                      focus ? 'bg-gray-100 dark:bg-gray-700 text-tkokhing-blue dark:text-tkokhing-dark' : 'text-gray-700 dark:text-gray-300',
                       'flex justify-between w-full px-4 py-2 text-sm'
                     )}
                   >
