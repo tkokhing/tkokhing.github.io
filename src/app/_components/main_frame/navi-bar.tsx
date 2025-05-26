@@ -96,18 +96,22 @@ export default function Navigationbar() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="space-x-8 flex items-center px-8 md:ml-6">
-                <FontSizeDropdown />
-                <div className="">
+              <div className="space-x-10 items-center px-4 md:ml-6 flex flex-row">
+                <div className="flex justify-evenly">
+                  <FontSizeDropdown />
+                </div>
+                <div className="flex justify-evenly">
                   <ThemeSwitcher />
                 </div>
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
               {/* Mobile menu button */}
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <DisclosureButton 
+                className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                aria-label="Open Main Menu"
+                >
                 <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
                 <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
                 <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
               </DisclosureButton>
@@ -115,6 +119,14 @@ export default function Navigationbar() {
           </div>
         </div>
         <DisclosurePanel className="md:hidden">
+          <div className="border-t border-gray-700 pb-3 pt-4 flex flex-row">
+            <div className="flex justify-evenly w-1/2">
+              <FontSizeDropdown />
+            </div>
+            <div className="flex justify-evenly w-1/2">
+              <ThemeSwitcher />
+            </div>
+          </div>
           <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             {navigation.map((item) => (
               <DisclosureButton
@@ -130,18 +142,6 @@ export default function Navigationbar() {
                 <item.icon aria-hidden="true" />
               </DisclosureButton>
             ))}
-          </div>
-          <div className="border-t border-gray-700 pb-3 pt-4">
-
-            <div className="flex justify-evenly">
-
-                <FontSizeDropdown />
-
-            <div className="px-5">
-              <ThemeSwitcher />
-            </div>
-            </div>
-
           </div>
         </DisclosurePanel>
       </Disclosure>

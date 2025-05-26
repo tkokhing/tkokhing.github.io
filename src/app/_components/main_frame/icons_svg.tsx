@@ -19,7 +19,7 @@ export const SquareBoxIcon = ({ fillColour = "#0071C1" }) => {
       xmlns="http://www.w3.org/2000/svg"
       x="0" y="0"
       height="100"
-      width="auto"
+      width="100"
     >
       {/* display square box */}
       <g>
@@ -37,7 +37,7 @@ export const RectangleBoxIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       x="0" y="0"
       height="100"
-      width="auto"
+      width="400"
     >
       {/* display rectangle box */}
       <g fill="#0071C1" opacity="1.000000">
@@ -209,16 +209,8 @@ export const ResearchWithTextIcon: React.FC<IconProps> = ({ height = 50, fillCol
 };
 
 export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour = "#1e1b4b", strokeColour = "#6b7280" }) => {
-  const [mounted, setMounted] = useState(false);
   const [hoverOn, setHovered] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null; // Or a placeholder
-  }
   return (
     <svg
       viewBox="0 0 24 24"
@@ -226,7 +218,6 @@ export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour = "#
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       fill="none"
-      stroke="currentColor"
       strokeWidth={width}
       strokeLinecap="round"
       strokeLinejoin="round"
