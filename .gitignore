@@ -12,13 +12,14 @@
 
 # testing
 /coverage
-/src/app/testerer
+/src/app/testerer/
 
 # next.js
 /.next/
 /out/
 /dist/
 /_posts
+/_frontiers
 /_topics
 /_linux
 /_mdxposts

@@ -102,9 +102,9 @@ export default function Navigationbar() {
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
-              {/* Mobile menu button */}
+              {/* Mobile Menu Button */}
               <DisclosureButton 
-                className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 aria-label="Open Main Menu"
                 >
                 <span className="absolute -inset-0.5" />
@@ -127,7 +127,7 @@ export default function Navigationbar() {
                 href={item.href}
                 aria-current={selected === item.name ? 'page' : undefined}
                 className={classNames(
-                  selected === item.name ? 'bg-gray-900' : 'hover:bg-gray-700',
+                  selected === item.name ? 'bg-gray-700 dark:bg-gray-600' : 'text-sky-800 hover:bg-gray-500',
                   'block rounded-md px-3 py-2'
                 )}
               >
