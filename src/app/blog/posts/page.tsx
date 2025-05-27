@@ -1,6 +1,6 @@
 import Container from "@/app/_components/container";
 import { getAllPosts } from "@/lib/api";
-import { AllStoriesTitle } from "@/app/_components/all-stories-title"
+import { AllStoriesTitle } from "@/app/_components/post_gen/all-stories-title"
 
 export default function PostsIndex() {
   const allPosts = getAllPosts("_posts");

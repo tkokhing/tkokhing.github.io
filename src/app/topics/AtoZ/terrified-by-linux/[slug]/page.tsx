@@ -2,8 +2,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/container";
-import { PostHeader } from "@/app/_components/post-header";
-import { PostBody } from "@/app/_components/post-body";
+import { PostHeader } from "@/app/_components/post_gen/post-header";
+import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
