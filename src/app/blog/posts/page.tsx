@@ -1,6 +1,7 @@
-import Container from "@/app/_components/container";
+import Container from "@/app/_components/preference/container";
 import { getAllPosts } from "@/lib/api";
-import { AllStoriesTitle } from "@/app/_components/post_gen/all-stories-title"
+import { MoreStoriesConcise } from "@/app/_components/post_gen/more-stories-concise"
+import { Suspense } from "react";
 
 export default function PostsIndex() {
   const allPosts = getAllPosts("_posts");
@@ -8,7 +9,9 @@ export default function PostsIndex() {
   return (
     <main>
       <Container>
-        {allPosts.length > 0 && <AllStoriesTitle posts={allPosts} />}
+        <Suspense>
+        {allPosts.length > 0 && <MoreStoriesConcise posts={allPosts} />}
+        </Suspense>
       </Container>
     </main>
   );

@@ -72,11 +72,11 @@ export default function Navigationbar() {
         <div className="container mx-auto px-5 sm:px-6 lg:px-8 ">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <div className="shrink-0 flex size-48">
+              <div className="shrink-0 flex size-28">
                 <ProfileLogoSVG />
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex  items-baseline space-x-4">
+                <div className="ml-10 flex shrink-0 items-baseline space-x-0.5">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -96,9 +96,9 @@ export default function Navigationbar() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="space-x-10 items-center px-4 md:ml-6 flex flex-row justify-evenly">
-                <FontSizeDropdown />
+              <div className="space-x-7 items-center px-4 md:ml-6 flex flex-row justify-evenly">
                 <ThemeSwitcher />
+                <FontSizeDropdown />
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
@@ -116,8 +116,8 @@ export default function Navigationbar() {
         </div>
         <DisclosurePanel className="md:hidden">
           <div className="border-t border-gray-700 pb-3 pt-4 items-center flex flex-row justify-around">
-            <FontSizeDropdown />
             <ThemeSwitcher />
+            <FontSizeDropdown />
           </div>
           <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             {navigation.map((item) => (

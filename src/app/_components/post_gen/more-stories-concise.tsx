@@ -1,23 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Post } from "@/interfaces/post";
-import { TitlePreview } from "../title-preview";
+import { TitlePreview } from "@/app/_components/post_gen/title-preview";
 
 type Props = {
   posts: Post[];
 };
 
-export function AllStoriesTitle({ posts }: Props) {
-  const [sortBy, setSortBy] = useState<"title" | "date">("title");
+export function MoreStoriesConcise({ posts }: Props) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const sortedPosts = [...posts].sort((a, b) => {
-    if (sortBy === "title") {
-      return a.title.localeCompare(b.title);
-    } else {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
+  const defaultSort = searchParams.get("sort") === "date" ? "date" : "title";
+  const [sortBy, setSortBy] = useState<"title" | "date">(defaultSort);
+
+  // Sync localStorage on sort change
+  useEffect(() => {
+    localStorage.setItem("preferredSort", sortBy);
+  }, [sortBy]);
+
+  // If no URL param, check localStorage once on load
+  useEffect(() => {
+    const saved = localStorage.getItem("preferredSort");
+    if (!searchParams.get("sort") && saved) {
+      setSortBy(saved === "date" ? "date" : "title");
+      router.replace(`?sort=${saved}`);
     }
+  }, []);
+
+  // Apply sorting
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (sortBy === "title") return a.title.localeCompare(b.title);
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
+
+  // Handle button click
+  const handleSortChange = (mode: "title" | "date") => {
+    setSortBy(mode);
+    router.replace(`?sort=${mode}`);
+  };
 
   return (
     <section>
@@ -27,7 +50,7 @@ export function AllStoriesTitle({ posts }: Props) {
         </h2>
         <div className="flex gap-2">
           <button
-            onClick={() => setSortBy("title")}
+            onClick={() => handleSortChange("title")}
             disabled={sortBy === "title"}
             className={`px-3 py-1 rounded transition ${
               sortBy === "title"
@@ -38,7 +61,7 @@ export function AllStoriesTitle({ posts }: Props) {
             A–Z
           </button>
           <button
-            onClick={() => setSortBy("date")}
+            onClick={() => handleSortChange("date")}
             disabled={sortBy === "date"}
             className={`px-3 py-1 rounded transition ${
               sortBy === "date"

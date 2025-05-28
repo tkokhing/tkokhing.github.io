@@ -1,4 +1,4 @@
-import Container from "@/app/_components/container";
+import Container from "@/app/_components/preference/container";
 // import MyTest from "@/app/_components/mytest";
 // import MyTest2 from "@/app/_components/mytest2";
 

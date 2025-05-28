@@ -1,7 +1,7 @@
 // pull from private repo: [tkokhing/blog_post/_posts] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Container from "@/app/_components/container";
+import Container from "@/app/_components/preference/container";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/api";
