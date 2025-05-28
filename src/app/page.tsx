@@ -1,5 +1,5 @@
-import Container from "@/app/_components/container";
-import CoverPage from "@/app/_components/coverpage";
+import Container from "@/app/_components/preference/container";
+import CoverPage from "@/app/_components/preference/coverpage";
 
 export default function Index() {
 

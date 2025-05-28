@@ -1,4 +1,4 @@
-import Container from "@/app/_components/container";
+import Container from "@/app/_components/preference/container";
 
 export default function Index() {
   return (

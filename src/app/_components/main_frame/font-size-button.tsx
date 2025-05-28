@@ -25,13 +25,11 @@ export default function FontSizeDropdown() {
     <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <MenuButton 
-          className="p-2 h-15 w-15 relative flex max-w-xs items-center rounded-full text-tkokhing-blue hover:text-tkokhing-dark bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+          className="p-1 h-10 w-15 -inset-0.5 relative flex max-w-xs items-center rounded-full text-tkokhing-blue hover:text-tkokhing-dark ring-1 ring-tkokhing-blue hover:bg-gray-700 hover:dark:ring-tkokhing-dark"
           aria-label="Open font size menu"
           >
-          <span className="absolute -inset-1.5" />
-          <span className="text-xs font-normal mr-3">A</span>
-          <span className="text-2xl font-bold -ml-1">| A</span>
-          <ChevronDownIcon className="ml-1 h-5 w-5 text-gray-500" aria-hidden="true" />
+          <span className="text-base"><sub>A</sub>A</span>
+          <ChevronDownIcon className="h-3 w-3 text-gray-500" aria-hidden="true" />
         </MenuButton>
       </div>
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useNavigation } from '@/app/_components/main_frame/navigation-context';
-import Container from '@/app/_components/container';
+import Container from '@/app/_components/preference/container';
 
 const SubpageHeader = () => {
   const [scroll, setScroll] = useState(0);

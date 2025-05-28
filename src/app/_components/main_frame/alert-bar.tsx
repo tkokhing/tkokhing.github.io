@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "@/app/_components/container";
+import Container from "@/app/_components/preference/container";
 import cn from "classnames";
 import { useRef, useEffect } from "react";
 
