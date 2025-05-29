@@ -1,3 +1,4 @@
+// blog/post/ list page
 import Container from "@/app/_components/preference/container";
 import { getAllPosts } from "@/lib/api";
 import { MoreStoriesConcise } from "@/app/_components/post_gen/more-stories-concise"

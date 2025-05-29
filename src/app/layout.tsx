@@ -5,12 +5,12 @@ import type { Metadata } from "next";
 import type { Viewport } from 'next'
 
 import AlertBar from "@/app/_components/main_frame/alert-bar";
+import { LanguageProvider } from "./_components/language_handler/language-provider";
 import Navigationbar from "@/app/_components/main_frame/navi-bar";
 import { NavigationProvider } from "@/app/_components/main_frame/navigation-context";
 import { FontSizeProvider } from "@/app/_components/main_frame/font-size-ctrl";
 import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import Footer from "@/app/_components/main_frame/footer";
-import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 import { T_ANI_GIF_URL } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -54,7 +54,7 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
-        {/* <ThemeSwitcher /> */}
+        <LanguageProvider>
         <NavigationProvider>
         <FontSizeProvider >
         <AlertBar />
@@ -64,6 +64,8 @@ export default function RootLayout({
         <Footer />
         </FontSizeProvider>
         </NavigationProvider>
+        </LanguageProvider>
+
       </body>
     </html>
   );
