@@ -1,12 +1,13 @@
 // pull from private repo: [tkokhing/blog_post/_posts] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Container from "@/app/_components/preference/container";
-import { PostHeader } from "@/app/_components/post_gen/post-header";
-import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
+import Container from "@/app/_components/preference/container";
+import FrontierData from "@/app/_components/preference/frontier-data";
+import { PostHeader } from "@/app/_components/post_gen/post-header";
+import { PostBody } from "@/app/_components/post_gen/post-body";
 
 const MDX_FOLDER = "_posts"; 
 
@@ -19,6 +20,9 @@ type Params = {
 export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug, MDX_FOLDER);
+  const ImportComponents = {
+    FrontierData,
+  };
   if (!post) return notFound();
  
   return (
@@ -33,7 +37,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-          <PostBody content={post.content} />
+          <PostBody content={post.content} components={ImportComponents}/>
         </article>
       </Container>
     </main>

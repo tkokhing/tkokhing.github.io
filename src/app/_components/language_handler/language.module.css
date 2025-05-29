@@ -1,0 +1,54 @@
+.languageSwitch {
+    cursor: pointer;
+    position: absolute;
+    --spacing: 20px;
+    bottom: calc(3vw + var(--spacing));
+    left: calc(var(--spacing) * 100%);
+    zIndex: 1;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid black;
+    font-size: 10px;
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    padding: 0;
+    transition: all 0.2s ease-in-out 0s !important;
+  }
+
+  [data-mode="system"] .languageSwitch {
+    border: 2px solid grey;
+    background-color: white;
+    color: black;
+  }
+  
+  [data-mode="system"] .languageSwitch:hover {
+    border: 1.5px dashed black;
+    background-color: white;
+    box-shadow: 0 0 20px 0px grey;
+    color: black;
+  } 
+  
+  [data-mode="dark"] .languageSwitch {
+    border: 2px solid grey;
+    background-color: teal;
+    color: white;
+  }
+
+  [data-mode="dark"] .languageSwitch:hover {
+    border: 1.5px dashed black;
+    background-color: white;
+    box-shadow: 0 0 20px 0px yellow;
+    color: black;
+  }
+
+  [data-mode="light"] .languageSwitch {
+    border: 2px solid grey;
+    background-color: yellow;
+  }
+  
+  [data-mode="light"] .languageSwitch:hover {
+    border: 1.5px dashed black;
+    background-color: white;
+    box-shadow: 0 0 20px 0px orange;
+  }
