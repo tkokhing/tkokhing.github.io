@@ -19,7 +19,8 @@ src/app/testerer/
 /out/
 /dist/
 /_posts
-/_frontiers
+/_frontier
+/_frontier_data
 /_topics
 /_linux
 /_mdxposts
