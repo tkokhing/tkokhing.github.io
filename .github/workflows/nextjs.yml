@@ -35,6 +35,7 @@ jobs:
           ls ./
           rm -rf public
           mkdir public
+          mv ./temp_public/_frontier_data ./src/lib
           mv ./temp_public/* ./public
           rm -rf ./temp_public ./public/README.md
       - name: Checkout [topic_post] private repo
@@ -150,6 +151,10 @@ jobs:
             ls -lha
             echo "Advance check on workflow loaded onto /home/runner/work/_temp"
             ls -lha /home/runner/work/_temp
+      - name: Clean Up Import Source Files
+        id: clean-frontier-data
+        run: |
+            rm -rf ./src/lib/_frontier_data/
 
   deploy:
     environment:
