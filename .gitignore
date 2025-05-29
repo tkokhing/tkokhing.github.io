@@ -13,13 +13,15 @@
 # testing
 /coverage
 src/app/testerer/
+src/lib/_frontier_data/
 
 # next.js
 /.next/
 /out/
 /dist/
 /_posts
-/_frontiers
+/_frontier
+/_frontier_data
 /_topics
 /_linux
 /_mdxposts
