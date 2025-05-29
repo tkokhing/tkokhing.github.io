@@ -93,6 +93,8 @@ jobs:
           ls -lha ./_posts
           echo "Advance check on linux post loaded onto ./_linux"
           ls -lha ./_linux
+          echo "Advance check on linux post loaded onto ./public"
+          ls -lhaR ./public
       - name: Detect package manager
         id: detect-package-manager
         run: |
