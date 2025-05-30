@@ -1,15 +1,15 @@
-// pull from private repo: [tkokhing/blog_post/_posts] MDX_FOLDER
+// pull from private repo: [tkokhing/frontier_post/_frontier] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Container from "@/app/_components/preference/container";
+import { CyberDomainData } from "@/app/_components/preference/data-exporter";
+import { PostHeader } from "@/app/_components/post_gen/post-header";
+import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
-import Container from "@/app/_components/preference/container";
-import { FrontierData } from "@/app/_components/preference/data-exporter";
-import { PostHeader } from "@/app/_components/post_gen/post-header";
-import { PostBody } from "@/app/_components/post_gen/post-body";
 
-const MDX_FOLDER = "_posts"; 
+const MDX_FOLDER = "_frontier"; 
 
 type Params = {
   params: Promise<{
@@ -21,7 +21,7 @@ export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   const ImportComponents = {
-    FrontierData,
+    CyberDomainData,
   };
   if (!post) return notFound();
  

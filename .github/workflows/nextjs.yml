@@ -27,7 +27,7 @@ jobs:
           token: ${{ secrets.PULL_SUB_FOLDERS_OF_PUBLIC_TOKEN }}
           path: temp_public
       - name: Copy and move [public] folder to correct level
-        id: move_public_images
+        id: move_public_images_AND_setup_data_exporter
         run: |
           echo "Present working directory --->:"
           pwd
@@ -35,9 +35,24 @@ jobs:
           ls ./
           rm -rf public
           mkdir public
-          mv ./temp_public/_frontier_data ./src/lib
           mv ./temp_public/* ./public
+          mv ./temp_public/_data_exporter ./src/lib
           rm -rf ./temp_public ./public/README.md
+      - name: Checkout [frontier_post] private repo
+        uses: actions/checkout@v4
+        with:
+          repository: tkokhing/frontier_post
+          token: ${{ secrets.PULL_FRONTIER_TOKEN }}
+          path: temp_frontier
+      - name: Move [_frontier] folder post to correct level
+        id: move_frontier_post
+        run: |
+          echo "Present working directory---->: $(pwd)"
+          mkdir _frontier
+          mv ./temp_frontier/_frontier/*.mdx ./_frontier
+          rm -rf ./temp_frontier
+          echo "ls -lha ---->:"
+          ls -lha .
       - name: Checkout [topic_post] private repo
         uses: actions/checkout@v4
         with:
@@ -154,7 +169,7 @@ jobs:
       - name: Clean Up Import Source Files
         id: clean-frontier-data
         run: |
-            rm -rf ./src/lib/_frontier_data/
+            rm -rf ./src/lib/_data_exporter/
 
   deploy:
     environment:
