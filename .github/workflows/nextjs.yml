@@ -35,8 +35,8 @@ jobs:
           ls ./
           rm -rf public
           mkdir public
-          mv ./temp_public/* ./public
           mv ./temp_public/_data_exporter ./src/lib
+          mv ./temp_public/* ./public
           rm -rf ./temp_public ./public/README.md
       - name: Checkout [frontier_post] private repo
         uses: actions/checkout@v4
