@@ -13,7 +13,7 @@
 # testing
 /coverage
 src/app/testerer/
-src/lib/_frontier_data/
+src/lib/_data_exporter/
 
 # next.js
 /.next/
@@ -21,7 +21,6 @@ src/lib/_frontier_data/
 /dist/
 /_posts
 /_frontier
-/_frontier_data
 /_topics
 /_linux
 /_mdxposts
