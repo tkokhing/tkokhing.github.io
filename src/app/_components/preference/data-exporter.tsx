@@ -6,13 +6,19 @@ import enFrontierData from '@/lib/_data_exporter/frontier_data_en.mdx';
 import zhFrontierData from '@/lib/_data_exporter/frontier_data_zh.mdx';
 import enCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_en.mdx';
 import zhCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_zh.mdx';
+import enBlueprintBattlefieldDataData from '@/lib/_data_exporter/blueprint_to_battlefield_en.mdx';
+import zhBlueprintBattlefieldDataData from '@/lib/_data_exporter/blueprint_to_battlefield_zh.mdx';
 
-import DisplayLanguageContent from '../language_handler/language-display';
+import DisplayLanguageContent from '@/app/_components/language_handler/language-display';
 
 export const FrontierData = () => {
-  return <DisplayLanguageContent components={{ en: enFrontierData, zh: zhFrontierData }}/>
+  return <DisplayLanguageContent LanguageChoice={{ en: enFrontierData, zh: zhFrontierData }}/>
 }
 
 export const CyberDomainData = () => {
-  return <DisplayLanguageContent components={{ en: enCyberDomainData, zh: zhCyberDomainData }}/>
+  return <DisplayLanguageContent LanguageChoice={{ en: enCyberDomainData, zh: zhCyberDomainData }}/>
+}
+
+export const BlueprintBattlefieldData = () => {
+  return <DisplayLanguageContent LanguageChoice={{ en: enBlueprintBattlefieldDataData, zh: zhBlueprintBattlefieldDataData }}/>
 }

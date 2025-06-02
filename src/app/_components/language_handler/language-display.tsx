@@ -5,15 +5,15 @@ import LanguageSwitcher from "@/app/_components/language_handler/language-switch
 import { useLanguage } from "@/app/_components/language_handler/language-provider";
 
 type LanguageChoiceProps = {
-  components: {
+  LanguageChoice: {
     en: ElementType;
     zh: ElementType;
   };
 };
 
-export default function DisplayLanguageContent({ components }: LanguageChoiceProps) {
+export default function DisplayLanguageContent({ LanguageChoice }: LanguageChoiceProps) {
   const { language } = useLanguage();
-  const DisplayContent = language === 'en' ? components.en:components.zh;
+  const DisplayContent = language === 'en' ? LanguageChoice.en:LanguageChoice.zh;
 
   return( 
     <div>
