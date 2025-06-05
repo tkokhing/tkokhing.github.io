@@ -45,7 +45,7 @@ export function MoreStoriesConcise({ posts }: Props) {
   return (
     <section>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-4xl md:text-6xl font-thin tracking-tighter leading-tight">
+        <h2 className="italic text-sm md:text-base font-thin tracking-tighter leading-tight">
           Browse by {sortBy === "title" ? "Title (A–Z)" : "Date (Newest)"}
         </h2>
         <div className="flex gap-2">
@@ -82,6 +82,7 @@ export function MoreStoriesConcise({ posts }: Props) {
             date={post.date}
             slug={post.slug}
             subPath={post.subPath}
+            excerpt={post.excerpt}
             postStatus={post.postStatus}
           />
         ))}

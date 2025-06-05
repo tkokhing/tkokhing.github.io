@@ -1,4 +1,4 @@
-// pull from private repo: [tkokhing/linux_post/_linux] MDX_FOLDER
+// [tkokhing/linux_post/_linux] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
