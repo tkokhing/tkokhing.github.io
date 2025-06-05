@@ -1,13 +1,15 @@
-// pull from private repo: [tkokhing/blog_post/_posts] MDX_FOLDER
+// [tkokhing/blog_post/_posts] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
 import Container from "@/app/_components/preference/container";
-import { FrontierData } from "@/app/_components/preference/data-exporter";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
+import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
+import { FrontierData } from "@/app/_components/preference/data-exporter";
+import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
 const MDX_FOLDER = "_posts"; 
 
@@ -22,6 +24,8 @@ export default async function Post(props: Params) {
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   const ImportComponents = {
     FrontierData,
+    ToggleFrame,
+    PostListConcise,
   };
   if (!post) return notFound();
  

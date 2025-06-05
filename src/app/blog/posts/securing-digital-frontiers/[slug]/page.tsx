@@ -1,15 +1,15 @@
-// pull from private repo: [tkokhing/frontier_post/_frontier] MDX_FOLDER
+// [tkokhing/frontier_post/_frontier] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
-import { CyberDomainData } from "@/app/_components/preference/data-exporter";
-import { BlueprintBattlefieldData } from "@/app/_components/preference/data-exporter";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
-
+import { CyberDomainData } from "@/app/_components/preference/data-exporter";
+import { BlueprintBattlefieldData } from "@/app/_components/preference/data-exporter";
+import { CyberThreatsData } from "@/app/_components/preference/data-exporter";
 const MDX_FOLDER = "_frontier"; 
 
 type Params = {
@@ -23,6 +23,7 @@ export default async function Post(props: Params) {
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   const ImportComponents = {
     CyberDomainData,
+    CyberThreatsData,
     BlueprintBattlefieldData,
   };
   if (!post) return notFound();
