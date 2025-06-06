@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useFontSize } from '@/app/_components/main_frame/font-size-ctrl';
 

@@ -1,26 +1,45 @@
-// app/_components/toggle-frame.tsx
-
 "use client";
 
-import { useState, ReactNode } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type Props = {
-  label?: string;
-  children: ReactNode;
+  label: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
 };
 
-export function ToggleFrame({ label, children }: Props) {
-  const [open, setOpen] = useState(false);
+export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Scroll into view when opened
+  useEffect(() => {
+    if (isOpen && ref.current) {
+      setTimeout(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [isOpen]);
 
   return (
-    <div className="my-4">
+    <div ref={ref} className="my-6">
       <button
-        onClick={() => setOpen(!open)}
-        className="underline text-blue-800 dark:text-blue-300  hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
+        type="button"
+        onClick={handleToggle}
+        className="text-left text-lg font-semibold underline text-blue-800 dark:text-blue-300  hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
       >
-        {open ? `Hide ${label}` : `Show ${label}`}
+        {label}&nbsp;{isOpen ? "▼" : "▶"} 
       </button>
-      {open && <div className="mt-2">{children}</div>}
+
+      {isOpen && (
+        <div className="mt-4">
+          {children}
+        </div>
+      )}
     </div>
   );
 }

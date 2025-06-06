@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { type ElementType } from 'react';
 import LanguageSwitcher from "@/app/_components/language_handler/language-switcher";

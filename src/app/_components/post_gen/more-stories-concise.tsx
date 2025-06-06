@@ -1,46 +1,16 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { Post } from "@/interfaces/post";
 import { TitlePreview } from "@/app/_components/post_gen/title-preview";
+import { usePostSort } from "@/app/_hooks/usePostSort";
 
 type Props = {
   posts: Post[];
+  skipURLParam?: boolean; // for MDX usage
 };
 
-export function MoreStoriesConcise({ posts }: Props) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const defaultSort = searchParams.get("sort") === "date" ? "date" : "title";
-  const [sortBy, setSortBy] = useState<"title" | "date">(defaultSort);
-
-  // Sync localStorage on sort change
-  useEffect(() => {
-    localStorage.setItem("preferredSort", sortBy);
-  }, [sortBy]);
-
-  // If no URL param, check localStorage once on load
-  useEffect(() => {
-    const saved = localStorage.getItem("preferredSort");
-    if (!searchParams.get("sort") && saved) {
-      setSortBy(saved === "date" ? "date" : "title");
-      router.replace(`?sort=${saved}`);
-    }
-  }, []);
-
-  // Apply sorting
-  const sortedPosts = [...posts].sort((a, b) => {
-    if (sortBy === "title") return a.title.localeCompare(b.title);
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
-
-  // Handle button click
-  const handleSortChange = (mode: "title" | "date") => {
-    setSortBy(mode);
-    router.replace(`?sort=${mode}`);
-  };
+export function MoreStoriesConcise({ posts, skipURLParam }: Props) {
+  const { sortedPosts, sortBy, handleSortChange } = usePostSort(posts, skipURLParam);
 
   return (
     <section>
