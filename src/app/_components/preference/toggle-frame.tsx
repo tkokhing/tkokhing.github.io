@@ -26,7 +26,8 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
   }, [isOpen]);
 
   return (
-    <div ref={ref} className="my-6">
+    <div ref={ref}>
+      <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
       <button
         type="button"
         onClick={handleToggle}
@@ -40,6 +41,7 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
           {children}
         </div>
       )}
+      <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
     </div>
   );
 }
