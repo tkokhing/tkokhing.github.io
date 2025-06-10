@@ -4,7 +4,7 @@ import { HeroPost } from "@/app/_components/post_gen/hero-post";
 import { MoreStories } from "@/app/_components/post_gen/more-stories";
 
 export default function Index() {
-  const allPosts = getAllPosts("_topics");
+  const allPosts = getAllPosts("_topic_post/_topics");
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1); 
   return (

@@ -1,4 +1,4 @@
-// [tkokhing/topic_post/_topics] MDX_FOLDER
+// [tkokhing/topic_post/_topic_post/_topics] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -8,7 +8,7 @@ import { getPostBySlug } from "@/lib/api";
 import { generatePageMetadata } from "@/lib/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
 
-const MDX_FOLDER = "_topics"; 
+const MDX_FOLDER = "_topic_post/_topics"; 
 
 type Params = {
   params: Promise<{

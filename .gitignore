@@ -19,8 +19,10 @@ src/lib/_data_exporter/
 /.next/
 /out/
 /dist/
+/_blog_post/_blogs
 /_posts
 /_frontier
+/_topic_post/_topics
 /_topics
 /_linux
 /_mdxposts

@@ -1,4 +1,4 @@
-// [tkokhing/blog_post/_posts] MDX_FOLDER
+// [tkokhing/blog_post/_blog_post/_blogs] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/api";
@@ -11,7 +11,7 @@ import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { FrontierData } from "@/app/_components/preference/data-exporter";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
-const MDX_FOLDER = "_posts"; 
+const MDX_FOLDER = "_blog_post/_blogs"; 
 
 type Params = {
   params: Promise<{

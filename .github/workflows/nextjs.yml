@@ -63,8 +63,8 @@ jobs:
         id: move_topics_post
         run: |
           echo "Present working directory---->: $(pwd)"
-          mkdir _topics
-          mv ./temp_topic/_topics/*.mdx ./_topics
+          mkdir -p _topic_post/_topics
+          mv ./temp_topic/_topics/*.mdx ./_topic_post/_topics
           rm -rf ./temp_topic
           echo "ls -lha ---->:"
           ls -lha .
@@ -73,13 +73,15 @@ jobs:
         with:
           repository: tkokhing/blog_post
           token: ${{ secrets.PULL_POST_TOKEN }}
-          path: _posts
+          path: temp_blog
       - name: Move [_posts] to correct level
         id: move_blog_post
         run: |
-          mv ./_posts/_posts/*.mdx _posts
-          rm ./_posts/README.md
-          find ./_posts -mindepth 1 -depth -type d ! -name "*.mdx" -exec rm -r {} +
+          mkdir -p _blog_post/_blogs
+          mv ./temp_blog/_blogs/*.mdx ./_blog_post/_blogs
+          rm -rf ./temp_blog
+          echo "ls -lha ---->:"
+          ls -lha .
       - name: Checkout [linux_post] private repo
         uses: actions/checkout@v4
         with:
