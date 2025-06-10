@@ -105,9 +105,9 @@ jobs:
           ls -lha
           echo "Advance check on workflow loaded onto ./.github"
           ls -lha ./.github
-          echo "Advance check on topic post loaded onto ./_topics"
+          echo "Advance check on topic post loaded onto ./_topic_post/_topics"
           ls -lha ./_topics
-          echo "Advance check on blog post loaded onto ./_posts"
+          echo "Advance check on blog post loaded onto ./_blog_post/_blogs"
           ls -lha ./_posts
           echo "Advance check on linux post loaded onto ./_linux"
           ls -lha ./_linux
