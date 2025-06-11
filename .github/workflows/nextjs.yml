@@ -171,7 +171,7 @@ jobs:
             echo "Advance check on workflow loaded onto /home/runner/work/_temp"
             ls -lha /home/runner/work/_temp
       - name: Clean Up Import Source Files
-        id: clean-frontier-data
+        id: clean-data-fr-data-exporter
         run: |
             rm -rf ./src/lib/_data_exporter/
 
