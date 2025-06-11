@@ -1,4 +1,4 @@
-// [tkokhing/linux_post/_linux] MDX_FOLDER
+// [tkokhing/linux_post/_linux_post/_linux/] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -13,7 +13,7 @@ import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
 import CodeLine from "@/app/_components/blog_frame/codeline";
 
-const MDX_FOLDER = "_linux"; 
+const MDX_FOLDER = "_linux_post/_linux/"; 
 
 type Params = {
   params: Promise<{

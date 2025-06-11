@@ -19,11 +19,13 @@ src/lib/_data_exporter/
 /.next/
 /out/
 /dist/
+
 /_blog_post
-/_frontier
+/_frontier_post/
+
 /_topic_post
-/_linux
-/_mdxposts
+/_linux_post
+
 /mytest
 /public
 

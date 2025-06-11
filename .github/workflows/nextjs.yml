@@ -48,8 +48,8 @@ jobs:
         id: move_frontier_post
         run: |
           echo "Present working directory---->: $(pwd)"
-          mkdir _frontier
-          mv ./temp_frontier/_frontier/*.mdx ./_frontier
+          mkdir -p _frontier_post/_frontier
+          mv ./temp_frontier/_frontier/*.mdx ./_frontier_post/_frontier
           rm -rf ./temp_frontier
           echo "ls -lha ---->:"
           ls -lha .
@@ -92,8 +92,8 @@ jobs:
         id: move_linux_post
         run: |
           echo "Present working directory---->: $(pwd)"
-          mkdir _linux
-          mv ./temp_linux/_linux/*.mdx ./_linux
+          mkdir -p _linux_post/_linux/
+          mv ./temp_linux/_linux/*.mdx ./_linux_post/_linux/
           rm -rf ./temp_linux
           echo "ls -lha ---->:"
           ls -lha .
@@ -109,8 +109,10 @@ jobs:
           ls -lha ./_topic_post/_topics
           echo "Advance check on blog post loaded onto ./_blog_post/_blogs"
           ls -lha ./_blog_post/_blogs
-          echo "Advance check on linux post loaded onto ./_linux"
-          ls -lha ./_linux
+          echo "Advance check on linux post loaded onto ./_linux_post/_linux/"
+          ls -lha ./_linux_post/_linux/
+          echo "Advance check on frontier post loaded onto ./_frontier_post/_frontier/"
+          ls -lha ./_frontier_post/_frontier
           echo "Advance check on linux post loaded onto ./public"
           ls -lhaR ./public
       - name: Detect package manager

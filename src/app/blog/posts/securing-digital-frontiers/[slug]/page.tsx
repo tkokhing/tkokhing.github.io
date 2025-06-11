@@ -1,4 +1,4 @@
-// [tkokhing/frontier_post/_frontier] MDX_FOLDER
+// [tkokhing/frontier_post/_frontier_post/_frontier] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -10,7 +10,7 @@ import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
 import { CyberDomainData } from "@/app/_components/preference/data-exporter";
 import { BlueprintBattlefieldData } from "@/app/_components/preference/data-exporter";
 import { CyberThreatsData } from "@/app/_components/preference/data-exporter";
-const MDX_FOLDER = "_frontier"; 
+const MDX_FOLDER = "_frontier_post/_frontier"; 
 
 type Params = {
   params: Promise<{
