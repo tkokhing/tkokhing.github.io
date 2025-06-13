@@ -15,6 +15,7 @@
 src/app/testerer/
 src/lib/_data_exporter/
 src/lib/.gitignore
+src/lib/README.md
 
 # next.js
 /.next/

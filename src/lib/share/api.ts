@@ -1,5 +1,5 @@
 import { Post } from "@/interfaces/post";
-import { REPO_NAME } from '@/lib/constants';
+import { REPO_NAME } from '@/lib/share/constants';
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";

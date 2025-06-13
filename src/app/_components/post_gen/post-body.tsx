@@ -2,7 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
-import PostBodyClient from '@/app/_components/post_gen/post-body-client'; // 👈 import client wrapper
+import PostBodyClient from '@/app/_components/post_gen/post-body-client'; 
 
 type Props = {
   content: string;

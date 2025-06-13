@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostBySlug } from "@/lib/api";
+import { getPostBySlug } from "@/lib/share/api";
 
 export async function generatePageMetadata(slug: string, mdx_folder: string): Promise<Metadata> {
   const post = getPostBySlug(slug, mdx_folder);

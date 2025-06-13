@@ -7,7 +7,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, ResearchWithTextIcon } from "@/app/_components/main_frame/icons_svg";
 import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
 import { useNavigation } from "@/app/_components/main_frame/navigation-context";
-import { TKOKHING_LOGO_SVG_URL } from "@/lib/constants";
+import { TKOKHING_LOGO_SVG_URL } from "@/lib/share/constants";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
 import FontSizeDropdown from "@/app/_components/main_frame/font-size-button";
 

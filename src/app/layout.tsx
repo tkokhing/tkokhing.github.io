@@ -11,7 +11,7 @@ import { NavigationProvider } from "@/app/_components/main_frame/navigation-cont
 import { FontSizeProvider } from "@/app/_components/main_frame/font-size-ctrl";
 import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import Footer from "@/app/_components/main_frame/footer";
-import { T_ANI_GIF_URL } from "@/lib/constants";
+import { T_ANI_GIF_URL } from "@/lib/share/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 

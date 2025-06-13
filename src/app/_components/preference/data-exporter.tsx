@@ -3,6 +3,8 @@
 "use client";
 import enFrontierData from '@/lib/_data_exporter/frontier_data_en.mdx';
 import zhFrontierData from '@/lib/_data_exporter/frontier_data_zh.mdx';
+import enFrontierLeadinData from '@/lib/_data_exporter/frontier_leadin_en.mdx';
+import zhFrontierLeadinData from '@/lib/_data_exporter/frontier_leadin_zh.mdx';
 import enCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_en.mdx';
 import zhCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_zh.mdx';
 import enCyberThreatsData from '@/lib/_data_exporter/cyber_threats_25_en.mdx';
@@ -14,6 +16,10 @@ import DisplayLanguageContent from '@/app/_components/language_handler/language-
 
 export const FrontierData = () => {
   return <DisplayLanguageContent LanguageChoice={{ en: enFrontierData, zh: zhFrontierData }}/>
+};
+
+export const FrontierLeadinData = () => {
+  return <DisplayLanguageContent LanguageChoice={{ en: enFrontierLeadinData, zh: zhFrontierLeadinData }}/>
 };
 
 export const CyberDomainData = () => {

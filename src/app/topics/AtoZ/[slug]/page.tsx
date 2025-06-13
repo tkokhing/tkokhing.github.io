@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
-import { getPostBySlug } from "@/lib/api";
-import { generatePageMetadata } from "@/lib/generatePageMetadata";
-import { generatePageStaticParams } from "@/lib/generatePageStaticParams";
+import { getPostBySlug } from "@/lib/share/api";
+import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
+import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 
 const MDX_FOLDER = "_topic_post/_topics"; 
 

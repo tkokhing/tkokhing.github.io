@@ -1,5 +1,5 @@
 import Container from "@/app/_components/preference/container";
-import { getAllPosts } from "@/lib/api";
+import { getAllPosts } from "@/lib/share/api";
 import { HeroPost } from "@/app/_components/post_gen/hero-post";
 import { MoreStories } from "@/app/_components/post_gen/more-stories";
 
