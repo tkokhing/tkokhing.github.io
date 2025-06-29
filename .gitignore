@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/mytest
 src/app/testerer/
 src/lib/_data_exporter/
 src/lib/.gitignore
@@ -22,13 +23,12 @@ src/lib/README.md
 /out/
 /dist/
 
+# project
+tkokhing.github.io.code-workspace
 /_blog_post
 /_frontier_post/
-
 /_topic_post
 /_linux_post
-
-/mytest
 /public
 
 # production
