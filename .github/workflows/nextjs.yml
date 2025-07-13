@@ -20,6 +20,18 @@ jobs:
     steps:
       - name: Checkout full branches
         uses: actions/checkout@v4
+      - name: Checkout [heptagoning] private repo
+        uses: actions/checkout@v4
+        with:
+          repository: tkokhing/heptagoning
+          token: ${{ secrets.PULL_HEPTAGONING_TOKEN }}
+          path: temp_heptagoning
+      - name: Move [_kill-chain] folder inside _heptagoning to correct level
+        id: move_heptagoning_kill-chain
+        run: |
+          mkdir -p _heptagoning/_kill-chain
+          mv ./temp_heptagoning/_kill-chain/*.mdx ./_heptagoning/_kill-chain
+          rm -rf ./temp_heptagoning
       - name: Checkout [tkokhing_lib] private repo
         uses: actions/checkout@v4
         with:

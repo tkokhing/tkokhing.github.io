@@ -1,4 +1,4 @@
-// [tkokhing/linux_post/_linux_post/_linux/] MDX_FOLDER
+// [tkokhing/topic_post/_topic_post/_topics] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -7,13 +7,10 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
+import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
+import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
-import Alert from "@/app/_components/blog_frame/alert";
-import Note from "@/app/_components/blog_frame/note";
-import Tip from "@/app/_components/blog_frame/tip";
-import CodeLine from "@/app/_components/blog_frame/codeline";
-
-const MDX_FOLDER = "_linux_post/_linux/"; 
+const MDX_FOLDER = "_heptagoning/_kill-chain"; 
 
 type Params = {
   params: Promise<{
@@ -23,14 +20,12 @@ type Params = {
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const LinuxBlogComponents = {
-    Tip,
-    Note,
-    Alert,
-    CodeLine,
+  const ImportComponents = {
+    ToggleFrame,
+    PostListConcise,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
-  if (!post || post.subPath != 'topics/AtoZ/terrified-by-linux') return notFound();
+  if (!post || post.subPath != 'heptagoning/kill-chain') return notFound();
  
   return (
     <main>
@@ -44,7 +39,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-          <PostBody content={post.content} components={LinuxBlogComponents} />
+          <PostBody content={post.content} components={ImportComponents}/>
         </article>
       </Container>
     </main>

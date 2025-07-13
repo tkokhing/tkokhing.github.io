@@ -7,9 +7,9 @@ import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 import Container from "@/app/_components/preference/container";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
-import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { FrontierData } from "@/app/_components/preference/data-exporter";
 import { FrontierLeadinData } from "@/app/_components/preference/data-exporter";
+import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
 const MDX_FOLDER = "_blog_post/_blogs"; 
@@ -22,14 +22,14 @@ type Params = {
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const post = getPostBySlug(params.slug, MDX_FOLDER);
   const ImportComponents = {
     FrontierData,
     FrontierLeadinData,
     ToggleFrame,
     PostListConcise,
   };
-  if (!post) return notFound();
+  const post = getPostBySlug(params.slug, MDX_FOLDER);
+  if (!post || post.subPath != 'blog/posts') return notFound();
  
   return (
     <main>

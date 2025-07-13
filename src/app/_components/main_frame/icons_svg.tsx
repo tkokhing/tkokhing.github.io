@@ -168,6 +168,70 @@ export const TopicWithTextIcon: React.FC<IconProps> = ({ height = 50, fillColour
   );
 };
 
+export const HeptagoningWithTextIcon: React.FC<IconProps> = ({ height = 50, fillColour = "#0071C1", hoverColour = "#D9F99D" }) => {
+  const [hoverOn, setHover] = useState(false);
+
+  return (
+    <svg
+      version="1.1"
+      viewBox={hoverOn ? "0 0 1179 333" : "0 0 359 333"}
+      xmlns="http://www.w3.org/2000/svg"
+      x="0" y="0"
+      width="100%"
+      height={height}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <g stroke={fillColour} fillRule="evenodd" strokeLinecap="round" opacity={hoverOn ? "0.000000" : "1.000000"}>
+        <rect x="27" y="15" width="304" height="304" strokeWidth="7.66667" strokeMiterlimit="8" fill="none"/>
+        <g strokeWidth="12">
+          <line x1="180.414" y1="46.794" x2="276.813" y2="94.396" />
+          <line x1="276.813" y1="94.396" x2="300.631" y2="201.398" />
+          <line x1="300.631" y1="201.398" x2="233.826" y2="287.180" />
+          <line x1="233.826" y1="287.180" x2="130.438" y2="287.180" />
+          <line x1="130.438" y1="287.180" x2="57.400" y2="201.398" />
+          <line x1="57.400" y1="201.398" x2="81.191" y2="94.396" />
+          <line x1="81.191" y1="94.396" x2="180.414" y2="46.794" />
+        </g>
+        <g strokeWidth="5">
+          <line x1="180.1018" y1="176.7104" x2="180.414" y2="46.794" />
+          <line x1="180.1018" y1="176.7104" x2="276.813" y2="94.396" />
+          <line x1="180.1018" y1="176.7104" x2="300.631" y2="201.398" />
+          <line x1="180.1018" y1="176.7104" x2="233.826" y2="287.180" />
+          <line x1="180.1018" y1="176.7104" x2="130.438" y2="287.180" />
+          <line x1="180.1018" y1="176.7104" x2="57.400" y2="201.398" />
+          <line x1="180.1018" y1="176.7104" x2="81.191" y2="94.396" />
+        </g>
+      </g>
+      {hoverOn && (
+        <g fill={hoverColour} stroke={hoverColour} strokeLinecap="round" opacity="1.000000">
+          <rect x="27" y="14.9936" width="1127" height="303.871" stroke={hoverColour} strokeWidth="7.66992" strokeMiterlimit="8" fill="none"/>
+          <path d="M331.5 36.4845 331.5 298.085" stroke={hoverColour} strokeWidth="6.6695" strokeMiterlimit="8" fill="none" fillRule="evenodd"/>
+          <text fontFamily="Georgia,Georgia_MSFontService,sans-serif" fontWeight="400" fontSize="113.333" transform="matrix(1 0 0 0.999576 388.082 227)">Heptagoning</text>
+          <g strokeWidth="12">
+            <line x1="180.414" y1="46.794" x2="276.813" y2="94.396" />
+            <line x1="276.813" y1="94.396" x2="300.631" y2="201.398" />
+            <line x1="300.631" y1="201.398" x2="233.826" y2="287.180" />
+            <line x1="233.826" y1="287.180" x2="130.438" y2="287.180" />
+            <line x1="130.438" y1="287.180" x2="57.400" y2="201.398" />
+            <line x1="57.400" y1="201.398" x2="81.191" y2="94.396" />
+            <line x1="81.191" y1="94.396" x2="180.414" y2="46.794" />
+          </g>
+          <g strokeWidth="5">
+            <line x1="180.1018" y1="176.7104" x2="180.414" y2="46.794" />
+            <line x1="180.1018" y1="176.7104" x2="276.813" y2="94.396" />
+            <line x1="180.1018" y1="176.7104" x2="300.631" y2="201.398" />
+            <line x1="180.1018" y1="176.7104" x2="233.826" y2="287.180" />
+            <line x1="180.1018" y1="176.7104" x2="130.438" y2="287.180" />
+            <line x1="180.1018" y1="176.7104" x2="57.400" y2="201.398" />
+            <line x1="180.1018" y1="176.7104" x2="81.191" y2="94.396" />
+          </g>
+        </g>
+      )}
+    </svg>
+  );
+};
+
 export const ResearchWithTextIcon: React.FC<IconProps> = ({ height = 50, fillColour = "#0071C1", hoverColour = "#D9F99D" }) => {
   const [hoverOn, setHover] = useState(false);
 
@@ -332,6 +396,7 @@ export default {
   HomeWithTextIcon,
   BlogWithTextIcon,
   TopicWithTextIcon,
+  HeptagoningWithTextIcon,
   ResearchWithTextIcon,
   SystemModeIcon,
   DarkModeIcon,

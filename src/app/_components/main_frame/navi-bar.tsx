@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, ResearchWithTextIcon } from "@/app/_components/main_frame/icons_svg";
-import { ProfileLogoSVG } from "@/app/_components/main_frame/icons_svg";
+import { ProfileLogoSVG, HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, HeptagoningWithTextIcon, ResearchWithTextIcon } from "@/app/_components/main_frame/icons_svg";
 import { useNavigation } from "@/app/_components/main_frame/navigation-context";
 import { TKOKHING_LOGO_SVG_URL } from "@/lib/share/constants";
 import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
@@ -27,6 +26,7 @@ const navigation = [
   { name: 'Home', href: '/', icon: HomeWithTextIcon },
   { name: 'Blog', href: '/blog', icon: BlogWithTextIcon },
   { name: 'Topics', href: '/topics', icon: TopicWithTextIcon },
+  { name: 'heptagoning', href: '/heptagoning', icon: HeptagoningWithTextIcon},
   { name: 'Research', href: '/research', icon: ResearchWithTextIcon },
 ];
 

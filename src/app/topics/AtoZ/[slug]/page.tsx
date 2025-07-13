@@ -17,8 +17,9 @@ type Params = {
 };
 
 export default async function Post(props: Params) {
-  const params = await props.params;  const post = getPostBySlug(params.slug, MDX_FOLDER);
-  if (!post) return notFound();
+  const params = await props.params;  
+  const post = getPostBySlug(params.slug, MDX_FOLDER);
+  if (!post || post.subPath != 'topics/AtoZ') return notFound();
  
   return (
     <main>

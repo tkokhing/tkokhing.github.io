@@ -20,13 +20,13 @@ type Params = {
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const post = getPostBySlug(params.slug, MDX_FOLDER);
   const ImportComponents = {
     CyberDomainData,
     CyberThreatsData,
     BlueprintBattlefieldData,
   };
-  if (!post) return notFound();
+  const post = getPostBySlug(params.slug, MDX_FOLDER);
+  if (!post || post.subPath != 'blog/posts/securing-digital-frontiers') return notFound();
  
   return (
     <main>
