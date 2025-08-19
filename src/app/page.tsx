@@ -7,7 +7,6 @@ export default function Index() {
     <main>
       <Container>
         <CoverPage />
-
       </Container>
     </main>
   );
