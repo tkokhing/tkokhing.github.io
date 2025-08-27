@@ -123,8 +123,6 @@ jobs:
           ls -lha ./_frontier_post/_frontier
           echo "Advance check on linux post loaded onto ./public"
           ls -lhaR ./public
-          echo "Advance check on content loaded onto ./lib"
-          ls -lhaR ./src/lib
       - name: Detect package manager
         id: detect-package-manager
         run: |
