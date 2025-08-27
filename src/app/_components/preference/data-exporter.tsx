@@ -1,16 +1,18 @@
 // for content injections and 
 // export to different page.tsx for dynamic language switching
 "use client";
-import enFrontierData from '@/lib/_data_exporter/frontier_data_en.mdx';
-import zhFrontierData from '@/lib/_data_exporter/frontier_data_zh.mdx';
-import enFrontierLeadinData from '@/lib/_data_exporter/frontier_leadin_en.mdx';
-import zhFrontierLeadinData from '@/lib/_data_exporter/frontier_leadin_zh.mdx';
-import enCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_en.mdx';
-import zhCyberDomainData from '@/lib/_data_exporter/strategic_cyber_domains_zh.mdx';
-import enCyberThreatsData from '@/lib/_data_exporter/cyber_threats_25_en.mdx';
-import zhCyberThreatsData from '@/lib/_data_exporter/cyber_threats_25_zh.mdx';
-import enBlueprintBattlefieldDataData from '@/lib/_data_exporter/blueprint_to_battlefield_en.mdx';
-import zhBlueprintBattlefieldDataData from '@/lib/_data_exporter/blueprint_to_battlefield_zh.mdx';
+import enFrontierData from '@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data_en.mdx';
+import zhFrontierData from '@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data_zh.mdx';
+import enFrontierLeadinData from '@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_leadin_en.mdx';
+import zhFrontierLeadinData from '@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_leadin_zh.mdx';
+import enCyberDomainData from '@/lib/_data_exporter/data_securingdigitalfrontiers/strategic_cyber_domains_en.mdx';
+import zhCyberDomainData from '@/lib/_data_exporter/data_securingdigitalfrontiers/strategic_cyber_domains_zh.mdx';
+import enCyberThreatsData from '@/lib/_data_exporter/data_securingdigitalfrontiers/cyber_threats_25_en.mdx';
+import zhCyberThreatsData from '@/lib/_data_exporter/data_securingdigitalfrontiers/cyber_threats_25_zh.mdx';
+import enBlueprintBattlefieldDataData from '@/lib/_data_exporter/data_securingdigitalfrontiers/blueprint_to_battlefield_en.mdx';
+import zhBlueprintBattlefieldDataData from '@/lib/_data_exporter/data_securingdigitalfrontiers/blueprint_to_battlefield_zh.mdx';
+
+import nmap_difference from '@/../../../../6_oscp/pen200/OSCP_Battle_Plan/1_Enumeration/1_1_nmap/nmap_diff_types.md'
 
 import DisplayLanguageContent from '@/app/_components/language_handler/language-display';
 
