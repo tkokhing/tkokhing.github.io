@@ -12,8 +12,6 @@ import zhCyberThreatsData from '@/lib/_data_exporter/data_securingdigitalfrontie
 import enBlueprintBattlefieldDataData from '@/lib/_data_exporter/data_securingdigitalfrontiers/blueprint_to_battlefield_en.mdx';
 import zhBlueprintBattlefieldDataData from '@/lib/_data_exporter/data_securingdigitalfrontiers/blueprint_to_battlefield_zh.mdx';
 
-import nmap_difference from '@/../../../../6_oscp/pen200/OSCP_Battle_Plan/1_Enumeration/1_1_nmap/nmap_diff_types.md'
-
 import DisplayLanguageContent from '@/app/_components/language_handler/language-display';
 
 export const FrontierData = () => {

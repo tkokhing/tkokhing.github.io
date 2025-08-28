@@ -21,7 +21,7 @@ src/lib/README.md
 # next.js
 /.next/
 /out/
-/dist/
+/dist
 
 # project
 tkokhing.github.io.code-workspace

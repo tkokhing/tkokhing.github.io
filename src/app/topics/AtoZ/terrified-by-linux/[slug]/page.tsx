@@ -11,7 +11,6 @@ import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
-import CodeLine from "@/app/_components/blog_frame/codeline";
 
 const MDX_FOLDER = "_linux_post/_linux/"; 
 
@@ -27,7 +26,6 @@ export default async function Post(props: Params) {
     Tip,
     Note,
     Alert,
-    CodeLine,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'topics/AtoZ/terrified-by-linux') return notFound();

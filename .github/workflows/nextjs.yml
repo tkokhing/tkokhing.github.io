@@ -30,7 +30,7 @@ jobs:
         id: move_heptagoning_kill-chain
         run: |
           mkdir -p _heptagoning/_kill-chain
-          mv ./temp_heptagoning/_kill-chain/*.mdx ./_heptagoning/_kill-chain
+          mv ./temp_heptagoning/* ./_heptagoning
           rm -rf ./temp_heptagoning
       - name: Checkout [tkokhing_lib] private repo
         uses: actions/checkout@v4
