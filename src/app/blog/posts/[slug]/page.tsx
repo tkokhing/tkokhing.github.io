@@ -7,8 +7,8 @@ import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 import Container from "@/app/_components/preference/container";
 import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
-import { FrontierData } from "@/app/_components/preference/data-exporter";
-import { FrontierLeadinData } from "@/app/_components/preference/data-exporter";
+import { FrontierData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
+import { FrontierLeadinData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
 import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 

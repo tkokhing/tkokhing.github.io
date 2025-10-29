@@ -7,9 +7,9 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { CyberDomainData } from "@/app/_components/preference/data-exporter";
-import { BlueprintBattlefieldData } from "@/app/_components/preference/data-exporter";
-import { CyberThreatsData } from "@/app/_components/preference/data-exporter";
+import { CyberDomainData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
+import { BlueprintBattlefieldData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
+import { CyberThreatsData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
 const MDX_FOLDER = "_frontier_post/_frontier"; 
 
 type Params = {

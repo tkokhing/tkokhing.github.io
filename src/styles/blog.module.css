@@ -8,17 +8,17 @@
 .alert {
   background-color: #fffbeb;
   border-color: #f59e0b;
-  color: black;
+  color: #451a03;
 }
 
 .note {
   background-color: #ecfdf5;
   border-color: #10b981;
-  color: black;
+  color: #14532d;
 }
 
 .tip {
   background-color: #eff6ff;
   border-color: #3b82f6;
-  color: black;
+  color: #1e3a8a;
 }

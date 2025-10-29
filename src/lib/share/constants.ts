@@ -5,3 +5,7 @@ export const LOGO_PATH = "/img/logo";
 export const REPO_NAME = ""; // for future expansion use
 export const T_ANI_GIF_URL = `${LOGO_PATH}/tkokhing.gif`;
 export const TKOKHING_LOGO_SVG_URL = `${LOGO_PATH}/tkokhing.svg`;
+export const VICTIM1_IP = "10.10.4.6";
+export const VICTIM1_PORT = "80";
+export const ATTACKER_IP = "10.4.6.114";
+export const ATTACKER_PORT = "4444";
