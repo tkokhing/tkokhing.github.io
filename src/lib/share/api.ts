@@ -18,25 +18,31 @@ function postsDirectory(mdx_folder: string): string{
 }
 
 function getPostSlugs(mdx_folder: string) {
-  return fs.readdirSync(postsDirectory(mdx_folder));
+  return fs
+    .readdirSync(postsDirectory(mdx_folder), { withFileTypes: true })
+    .filter(entry => entry.isFile() && entry.name.endsWith(".mdx"))
+    .map(entry => entry.name);
 }
 
-export function getPostBySlug(slug: string, mdx_folder: string){
+export function getPostBySlug(slug: string, mdx_folder: string) {
   const realSlug = slug.replace(/\.mdx?$/, "");
   const fullPath = join(postsDirectory(mdx_folder), `${realSlug}.mdx`);
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+
   const BASE_PATH = useBasePath();
-  
+
   // Update URLs based on the environment
   data.coverImage = data.coverImage.startsWith(BASE_PATH) ? data.coverImage : `${BASE_PATH}${data.coverImage}`;
   data.author.picture = data.author.picture.startsWith(BASE_PATH) ? data.author.picture : `${BASE_PATH}${data.author.picture}`;
   data.ogImage.url = data.ogImage.url.startsWith(BASE_PATH) ? data.ogImage.url : `${BASE_PATH}${data.ogImage.url}`;
+
   return { ...data, slug: realSlug, content } as Post;
 }
 
 export function getAllPosts(mdx_folder: string): Post[] {
   const slugs = getPostSlugs(mdx_folder);
-  const posts = slugs.map((slug) => getPostBySlug(slug, mdx_folder));
+  const posts = slugs.map(slug => getPostBySlug(slug, mdx_folder));
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }

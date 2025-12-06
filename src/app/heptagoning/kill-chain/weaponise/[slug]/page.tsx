@@ -1,4 +1,4 @@
-// [tkokhing/heptagoning/_heptagoning/_kill-chain/_recon] MDX_FOLDER
+// [tkokhing/heptagoning/_heptagoning/_kill-chain/_weaponise] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -12,7 +12,7 @@ import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
 
-const MDX_FOLDER = "_heptagoning/_kill-chain/_recon"; 
+const MDX_FOLDER = "_heptagoning/_kill-chain/_weaponise"; 
 
 type Params = {
   params: Promise<{
@@ -29,7 +29,7 @@ export default async function Post(props: Params) {
     NMAP_Overview,
     };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
-  if (!post || post.subPath != 'heptagoning/kill-chain/recon') return notFound();
+  if (!post || post.subPath != 'heptagoning/kill-chain/weaponise') return notFound();
  
   return (
     <main>

@@ -15,6 +15,7 @@ export default function PostBodyClient({ children }: { children: React.ReactNode
       prose-strong:font-extrabold 
       prose-em:text-sky-900 dark:prose-em:text-violet-100
       prose-em:font-extrabold 
+      prose-li:text-gray-600 dark:prose-li:text-slate-300
       prose-ul:text-gray-600 dark:prose-ul:text-slate-300
       prose-table:text-zinc-700 dark:prose-table:text-zinc-300
       prose-code:before:content-[''] prose-code:after:content-['']

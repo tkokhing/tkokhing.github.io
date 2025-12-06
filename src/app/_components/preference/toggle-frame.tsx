@@ -31,7 +31,7 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
       <button
         type="button"
         onClick={handleToggle}
-        className="text-left text-lg font-semibold underline text-blue-800 dark:text-blue-300  hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
+        className="text-left text-xs font-semibold underline text-blue-800 dark:text-blue-300  hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
       >
         {label}&nbsp;{isOpen ? "▼" : "▶"} 
       </button>
