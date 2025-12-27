@@ -1,4 +1,4 @@
-// [tkokhing/heptagoning/_heptagoning/_kill-chain/_recon] MDX_FOLDER
+// [tkokhing/heptagoning/_heptagoning/_kill-chain/_active_dir] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -7,13 +7,13 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP, RUSTSCAN_Overview } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
+import { AD_Overview, AD_Kerberos } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
 import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 
-const MDX_FOLDER = "_heptagoning/_kill-chain/_recon"; 
+const MDX_FOLDER = "_heptagoning/_kill-chain/_active_dir"; 
 
 type Params = {
   params: Promise<{
@@ -28,14 +28,11 @@ export default async function Post(props: Params) {
     Note,
     Alert,
     ToggleFrame,
-    NMAP_Overview,
-    NMAP_Vuln_Scan,
-    NMAP_SMB_Enum,
-    NMAP_TCP_vs_UDP,
-    RUSTSCAN_Overview,
-    };
+    AD_Overview,
+    AD_Kerberos,
+  };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
-  if (!post || post.subPath != 'heptagoning/kill-chain/recon') return notFound();
+  if (!post || post.subPath != 'heptagoning/kill-chain/active_dir') return notFound();
  
   return (
     <main>
