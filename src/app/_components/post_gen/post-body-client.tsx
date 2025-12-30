@@ -19,9 +19,12 @@ export default function PostBodyClient({ children }: { children: React.ReactNode
       prose-ul:text-gray-600 dark:prose-ul:text-slate-300
       prose-table:text-zinc-700 dark:prose-table:text-zinc-300
       prose-code:before:content-[''] prose-code:after:content-['']
-      prose-code:bg-gray-800 prose-code:text-tkokhing-dark 
-      prose-code:rounded prose-code:px-1 prose-code:py-0.5 
-      prose-code:font-thin prose-code:inline-block prose-code:leading-loose
+
+      prose-code:bg-[#24292E] prose-code:text-[#d9e3ee]
+      prose-code:rounded-md prose-code:px-1.5
+      prose-code:py-0.5 prose-code:font-thin
+      prose-code:text-sm prose-code:inline-block
+      prose-code:leading-relaxed
       `}>
         {children}
     </div>
