@@ -7,7 +7,7 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP, RUSTSCAN_Overview } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
+import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP, RUSTSCAN_Overview, GOBUSTER_Overview, GOBUSTER_Outsmart_301,GOBUSTER_Advanced } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
@@ -33,6 +33,9 @@ export default async function Post(props: Params) {
     NMAP_SMB_Enum,
     NMAP_TCP_vs_UDP,
     RUSTSCAN_Overview,
+    GOBUSTER_Overview,
+    GOBUSTER_Outsmart_301,
+    GOBUSTER_Advanced,
     };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'heptagoning/kill-chain/recon') return notFound();
