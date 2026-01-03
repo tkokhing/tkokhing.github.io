@@ -26,7 +26,7 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
   }, [isOpen]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="shadow-sm  hover:shadow-sm hover:shadow-blue-900/85 dark:shadow-sky-900/50  hover:dark:shadow-yellow-100/85 hover:dark:shadow-sm py-3 px-4">
       <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
       <button
         type="button"
