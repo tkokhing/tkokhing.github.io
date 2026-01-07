@@ -7,7 +7,7 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { AD_Access, AD_Overview, AD_Enum_powerview, AD_Kerberos } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
+import { AD_Access, AD_Overview, AD_Enum_powerview, AD_Kerberos, AD_Lateral_move } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
@@ -32,6 +32,7 @@ export default async function Post(props: Params) {
     AD_Overview,
     AD_Enum_powerview,
     AD_Kerberos,
+    AD_Lateral_move,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'heptagoning/kill-chain/active_dir') return notFound();
