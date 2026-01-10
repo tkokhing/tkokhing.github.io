@@ -72,8 +72,9 @@ export const RUNNING_SPN_PASSWORD = "running_spn_pas$word";
 export const EncodedText = "please_update_encoded_text_for_scshell"
 
 
-// For all sites VICTIM TAGGING
-export const VICTIM1_IP = MS01_IP_EXT;
+// For all sites VICTIM TAGGING  192.168.123.110
+// export const VICTIM1_IP = MS01_IP_EXT;
+export const VICTIM1_IP = "192.168.123.110";
 export const VICTIM1_PORT = MS01_FORWARD_PORT_2;
 
 
