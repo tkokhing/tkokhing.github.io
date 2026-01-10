@@ -15,6 +15,7 @@
 /mytest
 src/app/testerer/
 src/lib/_data_exporter/
+src/lib/.gitattributes
 src/lib/.gitignore
 src/lib/README.md
 

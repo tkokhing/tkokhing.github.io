@@ -29,10 +29,16 @@ export const TKOKHING_LOGO_SVG_URL = `${LOGO_PATH}/tkokhing.svg`;
 
 
 export const ATTACKER_IP = "192.168.118.10";
-export const ATTACKER_PORT = "4444";
+export const ATTACKER_PORT = "22";
 
 // // Client01 (aka MS01) Browser Viewing
 // // - Internal (172.16.242.173)
+
+export const AD_DOMAIN_NAME = "CAR_DOMAIN"
+
+export const MS01_username = "this_AD_user";
+export const MS01_password = "this_AD_password";
+
 export const MS01_IP_EXT = "192.168.118.173";
 export const MS01_IP_INT = "172.16.242.173";
 export const MS01_FORWARD_PORT_1 = "80";   // To download <u>PowerCat</u>
@@ -56,7 +62,7 @@ export const AD_ATTACKER_LISTEN_PORT_2 = "443"; // To facilitate incoming <u>rev
 // // for kerberoasted service 
 export const RUNNING_SPN = "svc-auth";
 export const RUNNING_SPN_HASH = "hashhashashashverylong";
-export const RUNNING_SPN_PASSWORD = "pas$word";
+export const RUNNING_SPN_PASSWORD = "running_spn_pas$word";
 
 
 // // EncodedText for SCSHELL
