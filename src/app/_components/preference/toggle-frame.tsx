@@ -8,8 +8,8 @@ type Props = {
   defaultOpen?: boolean;
 };
 
-// export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
-export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
+export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
+// export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const ref = useRef<HTMLDivElement>(null);
 
