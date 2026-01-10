@@ -34,7 +34,7 @@ export const ATTACKER_PORT = "22";
 // // Client01 (aka MS01) Browser Viewing
 // // - Internal (172.16.242.173)
 
-export const AD_DOMAIN_NAME = "CAR_DOMAIN"
+export const AD_DOMAIN_NAME = "oscp.exam" //updated
 
 export const MS01_username = "r.andrews";  // updated
 export const MS01_password = "BusyOfficeWorker890"; //updated
@@ -75,3 +75,13 @@ export const EncodedText = "please_update_encoded_text_for_scshell"
 // For all sites VICTIM TAGGING
 export const VICTIM1_IP = MS01_IP_EXT;
 export const VICTIM1_PORT = MS01_FORWARD_PORT_2;
+
+
+// PORT     STATE SERVICE       REASON
+// 135/tcp  open  msrpc         syn-ack ttl 127
+// 139/tcp  open  netbios-ssn   syn-ack ttl 127
+// 445/tcp  open  microsoft-ds  syn-ack ttl 127
+// 3389/tcp open  ms-wbt-server syn-ack ttl 127
+// 5985/tcp open  wsman         syn-ack ttl 127
+
+// Nmap done: 1 IP address (1 host up) scanned in 12.95 seconds
