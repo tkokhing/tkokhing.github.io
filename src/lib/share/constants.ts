@@ -36,10 +36,10 @@ export const ATTACKER_PORT = "22";
 
 export const AD_DOMAIN_NAME = "CAR_DOMAIN"
 
-export const MS01_username = "this_AD_user";
-export const MS01_password = "this_AD_password";
+export const MS01_username = "r.andrews";  // updated
+export const MS01_password = "BusyOfficeWorker890"; //updated
 
-export const MS01_IP_EXT = "192.168.118.173";
+export const MS01_IP_EXT = "192.168.123.206";  //updated
 export const MS01_IP_INT = "172.16.242.173";
 export const MS01_FORWARD_PORT_1 = "80";   // To download <u>PowerCat</u>
 export const MS01_FORWARD_PORT_2 = "4444"; // To open <u>reverse shell</u>
@@ -47,11 +47,12 @@ export const MS01_FORWARD_PORT_2 = "4444"; // To open <u>reverse shell</u>
 
 // // WEB01 (aka MS02) Terminal
 // // - Internal (172.16.242.176)
-export const MS02_IP_INT = "172.16.242.176";
+//updated
+export const MS02_IP_INT = "172.16.123.202"; //updated
 export const MS02_PORT_FORWARD = "4443";
 
-
-export const DC01_IP = "172.16.242.162";
+//updated
+export const DC01_IP = "172.16.123.200"; //updated
 export const DC01_PORT_FORWARD = "4442";
 
 export const AD_ATTACKER_IP = ATTACKER_IP;
