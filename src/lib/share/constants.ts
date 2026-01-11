@@ -34,13 +34,13 @@ export const ATTACKER_PORT = "22";
 // // Client01 (aka MS01) Browser Viewing
 // // - Internal (172.16.242.173)
 
-export const AD_DOMAIN_NAME = "oscp.exam" //updated
+export const AD_DOMAIN_NAME = "OSCP.EXAM" //updated
 
 export const MS01_username = "r.andrews";  // updated
 export const MS01_password = "BusyOfficeWorker890"; //updated
 
 export const MS01_IP_EXT = "192.168.123.206";  //updated
-export const MS01_IP_INT = "172.16.242.173";
+export const MS01_IP_INT = "172.16.123.206"; // updated
 export const MS01_FORWARD_PORT_1 = "80";   // To download <u>PowerCat</u>
 export const MS01_FORWARD_PORT_2 = "4444"; // To open <u>reverse shell</u>
 
