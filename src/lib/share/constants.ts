@@ -28,7 +28,7 @@ export const TKOKHING_LOGO_SVG_URL = `${LOGO_PATH}/tkokhing.svg`;
 // export const DC01_PORT_FORWARD = "4442";
 
 
-export const ATTACKER_IP = "192.168.118.10";
+export const ATTACKER_IP = "192.168.49.123"; //updated
 export const ATTACKER_PORT = "22";
 
 // // Client01 (aka MS01) Browser Viewing
