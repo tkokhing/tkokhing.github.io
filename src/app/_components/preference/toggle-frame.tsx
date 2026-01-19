@@ -8,8 +8,8 @@ type Props = {
   defaultOpen?: boolean;
 };
 
-// export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
-export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
+export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
+// export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -17,12 +17,31 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
     setIsOpen((prev) => !prev);
   };
 
-  // Scroll into view when opened
+  // Scroll into view when ESC is pressed
   useEffect(() => {
-    if (isOpen && ref.current) {
-      setTimeout(() => {
-        ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "Escape" &&
+        isOpen &&
+        document.activeElement === ref.current
+      ) {
+        scrollToTopAndClose();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
+  // Scroll COLLAPSED frame to center when ESC or [COLLAPSE] button is pressed
+  useEffect(() => {
+    if (!isOpen && ref.current) {
+      requestAnimationFrame(() => {
+        ref.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      });
     }
   }, [isOpen]);
 
@@ -34,6 +53,7 @@ export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
   return (
     <div
       ref={ref}
+      tabIndex={-1}
       className="shadow-sm hover:shadow-sm hover:shadow-blue-900/85 dark:shadow-sky-900/50 hover:dark:shadow-yellow-100/85 py-3 px-4"
     >
       <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
