@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 import type { Viewport } from 'next'
 
 import AlertBar from "@/app/_components/main_frame/alert-bar";
-import { LanguageProvider } from "./_components/language_handler/language-provider";
+import { LanguageProvider } from "@/app/_components/language_handler/language-provider";
+import { ToggleFrameProvider } from "@/app/_components/preference/toggle-frame-provider";
 import Navigationbar from "@/app/_components/main_frame/navi-bar";
 import { NavigationProvider } from "@/app/_components/main_frame/navigation-context";
 import { FontSizeProvider } from "@/app/_components/main_frame/font-size-ctrl";
@@ -55,6 +56,7 @@ export default function RootLayout({
         className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
       >
         <LanguageProvider>
+        <ToggleFrameProvider>  
         <NavigationProvider>
         <FontSizeProvider >
         <AlertBar />
@@ -64,6 +66,7 @@ export default function RootLayout({
         <Footer />
         </FontSizeProvider>
         </NavigationProvider>
+        </ToggleFrameProvider>
         </LanguageProvider>
 
       </body>

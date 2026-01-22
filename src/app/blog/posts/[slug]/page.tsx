@@ -10,6 +10,7 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { FrontierData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
 import { FrontierLeadinData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
 import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
+import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
 const MDX_FOLDER = "_blog_post/_blogs"; 
@@ -34,17 +35,19 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author} 
-            subPath={post.subPath}
-            postStatus={post.postStatus}
-          />
-          <PostBody content={post.content} components={ImportComponents}/>
-        </article>
+        <ToggleAllFrame>
+          <article className="mb-32">
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author} 
+              subPath={post.subPath}
+              postStatus={post.postStatus}
+              />
+            <PostBody content={post.content} components={ImportComponents}/>
+          </article>
+        </ToggleAllFrame>
       </Container>
     </main>
   );

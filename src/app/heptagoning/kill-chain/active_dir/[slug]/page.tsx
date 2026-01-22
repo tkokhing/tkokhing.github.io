@@ -12,7 +12,7 @@ import Alert from "@/app/_components/blog_frame/alert";
 import Note from "@/app/_components/blog_frame/note";
 import Tip from "@/app/_components/blog_frame/tip";
 import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
-
+import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 const MDX_FOLDER = "_heptagoning/_kill-chain/_active_dir"; 
 
 type Params = {
@@ -52,17 +52,19 @@ export default async function Post(props: Params) {
   return (
     <main>
       <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author} 
-            subPath={post.subPath}
-            postStatus={post.postStatus}
-          />
-          <PostBody content={post.content} components={ImportComponents}/>
-        </article>
+        <ToggleAllFrame>
+          <article className="mb-32">
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author} 
+              subPath={post.subPath}
+              postStatus={post.postStatus}
+              />
+            <PostBody content={post.content} components={ImportComponents}/>
+          </article>
+        </ToggleAllFrame>
       </Container>
     </main>
   );

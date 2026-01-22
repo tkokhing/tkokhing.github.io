@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { useToggleBroadcast } from "./toggle-frame-provider";
 
 type Props = {
   label: string;
@@ -8,14 +9,26 @@ type Props = {
   defaultOpen?: boolean;
 };
 
+
+// Next 2 lines are switching between "defaultOpen = true" Vs "defaultOpen = false" for quick open_all, close_all
 export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
 // export function ToggleFrame({ label, children, defaultOpen = false }: Props) {
+
+  const ctx = useToggleBroadcast();
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const ref = useRef<HTMLDivElement>(null);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
+  // for Toggle open / closed
+  useEffect(() => {
+    if (!ctx) return;
+
+    return ctx.register((open: boolean) => {
+      setIsOpen(open);
+    });
+  }, [ctx]);
 
   // Scroll into view when ESC is pressed
   useEffect(() => {
