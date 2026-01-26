@@ -27,7 +27,7 @@ export function PostHeader({ title, coverImage, date, author, subPath, postStatu
         <div className="block md:hidden mb-6">
           <Avatar name={author.name} picture={author.picture} />
         </div>
-        <div className="mb-6 text-lg italic">
+        <div className="mb-6 text-adaptive_fs_sm italic">
           {postStatus} <DateFormatter dateString={date} />
         </div>
       </div>

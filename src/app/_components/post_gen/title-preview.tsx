@@ -19,12 +19,12 @@ export function TitlePreview({
   postStatus,
 }: Props) {
   return (
-    <div className="shadow-sm w-full dark:shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4 text-xl mb-3 leading-snug">
+    <div className="shadow-sm w-full dark:shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4 mb-3 leading-snug">
       <Link href={`/${subPath}/${slug}`}>
-        <h3 className="text-xl font-medium hover:underline">{title}</h3>
+        <h3 className="text-adaptive_fs_base font-medium hover:underline">{title}</h3>
       </Link>
-      <p className="text-pretty text-xs mb-1 italic">{excerpt}</p>
-      <p className="text-right text-xs italic">
+      <p className="text-pretty text-adaptive_fs_sm mb-1 italic">{excerpt}</p>
+      <p className="text-right text-adaptive_fs_xs italic">
         {postStatus} <DateFormatter dateString={date} />
       </p>
     </div>

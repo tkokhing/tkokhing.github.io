@@ -44,10 +44,11 @@ const config: Config = {
         tighter: "-.04em",
       },
       fontSize: {
-        "5xl": "2.5rem",
-        "6xl": "2.75rem",
-        "7xl": "4.5rem",
-        "8xl": "6.25rem",
+        'adaptive_fs_xl': 'clamp(2rem, calc(5.5vw), 4.5rem)',
+        'adaptive_fs_l': 'clamp(1.7rem, calc(4.2vw), 3.5rem)',
+        'adaptive_fs_base': 'clamp(1.2rem, calc(3vw), 3rem)',
+        'adaptive_fs_sm': 'clamp(0.875rem, calc(2vw), 2rem)',
+        'adaptive_fs_xs': 'clamp(0.625rem, calc(1vw), 2rem)',
       },
       boxShadow: {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
