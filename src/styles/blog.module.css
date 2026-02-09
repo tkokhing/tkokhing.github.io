@@ -23,6 +23,10 @@
   color: #1e3a8a;
 }
 
+.prose {
+  max-width: 100%;
+}
+
 /* for < pre > < code > block codes render IP and timming suffix */
 .prose pre{
   @apply bg-[#24292E] rounded-lg p-4;
@@ -42,4 +46,36 @@
   @apply text-tkokhing-dark;
   padding: 0.15em 0.4em;
   border-radius: 0.375rem;
+}
+
+/* Prevent tables from breaking container */
+.prose table {
+  display: block;
+  margin-left: auto;
+  table-layout: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.13);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.dark .prose table {
+  background: rgba(255,255,255,0.24);
+}
+
+/* Chrome / Edge / Safari */
+.prose table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.prose table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.prose table::-webkit-scrollbar-thumb {
+  background: rgba(120,120,120,0.5);
+  border-radius: 9999px;
 }

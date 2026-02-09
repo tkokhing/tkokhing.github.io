@@ -1,9 +1,12 @@
 import Container from "@/app/_components/preference/container";
-import { getAllPosts } from "@/lib/share/api";
+import { getAllPosts, loadPost } from "@/lib/share/api";
 import { HeroPost } from "@/app/_components/post_gen/hero-post";
 import { MoreStories } from "@/app/_components/post_gen/more-stories";
+import { PostBody } from "../_components/post_gen/post-body";
 
 export default function Index() {
+
+  const readmeHeptagoning = loadPost("README.md","_heptagoning")
   const allPosts = getAllPosts("_heptagoning/_kill-chain");
   
   const filteredPosts = allPosts.filter(
@@ -14,6 +17,8 @@ export default function Index() {
   return (
     <main>
       <Container>
+      <PostBody content={readmeHeptagoning} />
+      <br />
       <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
