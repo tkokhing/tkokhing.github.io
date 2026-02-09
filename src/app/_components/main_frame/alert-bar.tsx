@@ -38,7 +38,7 @@ const AlertBar = ({ preview }: Props) => {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm dark:text-teal-100">
+        <div className="py-2 text-center text-adaptive_fs_xs dark:text-teal-100">
           {preview ? (
             <>
               This page is a preview.{" "}
