@@ -25,9 +25,6 @@
 
 .prose {
   max-width: 100%;
-}
-
-.prose a {
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -70,11 +67,6 @@
   @apply text-tkokhing-dark;
   padding: 0.15em 0.4em;
   border-radius: 0.125rem;
-}
-
-.prose a code[data-kind] {
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 /* Prevent tables from breaking container */
