@@ -27,11 +27,35 @@
   max-width: 100%;
 }
 
-/* for < pre > < code > block codes render IP and timming suffix */
-.prose pre{
-  @apply bg-[#24292E] rounded-lg p-4;
+.prose a {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
+/* for < pre > < code > block codes render IP and file_timing suffix */
+.prose pre{
+  @apply bg-[#24292E];
+}
+
+.prose pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+.prose pre::-webkit-scrollbar-button {
+  display: none;
+}
+.prose pre::-webkit-scrollbar-thumb {
+  background: rgba(120,120,120,0.5);
+}
+.prose pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 23, 23, 0.5);
+}
+.dark .prose pre::-webkit-scrollbar-thumb {
+  background: rgb(245, 245, 245);
+  border-radius: 9999px;
+}
+.dark .prose pre::-webkit-scrollbar-thumb:hover {
+  background: rgb(120, 120, 120);
+}
 /* for future if need to split */
 /* .prose pre.language-bash code, */
 /* .prose pre.language-powershell code { */
@@ -45,7 +69,12 @@
 .prose code[data-kind] {
   @apply text-tkokhing-dark;
   padding: 0.15em 0.4em;
-  border-radius: 0.375rem;
+  border-radius: 0.125rem;
+}
+
+.prose a code[data-kind] {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Prevent tables from breaking container */
@@ -58,7 +87,7 @@
   overflow-x: auto;
   white-space: nowrap;
   background: rgba(0,0,0,0.13);
-  border-radius: 0.375rem;
+  border-radius: 0.125rem;
   padding: 0.5rem;
 }
 
@@ -74,8 +103,17 @@
 .prose table::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .prose table::-webkit-scrollbar-thumb {
   background: rgba(120,120,120,0.5);
   border-radius: 9999px;
+}
+.prose table::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 23, 23, 0.5);
+}
+.dark .prose table::-webkit-scrollbar-thumb {
+  background: rgb(245, 245, 245);
+  border-radius: 9999px;
+}
+.dark .prose table::-webkit-scrollbar-thumb:hover {
+  background: rgb(120, 120, 120);
 }

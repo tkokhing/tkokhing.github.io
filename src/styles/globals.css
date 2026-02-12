@@ -3,3 +3,4 @@
 @tailwind utilities;
 @plugin "@tailwindcss/typography";
 @import 'blog.module.css';
+@import 'icon_svg.module.css'

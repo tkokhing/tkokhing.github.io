@@ -741,7 +741,7 @@ export const SystemModeIcon: React.FC<IconProps> = ({ width = 2, fillColour = "#
       </rect>
     </svg>
   )
-}
+};
 
 export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "white" }) => {
   const [hoverOn, setHovered] = React.useState(false);
@@ -783,8 +783,7 @@ export const DarkModeIcon: React.FC<IconProps> = ({ width = 1, strokeColour = "w
       </g>
     </svg>
   )
-}
-
+};
 
 export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "#FFBE03" }) => {
 
@@ -808,7 +807,7 @@ export const LightModeIcon: React.FC<IconProps> = ({ width = 2, strokeColour = "
       <circle cx="12" cy="12" r="0.5" fill="#FFF003" />
     </svg>
   )
-}
+};
 
 export const ProfileLogoSVG = () => (
   <svg
@@ -836,7 +835,61 @@ export const ProfileLogoSVG = () => (
       <path d="M1000 1380 l0 -520 150 0 150 0 0 130 0 130 150 0 150 0 0 130 0 130 -150 0 -150 0 0 260 0 260 -150 0 -150 0 0 -520z" />
     </g>
   </svg>
-)
+);
+
+export const ExpandAll: React.FC<IconProps> = ({ fillColour = "#D9F99D" }) => {
+  const [hoverOn, setHovered] = useState(false);
+
+  return (
+    <svg 
+      version="1.1" 
+      viewBox="0 0 512 512" 
+      xmlns="http://www.w3.org/2000/svg" 
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      height="20px" 
+      width="20px"
+    >
+    <title>Expand All</title>
+    <title>Learning never stops</title>
+    <g strokeLinecap="round" strokeLinejoin="round" fill={hoverOn ? fillColour : "#0071C1"} stroke={hoverOn ? fillColour : "#0071C1"}>        
+    <path d="M199.541,365.792c-4.237-4.093-10.99-3.976-15.083,0.262c-3.993,4.134-3.993,10.687,0,14.821l64,64 c4.157,4.174,10.911,4.187,15.085,0.03c0.01-0.01,0.02-0.02,0.03-0.03l64-64c4.093-4.237,3.976-10.99-0.261-15.083 c-4.134-3.993-10.688-3.993-14.821,0l-45.824,45.792V100.416l45.792,45.792c4.237,4.093,10.99,3.976,15.083-0.262 c3.993-4.134,3.993-10.687,0-14.821l-64-64c-4.157-4.174-10.911-4.187-15.085-0.03c-0.01,0.01-0.02,0.02-0.03,0.03l-64,64 c-4.093,4.237-3.975,10.99,0.262,15.083c4.134,3.992,10.687,3.992,14.82,0l45.824-45.792v311.168L199.541,365.792z"></path> 
+    <line strokeWidth="50" x1="0" y1="0" x2="512" y2="0" />
+    <line strokeWidth="50" x1="0" y1="512" x2="512" y2="512" />
+
+    </g> 
+</svg>
+  )
+};
+
+export const CollapseAll: React.FC<IconProps> = ({ fillColour = "#D9F99D" }) => {
+  const [hoverOn, setHovered] = useState(false);
+
+  return (
+    <svg 
+      version="1.1" 
+      viewBox="0 0 60 60" 
+      xmlns="http://www.w3.org/2000/svg" 
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      height="20px" 
+      width="20px"
+    >
+    <title>Collapse All</title>
+    <title>Learning never stops</title>
+    <g strokeMiterlimit="8"strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill={hoverOn ? fillColour : "#0071C1"} stroke={hoverOn ? fillColour : "#0071C1"}>        
+      <line x1="0" y1="26" x2="60" y2="26" />
+      <line x1="0" y1="34" x2="60" y2="34" />
+      <line x1="30" y1="0" x2="30" y2="20" />
+      <line x1="23" y1="15" x2="30" y2="20" />
+      <line x1="37" y1="15" x2="30" y2="20" />
+      <line x1="30" y1="40" x2="30" y2="60" />
+      <line x1="23" y1="45" x2="30" y2="40" />
+      <line x1="37" y1="45" x2="30" y2="40" />
+    </g> 
+</svg>
+  )
+};
 
 export default {
   SquareBoxIcon,
@@ -857,4 +910,6 @@ export default {
   DarkModeIcon,
   LightModeIcon,
   ProfileLogoSVG,
+  ExpandAll,
+  CollapseAll,
 };
