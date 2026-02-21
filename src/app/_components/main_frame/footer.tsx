@@ -2,7 +2,7 @@ import Container from "@/app/_components/preference/container";
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-slate-800">
+    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-transparent">
       <Container>
         <div className="py-8 flex flex-col lg:flex-row items-center">
           <h3 className="text-2xl lg:text-[1.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-4 lg:mb-0 lg:pr-4 lg:w-1/2 dark:text-teal-100">

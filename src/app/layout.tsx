@@ -1,8 +1,7 @@
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import cn from "classnames";
-import type { Metadata } from "next";
-import type { Viewport } from 'next'
+import type { Metadata, Viewport } from "next";
 
 import AlertBar from "@/app/_components/main_frame/alert-bar";
 import { LanguageProvider } from "@/app/_components/language_handler/language-provider";
@@ -53,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-slate-900 dark:text-slate-300")}
+        className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-gradient-radial from-teal-900 from-10% to-zinc-900 to-90% dark:text-slate-300")}
       >
         <LanguageProvider>
         <ToggleFrameProvider>  
