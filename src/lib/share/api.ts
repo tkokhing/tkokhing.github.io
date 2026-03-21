@@ -8,12 +8,20 @@ function useBasePath(): string {
   return process.env.GITHUB_ACTIONS ? REPO_NAME : '';
 }
 
-function postsDirectory(post_folder: string): string{
-  fs.readdir((join(process.cwd(), post_folder)), (err) => {
-    if (err) {
-      console.error('Error reading directory:', err);
-    }
-  })
+// function postsDirectory(post_folder: string): string{
+//   fs.readdir((join(process.cwd(), post_folder)), (err) => {
+//     if (err) {
+//       console.error('Error reading directory:', err);
+//     }
+//   })
+//   return join(process.cwd(), post_folder);
+// }
+
+function postsDirectory(post_folder: string): string {
+  if (typeof post_folder !== "string" || !post_folder.trim()) {
+    throw new TypeError(`post_folder must be a non-empty string, got: ${post_folder}`);
+  }
+
   return join(process.cwd(), post_folder);
 }
 

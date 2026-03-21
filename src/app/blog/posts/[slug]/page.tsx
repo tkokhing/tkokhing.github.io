@@ -12,6 +12,8 @@ import { FrontierLeadinData } from "@/lib/_data_exporter/data_securingdigitalfro
 import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
+import Mermaid from "@/app/_components/post_gen/render-mermaid";
+import Diagram from "@/lib/_data_exporter/diagrams/diagrams_exporter";
 
 const MDX_FOLDER = "_blog_post/_blogs"; 
 
@@ -28,6 +30,8 @@ export default async function Post(props: Params) {
     FrontierLeadinData,
     ToggleFrame,
     PostListConcise,
+    Mermaid,
+    Diagram,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'blog/posts') return notFound();

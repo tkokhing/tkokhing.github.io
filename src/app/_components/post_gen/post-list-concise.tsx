@@ -11,6 +11,8 @@ type Props = {
 };
 
 export function PostListConcise ({ dir, chosen_subPath }: Props) {
+  if (typeof dir !== 'string'|| !dir.trim()) {
+    throw new TypeError(`post_folder must be a non-empty string, got: ${dir}`);}
   const allPosts = getAllPosts(dir);
 
   const filteredPosts = allPosts.filter(
