@@ -1,8 +1,11 @@
 name: Deploy tkokhing main page to GitHub Pages
 
 on:
+  # repository_dispatch:
+  #   types: [auto-trigger-rebuild]
+
   repository_dispatch:
-    types: [auto-trigger-rebuild]
+    types: [app-trigger-rebuild]
 
   push:
     branches: ["main"]
