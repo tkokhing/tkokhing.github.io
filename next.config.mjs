@@ -1,8 +1,9 @@
-
-// next.config.mjs
+// next.config.mjs, implemented with @next/mdx, serves for `import` of *.MDX
 import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
-import rehypePrettyCode from "rehype-pretty-code";
+// import rehypePrettyCode from "rehype-pretty-code";
+// import remarkGfm from "remark-gfm"; 
+// import rehypePrettyCode from "rehype-pretty-code";
+// From Next v16+, import packages no longer required hence call as string under [options]
 
 /** @type {import('rehype-pretty-code').Options} */
 const prettyOptions = {
@@ -11,16 +12,16 @@ const prettyOptions = {
 };
 
 const withMDX = createMDX({
-  extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [[rehypePrettyCode, prettyOptions]],
+    remarkPlugins: ["remark-gfm"],
+    rehypePlugins: [["rehype-pretty-code", prettyOptions], "rehype-slug", "rehype-autolink-headings"],
   },
+  extension: /\.mdx?$/,
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // turn off mdxRs for plugin support
+  // mdxRs  MUST  be FALSE for remark/rehype plugins to work
   experimental: { mdxRs: false },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   output: "export",

@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ProfileLogoSVG, HomeWithTextIcon, BlogWithTextIcon, TopicWithTextIcon, HeptagoningWithTextIcon, ResearchWithTextIcon } from "@/app/_components/main_frame/icons_svg";
 import { useNavigation } from "@/app/_components/main_frame/navigation-context";
 import { TKOKHING_LOGO_SVG_URL } from "@/lib/share/constants";
-import { ThemeSwitcher } from "@/app/_components/main_frame/theme-switcher";
+import { ThemeSwitcherButton } from "@/app/_components/main_frame/theme-switcher";
 import FontSizeDropdown from "@/app/_components/main_frame/font-size-button";
 
 const user = {
@@ -96,8 +96,8 @@ export default function Navigationbar() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="space-x-7 items-center px-4 md:ml-6 flex flex-row justify-evenly">
-                <ThemeSwitcher />
+              <div className="flex flex-row justify-evenly items-center space-x-7 px-4 md:ml-6">
+                <ThemeSwitcherButton />
                 <FontSizeDropdown />
               </div>
             </div>
@@ -133,8 +133,8 @@ export default function Navigationbar() {
                 </DisclosureButton>
               </div>
               {/* Settings */}
-              <div className="flex justify-around py-4 border-b border-gray-200 dark:border-zinc-700">
-                <ThemeSwitcher />
+              <div className="flex justify-around items-center py-4 border-b border-gray-200 dark:border-zinc-700">
+                <ThemeSwitcherButton />
                 <FontSizeDropdown />
               </div>
               {/* Navigation */}

@@ -1,6 +1,6 @@
+@import 'blog.module.css';
+@import 'icon_svg.module.css';
+@plugin "@tailwindcss/typography";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@plugin "@tailwindcss/typography";
-@import 'blog.module.css';
-@import 'icon_svg.module.css'

@@ -8,7 +8,7 @@ export default function PostBodyClient({ children }: { children: React.ReactNode
   return (
     <div className={
       `mx-auto prose prose-${fontSize} prose
-      prose-headings:text-zinc-800 dark:prose-headings:text-slate-400
+      prose-headings:text-blue-800 dark:prose-headings:text-blue-500
       prose-a:text-blue-800 dark:prose-a:text-blue-300
       prose-p:text-zinc-700 dark:prose-p:text-zinc-300
       prose-strong:text-stone-800 dark:prose-strong:text-sky-100

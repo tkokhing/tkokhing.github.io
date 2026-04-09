@@ -84,9 +84,6 @@ const Script = memo(() => (
   />
 ));
 
-export const ThemeSwitcher = () => (
-  <>
-    <Script />
-    <Switch />
-  </>
-);
+// Export as separate components, Script to layout, Switch to Navi-bar
+export const ThemeSwitcherScript = () => <Script />;
+export const ThemeSwitcherButton = () => <Switch />;

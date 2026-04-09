@@ -22,7 +22,7 @@ function postsDirectory(post_folder: string): string {
     throw new TypeError(`post_folder must be a non-empty string, got: ${post_folder}`);
   }
 
-  return join(process.cwd(), post_folder);
+  return join(/*turbopackIgnore: true*/  process.cwd(), post_folder);
 }
 
 // dual usage, call it directly to load MD format
@@ -34,7 +34,7 @@ export function loadPost(slug: string, post_folder: string) {
   : ".mdx"; // default fallback
 
   const realSlug = slug.replace(/\.mdx?$/, "").replace(/\.md$/, "");
-  const fullPath = join(postsDirectory(post_folder), `${realSlug}${ext}`);
+  const fullPath = join(/*turbopackIgnore: true*/  postsDirectory(post_folder), `${realSlug}${ext}`);
   return fs.readFileSync(fullPath, "utf-8");
 }
 

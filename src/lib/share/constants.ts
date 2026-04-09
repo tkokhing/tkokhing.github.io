@@ -33,6 +33,7 @@ export const ATTACKER_PORT = "22";
 // ---------------------------- AD Domain Name  ----------------------------
 // export const AD_DOMAIN_NAME = "OSCP.EXAM" //updated
 export const AD_DOMAIN_NAME = "CAR.TOON" //mine
+export const BOX_DOMAIN_NAME = "futurevera.thm" //mine
 
 // ---------------------------- Client01  aka MS01  ----------------------------
 

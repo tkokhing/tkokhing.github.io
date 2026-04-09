@@ -12,6 +12,7 @@ import { FontSizeProvider } from "@/app/_components/main_frame/font-size-ctrl";
 import SubpageHeader from "@/app/_components/main_frame/subpage-header";
 import Footer from "@/app/_components/main_frame/footer";
 import { T_ANI_GIF_URL } from "@/lib/share/constants";
+import { ThemeSwitcherScript } from "@/app/_components/main_frame/theme-switcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,20 +55,20 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-gradient-radial from-teal-900 from-10% to-zinc-900 to-90% dark:text-slate-300")}
       >
+        <ThemeSwitcherScript />
         <LanguageProvider>
-        <ToggleFrameProvider>  
-        <NavigationProvider>
-        <FontSizeProvider >
-        <AlertBar />
-        <Navigationbar />
-        <SubpageHeader />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
-        </FontSizeProvider>
-        </NavigationProvider>
-        </ToggleFrameProvider>
+          <ToggleFrameProvider>
+            <NavigationProvider>
+              <FontSizeProvider >
+                <AlertBar />
+                <Navigationbar />
+                <SubpageHeader />
+                <div className="min-h-screen">{children}</div>
+                <Footer />
+              </FontSizeProvider>
+            </NavigationProvider>
+          </ToggleFrameProvider>
         </LanguageProvider>
-
       </body>
     </html>
   );
