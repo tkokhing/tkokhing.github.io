@@ -1,4 +1,5 @@
 "use client";
+
 import { monthdate } from "@/app/_components/preference/variable";
 
 export default function FilenameSuffix() {

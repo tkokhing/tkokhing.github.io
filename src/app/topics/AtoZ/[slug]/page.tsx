@@ -1,4 +1,4 @@
-// [tkokhing/topic_post/_topic_post/_topics] MDX_FOLDER
+// [tkokhing/topic_post/_topics] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";

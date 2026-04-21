@@ -104,8 +104,9 @@ export default function Navigationbar() {
             <div className="-mr-2 flex md:hidden">
               {/* Mobile Menu Button */}
               <DisclosureButton 
+                title="Open Menu"
                 className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                aria-label="Open Main Menu"
+                aria-label="Open Menu"
                 >
                 <span className="absolute -inset-0.5" />
                 <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
@@ -125,8 +126,9 @@ export default function Navigationbar() {
               <div className="flex items-center justify-between p-4 border-b border-gray-300 dark:border-zinc-700">
                 <span className="font-semibold">Menu</span>
                 <DisclosureButton 
+                  title="Close menu"
                   className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  aria-label="Open Main Menu"
+                  aria-label="Close Menu"
                   >
                   <span className="absolute -inset-0.5" />
                   <XMarkIcon aria-hidden="true" className="size-6 group-data-[open]:block" />

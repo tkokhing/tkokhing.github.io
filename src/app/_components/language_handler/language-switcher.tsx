@@ -14,6 +14,7 @@ const LanguageSwitcher = () => {
     <Container>
 
     <button
+      title={language === 'en' ? '中文版' : 'English edition'}
       onClick={handleLanguageChange}
       className={styles.languageSwitch}
       aria-label="Language_Switch"

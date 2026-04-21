@@ -1,4 +1,4 @@
-// [tkokhing/topic_post/_topic_post/_topics] MDX_FOLDER
+// [tkokhing/heptagoning/_kill-chain] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/app/_components/preference/container";
@@ -7,7 +7,6 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 
@@ -22,12 +21,11 @@ type Params = {
 export default async function Post(props: Params) {
   const params = await props.params;
   const ImportComponents = {
-    ToggleFrame,
     PostListConcise,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'heptagoning/kill-chain') return notFound();
- 
+  
   return (
     <main>
       <Container>
@@ -41,7 +39,7 @@ export default async function Post(props: Params) {
               subPath={post.subPath}
               postStatus={post.postStatus}
               />
-            <PostBody content={post.content} components={ImportComponents}/>
+            <PostBody content={post.content} components={{...ImportComponents}}/>
           </article>
         </ToggleAllFrame>
       </Container>

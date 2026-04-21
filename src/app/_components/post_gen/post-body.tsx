@@ -1,11 +1,12 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+// added Options -> render`*.mdx` files as `pages`
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from "rehype-pretty-code";
-// added Options here to processes `*.mdx` files as `pages`
-
 import PostBodyClient from '@/app/_components/post_gen/post-body-client';
+// inject REACT components, not MDX, common to most functions
+import { frameComponents } from '@/lib/_data_exporter/pipeline/frame_components';
 
 type Props = {
   content: string;
@@ -22,7 +23,7 @@ export function PostBody({ content, components = {} }: Props) {
     <PostBodyClient>
       <MDXRemote
         source={content || ''}
-        components={components}
+        components={{...components, ...frameComponents}}
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],

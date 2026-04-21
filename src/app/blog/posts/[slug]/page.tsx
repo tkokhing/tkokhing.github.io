@@ -1,4 +1,4 @@
-// [tkokhing/blog_post/_blog_post/_blogs] MDX_FOLDER
+// [tkokhing/blog_post/_blogs] MDX_FOLDER
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/share/api";
@@ -9,7 +9,6 @@ import { PostHeader } from "@/app/_components/post_gen/post-header";
 import { PostBody } from "@/app/_components/post_gen/post-body";
 import { FrontierData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
 import { FrontierLeadinData } from "@/lib/_data_exporter/data_securingdigitalfrontiers/frontier_data-exporter";
-import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 import { PostListConcise } from "@/app/_components/post_gen/post-list-concise";
 import Mermaid from "@/app/_components/post_gen/render-mermaid";
@@ -28,7 +27,6 @@ export default async function Post(props: Params) {
   const ImportComponents = {
     FrontierData,
     FrontierLeadinData,
-    ToggleFrame,
     PostListConcise,
     Mermaid,
     Diagram,
@@ -49,7 +47,7 @@ export default async function Post(props: Params) {
               subPath={post.subPath}
               postStatus={post.postStatus}
               />
-            <PostBody content={post.content} components={ImportComponents}/>
+            <PostBody content={post.content} components={{...ImportComponents}}/>
           </article>
         </ToggleAllFrame>
       </Container>

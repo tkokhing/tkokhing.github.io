@@ -25,6 +25,7 @@ export default function FontSizeDropdown() {
     <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <MenuButton 
+          title="Font size settings"
           className="p-1 h-10 w-15 -inset-0.5 relative flex max-w-xs items-center rounded-full text-tkokhing-blue hover:text-tkokhing-dark ring-1 ring-tkokhing-blue hover:bg-gray-700 hover:dark:ring-tkokhing-dark"
           aria-label="Open font size menu"
           >

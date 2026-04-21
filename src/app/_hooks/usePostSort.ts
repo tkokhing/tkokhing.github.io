@@ -8,7 +8,7 @@ import { Post } from "@/interfaces/post";
 
 type SortMode = "title" | "date";
 
-export function usePostSort(posts: Post[], skipURLParam = false) {
+export function usePostSort(posts: Post[], skipURLParam = true) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const defaultSort: SortMode = searchParams.get("sort") === "date" ? "date" : "title";

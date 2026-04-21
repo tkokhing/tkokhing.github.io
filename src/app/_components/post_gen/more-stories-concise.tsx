@@ -22,6 +22,7 @@ export function MoreStoriesConcise({ posts, skipURLParam }: Props) {
           <button
             onClick={() => handleSortChange("title")}
             disabled={sortBy === "title"}
+            title={sortBy === 'title' ? '' : 'Sort by Title'}
             className={`px-3 py-1 rounded transition ${
               sortBy === "title"
                 ? "bg-gray-700 dark:bg-gray-600 text-tkokhing-blue cursor-default"
@@ -33,6 +34,7 @@ export function MoreStoriesConcise({ posts, skipURLParam }: Props) {
           <button
             onClick={() => handleSortChange("date")}
             disabled={sortBy === "date"}
+            title={sortBy === 'date' ? '' : 'Click to sort'}
             className={`px-3 py-1 rounded transition ${
               sortBy === "date"
                 ? "bg-gray-700 dark:bg-gray-600 text-tkokhing-blue cursor-default"

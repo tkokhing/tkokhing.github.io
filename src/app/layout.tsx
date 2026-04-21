@@ -52,23 +52,42 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body
-        className={cn(inter.className, "bg-slate-50 text-sky-700 dark:bg-gradient-radial from-teal-900 from-10% to-zinc-900 to-90% dark:text-slate-300")}
-      >
-        <ThemeSwitcherScript />
-        <LanguageProvider>
-          <ToggleFrameProvider>
-            <NavigationProvider>
-              <FontSizeProvider >
-                <AlertBar />
-                <Navigationbar />
-                <SubpageHeader />
-                <div className="min-h-screen">{children}</div>
-                <Footer />
-              </FontSizeProvider>
-            </NavigationProvider>
-          </ToggleFrameProvider>
-        </LanguageProvider>
+      <body className={cn(inter.className, "antialiased")}>
+        {/* 1. The Fixed Background Layer */}
+        {/* <div
+          className={cn(
+            "fixed inset-0 -z-10", // Locks to viewport, stays behind content
+            "bg-slate-50", // Your Light Mode
+            "dark:bg-fixed dark:bg-gradient-radial dark:from-teal-900 dark:from-10% dark:to-zinc-900 dark:to-90%", // Your Dark Mode
+            // "transition-colors duration-300 ease-in-out" 
+          )}
+        /> */}
+        <div
+          className={cn(
+            "fixed inset-0 -z-10",
+            "bg-slate-50",
+            "dark:bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))]",
+            "dark:from-teal-900 dark:from-10% dark:to-zinc-900 dark:to-90%"
+          )}
+        />
+        {/* 2. The Scrolling Content Layer */}
+        <div className="relative z-10 text-sky-700 dark:text-slate-300">
+          <ThemeSwitcherScript />
+          <LanguageProvider>
+            <ToggleFrameProvider>
+              <NavigationProvider>
+                <FontSizeProvider >
+                  <AlertBar />
+                  <Navigationbar />
+                  <SubpageHeader />
+                  <div className="min-h-screen">{children}</div>
+                  <Footer />
+                </FontSizeProvider>
+              </NavigationProvider>
+            </ToggleFrameProvider>
+          </LanguageProvider>
+
+        </div>
       </body>
     </html>
   );

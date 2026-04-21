@@ -2,6 +2,9 @@
   padding: 1em;
   margin: 1.5em 0;
   border-left: 8px solid;
+  border-top: 0.5px solid;
+  border-bottom: 0.5px solid;
+  border-right: 0.5px solid;
   border-radius: 6px;
 }
 

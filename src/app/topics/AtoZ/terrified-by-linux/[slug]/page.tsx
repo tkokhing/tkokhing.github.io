@@ -8,10 +8,6 @@ import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 
-import Alert from "@/app/_components/blog_frame/alert";
-import Note from "@/app/_components/blog_frame/note";
-import Tip from "@/app/_components/blog_frame/tip";
-
 const MDX_FOLDER = "_linux_post/_linux/"; 
 
 type Params = {
@@ -22,11 +18,6 @@ type Params = {
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const LinuxBlogComponents = {
-    Tip,
-    Note,
-    Alert,
-  };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'topics/AtoZ/terrified-by-linux') return notFound();
  
@@ -42,7 +33,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-          <PostBody content={post.content} components={LinuxBlogComponents} />
+          <PostBody content={post.content} components={""} />
         </article>
       </Container>
     </main>

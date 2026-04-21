@@ -7,12 +7,9 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { AD_Access, AD_Enum_net_command, AD_Enum_powerview, AD_Exploit_attack, AD_Auth_decision_flow, AD_Kerberos, AD_As_rep_roast, AD_Ldap, AD_Call_back_attacker, AD_Lateral_move, AD_Bypass_uac, AD_Pass_the_hash, AD_Overpass_the_hash, AD_Netexec, AOA_Killchain_roast_or_abuse, AOA_Killchain_rapid_checklist, SSH_Connection } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
-import Alert from "@/app/_components/blog_frame/alert";
-import Note from "@/app/_components/blog_frame/note";
-import Tip from "@/app/_components/blog_frame/tip";
-import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
+import { AD_Access, AD_Enum_net_command, AD_Enum_powerview, AD_Exploit_attack, AD_Call_back_attacker, AD_Lateral_move, AOA_Killchain_roast_or_abuse, AOA_Killchain_rapid_checklist } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
+
 const MDX_FOLDER = "_heptagoning/_kill-chain/_active_dir"; 
 
 type Params = {
@@ -24,27 +21,14 @@ type Params = {
 export default async function Post(props: Params) {
   const params = await props.params;
   const ImportComponents = {
-    Tip,
-    Note,
-    Alert,
-    ToggleFrame,
     AD_Access,
     AD_Enum_net_command,
     AD_Enum_powerview,
     AD_Exploit_attack,
-    AD_Auth_decision_flow,
-    AD_Kerberos,
-    AD_As_rep_roast,
-    AD_Ldap,
     AD_Call_back_attacker,
     AD_Lateral_move,
-    AD_Bypass_uac,
-    AD_Pass_the_hash,
-    AD_Overpass_the_hash,
-    AD_Netexec,
     AOA_Killchain_roast_or_abuse,
     AOA_Killchain_rapid_checklist,
-    SSH_Connection,
   };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'heptagoning/kill-chain/active_dir') return notFound();
@@ -62,7 +46,7 @@ export default async function Post(props: Params) {
               subPath={post.subPath}
               postStatus={post.postStatus}
               />
-            <PostBody content={post.content} components={ImportComponents}/>
+            <PostBody content={post.content} components={{...ImportComponents}}/>
           </article>
         </ToggleAllFrame>
       </Container>

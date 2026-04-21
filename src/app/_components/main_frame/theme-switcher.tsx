@@ -67,6 +67,7 @@ const Switch = () => {
 
   return (
     <button
+      title={mode === 'dark' ? 'Switch to Light theme' : mode === 'light' ? 'Switch to System theme' : 'Switch to Dark theme'}
       suppressHydrationWarning
       className={styles.switch}
       aria-label="Toggle theme"

@@ -8,10 +8,11 @@ import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
-import Alert from "@/app/_components/blog_frame/alert";
-import Note from "@/app/_components/blog_frame/note";
-import Tip from "@/app/_components/blog_frame/tip";
-import { ToggleFrame } from "@/app/_components/preference/toggle-frame";
+
+// import Alert from "@/app/_components/blog_frame/alert";
+// import Note from "@/app/_components/blog_frame/note";
+// import Tip from "@/app/_components/blog_frame/tip";
+
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
 const MDX_FOLDER = "_heptagoning/_kill-chain/_delivery"; 
 
@@ -24,10 +25,6 @@ type Params = {
 export default async function Post(props: Params) {
   const params = await props.params;
   const ImportComponents = {
-    Tip,
-    Note,
-    Alert,
-    ToggleFrame,
     NMAP_Overview,
     NMAP_Vuln_Scan,
     NMAP_SMB_Enum,
@@ -49,7 +46,7 @@ export default async function Post(props: Params) {
               subPath={post.subPath}
               postStatus={post.postStatus}
             />
-            <PostBody content={post.content} components={ImportComponents}/>
+            <PostBody content={post.content} components={{...ImportComponents}}/>
           </article>
         </ToggleAllFrame>
       </Container>

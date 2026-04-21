@@ -8,9 +8,11 @@ import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
 import { NMAP_Overview } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
-import Alert from "@/app/_components/blog_frame/alert";
-import Note from "@/app/_components/blog_frame/note";
-import Tip from "@/app/_components/blog_frame/tip";
+
+// import Alert from "@/app/_components/blog_frame/alert";
+// import Note from "@/app/_components/blog_frame/note";
+// import Tip from "@/app/_components/blog_frame/tip";
+
 
 const MDX_FOLDER = "_heptagoning/_kill-chain/_weaponise"; 
 
@@ -23,9 +25,9 @@ type Params = {
 export default async function Post(props: Params) {
   const params = await props.params;
   const ImportComponents = {
-    Tip,
-    Note,
-    Alert,
+    // Tip,
+    // Note,
+    // Alert,
     NMAP_Overview,
     };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
