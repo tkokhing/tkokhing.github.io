@@ -117,7 +117,8 @@ export default function Navigationbar() {
         </div>
         <DisclosurePanel className="md:hidden">
           {/* blur out backdrop */}
-          <div className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" />
+          {/* <div className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" /> */}
+          <DisclosureButton className="fixed inset-0 bg-black/40 backdrop-blur-sm cursor-default" />
           {/* Drawer panel */}
           <div className="absolute origin-top-right right-5 sm:right-6 lg:right-8 z-50 h-full w-[80%] max-w-sm">
             {/* separate shading which cannot be absolute, resizing will failed*/}
