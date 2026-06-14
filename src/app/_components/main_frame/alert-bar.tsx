@@ -32,7 +32,7 @@ const AlertBar = ({ preview }: Props) => {
 
   return (
     <div
-      className={cn("border-b dark:bg-transparent", {
+      className={cn("border-b bg-transparent dark:bg-transparent", {
         "bg-neutral-800 border-neutral-800 text-white": preview,
         "bg-neutral-50 border-neutral-200": !preview,
       })}

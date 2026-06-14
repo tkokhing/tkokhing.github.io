@@ -59,10 +59,14 @@
 /* for future if need to split */
 /* .prose pre.language-bash code, */
 /* .prose pre.language-powershell code { */
-  /* @apply bg-transparent text-tkokhing-dark;} */
+  /* @apply bg-transparent;} */
+
+/* for future if need to split */
+/* .prose pre.language-bash code{ */
+  /* @apply bg-transparent text-green-600;} */
 
 .prose pre[class^="language-"] code {
-  @apply bg-transparent text-tkokhing-dark;
+  @apply bg-transparent text-blue-500;
 }
 
 /* for command that (i) having user-input IPs/Ports or (ii) output to a file */

@@ -53,23 +53,48 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={cn(inter.className, "antialiased")}>
-        {/* 1. The Fixed Background Layer */}
-        {/* <div
-          className={cn(
-            "fixed inset-0 -z-10", // Locks to viewport, stays behind content
-            "bg-slate-50", // Your Light Mode
-            "dark:bg-fixed dark:bg-gradient-radial dark:from-teal-900 dark:from-10% dark:to-zinc-900 dark:to-90%", // Your Dark Mode
-            // "transition-colors duration-300 ease-in-out" 
-          )}
-        /> */}
-        <div
-          className={cn(
-            "fixed inset-0 -z-10",
-            "bg-slate-50",
-            "dark:bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))]",
-            "dark:from-teal-900 dark:from-10% dark:to-zinc-900 dark:to-90%"
-          )}
-        />
+        {/* Background System */}
+        <div className="fixed inset-0 -z-10 overflow-hidden">
+
+          {/* Base Gradient */}
+          <div
+            className={cn(
+              "absolute inset-0",
+              "bg-slate-50",
+              "dark:bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))]",
+              "dark:from-teal-950 dark:via-zinc-950 dark:to-black"
+            )}
+          />
+          {/* Glow Top Right */}
+          {/* <div className="absolute right-[-10rem] top-[-10rem] h-[35rem] w-[35rem] rounded-full bg-lime-400/20 blur-[140px]" /> */}
+
+          {/* Glow Bottom Left */}
+          <div className="absolute bottom-[-10rem] left-[-10rem] h-[35rem] w-[35rem] rounded-full bg-yellow-300/20 blur-[160px]" />
+
+          {/* Ambient Layer */}
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 via-transparent to-green-900/10" />
+
+          {/* Noise */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-soft-light">
+            <svg className="h-full w-full">
+              <filter id="noise">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.65"
+                  numOctaves="3"
+                />
+              </filter>
+              <rect width="100%" height="100%" filter="url(#noise)" />
+            </svg>
+          </div>
+
+          {/* Plexus Layer */}
+          <div className="plexus-bg absolute inset-0 opacity-40 dark:opacity-70" />
+
+          {/* Subtle Noise Texture */}
+          <div className="noise-bg absolute inset-0 opacity-[0.015] dark:opacity-[0.03]" />
+        </div>
+
         {/* 2. The Scrolling Content Layer */}
         <div className="relative z-10 text-sky-700 dark:text-slate-300">
           <ThemeSwitcherScript />
