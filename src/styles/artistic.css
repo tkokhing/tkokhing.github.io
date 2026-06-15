@@ -1,12 +1,30 @@
-.plexus-bg {
-  background-image:
-    url("data:image/svg+xml,%3Csvg%20width%3D'1600'%20height%3D'900'%20viewBox%3D'0%200%201600%20900'%20fill%3D'none'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20opacity%3D'0.22'%3E%3Ccircle%20cx%3D'180'%20cy%3D'140'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'420'%20cy%3D'220'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'680'%20cy%3D'180'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'920'%20cy%3D'320'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'1240'%20cy%3D'200'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Cline%20x1%3D'180'%20y1%3D'140'%20x2%3D'420'%20y2%3D'220'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'420'%20y1%3D'220'%20x2%3D'680'%20y2%3D'180'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'680'%20y1%3D'180'%20x2%3D'920'%20y2%3D'320'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'920'%20y1%3D'320'%20x2%3D'1240'%20y2%3D'200'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+@layer utilities {
+  .plexus-bg {
+    background-image:url("data:image/svg+xml,%3Csvg%20width%3D'1600'%20height%3D'900'%20viewBox%3D'0%200%201600%20900'%20fill%3D'none'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20opacity%3D'0.22'%3E%3Ccircle%20cx%3D'180'%20cy%3D'140'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'420'%20cy%3D'220'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'680'%20cy%3D'180'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'920'%20cy%3D'320'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'1240'%20cy%3D'200'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Cline%20x1%3D'180'%20y1%3D'140'%20x2%3D'420'%20y2%3D'220'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'420'%20y1%3D'220'%20x2%3D'680'%20y2%3D'180'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'680'%20y1%3D'180'%20x2%3D'920'%20y2%3D'320'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'920'%20y1%3D'320'%20x2%3D'1240'%20y2%3D'200'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 
-  background-size: cover;
-  background-position: center;
+  .plexus-bg::after {
+    pointer-events: none;
+  }
+  
+  .noise-bg {
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'140'%20height%3D'140'%20viewBox%3D'0%200%20140%20140'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20%20%20%20%20%20baseFrequency%3D'0.9'%20%20%20%20%20%20numOctaves%3D'2'%20%20%20%20%20%20stitchTiles%3D'stitch'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'140'%20height%3D'140'%20filter%3D'url(%23n)'%20opacity%3D'1'%2F%3E%3C%2Fsvg%3E");
 }
 
-/* equivalent to the below is shown on top */
+}
+
+/* .plexus-bg {
+  background-image:
+  url("data:image/svg+xml,%3Csvg%20width%3D'1600'%20height%3D'900'%20viewBox%3D'0%200%201600%20900'%20fill%3D'none'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20opacity%3D'0.22'%3E%3Ccircle%20cx%3D'180'%20cy%3D'140'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'420'%20cy%3D'220'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'680'%20cy%3D'180'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'920'%20cy%3D'320'%20r%3D'1.5'%20fill%3D'%230ea5e9'%2F%3E%3Ccircle%20cx%3D'1240'%20cy%3D'200'%20r%3D'2'%20fill%3D'%230ea5e9'%2F%3E%3Cline%20x1%3D'180'%20y1%3D'140'%20x2%3D'420'%20y2%3D'220'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'420'%20y1%3D'220'%20x2%3D'680'%20y2%3D'180'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'680'%20y1%3D'180'%20x2%3D'920'%20y2%3D'320'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3Cline%20x1%3D'920'%20y1%3D'320'%20x2%3D'1240'%20y2%3D'200'%20%20%20%20%20%20stroke%3D'%230ea5e9'%20%20%20%20%20%20stroke-opacity%3D'0.15'%20%20%20%20%20%20stroke-width%3D'1'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: cover;
+  background-position: center;
+} */
+
+/* equivalent to the below is shown bottom */
+
 /* .plexus-bg {
   background-image:
     url("data:image/svg+xml,%3Csvg width='1600' height='900' viewBox='0 0 1600 900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E
@@ -45,12 +63,13 @@
   background-position: center;
 } */
 
-.noise-bg {
+/* equivalent to the below is shown bottom */
+
+/* .noise-bg {
   background-image:
   url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'140'%20height%3D'140'%20viewBox%3D'0%200%20140%20140'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20%20%20%20%20%20baseFrequency%3D'0.9'%20%20%20%20%20%20numOctaves%3D'2'%20%20%20%20%20%20stitchTiles%3D'stitch'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'140'%20height%3D'140'%20filter%3D'url(%23n)'%20opacity%3D'1'%2F%3E%3C%2Fsvg%3E");
-}
+} */
 
-/* equivalent to the below is shown above */
 /* .noise-bg {
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E
