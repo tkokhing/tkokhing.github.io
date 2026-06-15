@@ -89,7 +89,9 @@ export default function RootLayout({
           </div>
 
           {/* Plexus Layer */}
-          <div className="plexus-bg absolute inset-0 opacity-40 dark:opacity-70" />
+          {/* <div className="plexus-bg absolute inset-0 opacity-40 dark:opacity-70" /> */}
+
+          <div className="plexus-bg pointer-events-none absolute inset-0 opacity-[0.08] dark:opacity-[0.18]" />
 
           {/* Subtle Noise Texture */}
           <div className="noise-bg absolute inset-0 opacity-[0.015] dark:opacity-[0.03]" />

@@ -1,6 +1,6 @@
+@import 'artistic.css';
 @import 'blog.module.css';
 @import 'icon_svg.module.css';
-@import 'artistic.css';
 @plugin "@tailwindcss/typography";
 @tailwind base;
 @tailwind components;

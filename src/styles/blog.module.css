@@ -77,7 +77,7 @@
 }
 
 /* Prevent tables from breaking container */
-.prose table {
+.prose table {   
   display: block;
   margin-left: auto;
   table-layout: auto;
@@ -88,6 +88,10 @@
   background: rgba(0,0,0,0.13);
   border-radius: 0.125rem;
   padding: 0.5rem;
+}
+
+.prose tbody td {
+    overflow-wrap: break-word;
 }
 
 .dark .prose table {

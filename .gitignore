@@ -18,6 +18,7 @@ src/lib/_data_exporter/
 src/lib/.gitattributes
 src/lib/.gitignore
 src/lib/README.md
+/_frontier_post/record_star.txt
 
 # next.js
 /.next/

@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout full branches
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Checkout [heptagoning] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/heptagoning
           token: ${{ secrets.PULL_HEPTAGONING_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
           mv ./temp_heptagoning/* ./_heptagoning
           rm -rf ./temp_heptagoning
       - name: Checkout [tkokhing_lib] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/tkokhing_lib
           token: ${{ secrets.PULL_LIB_TOKEN }}
@@ -48,7 +48,7 @@ jobs:
           mv ./temp_lib/_data_exporter ./src/lib
           rm -rf ./temp_lib
       - name: Checkout [public] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/tkokhing_public
           token: ${{ secrets.PULL_SUB_FOLDERS_OF_PUBLIC_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
           mv ./temp_public/* ./public
           rm -rf ./temp_public ./public/README.md
       - name: Checkout [frontier_post] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/frontier_post
           token: ${{ secrets.PULL_FRONTIER_TOKEN }}
@@ -73,7 +73,7 @@ jobs:
           mv ./temp_frontier/_frontier/*.mdx ./_frontier_post/_frontier
           rm -rf ./temp_frontier
       - name: Checkout [topic_post] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/topic_post
           token: ${{ secrets.PULL_TOPIC_TOKEN }}
@@ -85,7 +85,7 @@ jobs:
           mv ./temp_topic/_topics/*.mdx ./_topic_post/_topics
           rm -rf ./temp_topic
       - name: Checkout [blog_post] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/blog_post
           token: ${{ secrets.PULL_POST_TOKEN }}
@@ -97,7 +97,7 @@ jobs:
           mv ./temp_blog/_blogs/*.mdx ./_blog_post/_blogs
           rm -rf ./temp_blog
       - name: Checkout [linux_post] private repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: tkokhing/linux_post
           token: ${{ secrets.PULL_LINUX_TOKEN }}
@@ -144,14 +144,14 @@ jobs:
             exit 1
           fi
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Restore cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             .next/cache
@@ -163,7 +163,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v6
         with:
           path: ./dist
       - name: Verify artifact directory 
@@ -192,14 +192,9 @@ jobs:
           echo "Present deployment directory---->: $(pwd)"
           echo "Advance check on all contents, incl hidden, are loaded onto present deployment directory"
           ls -lha
-          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src/internal"
-          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src/internal
-          echo "Advance check - /home/runner/work/_actions/actions/deploy-pages/v4/src"
-          ls -lha /home/runner/work/_actions/actions/deploy-pages/v4/src
-
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
       - name: Verify GitHub working environment state 
         id: present-working-environment
         run: |
