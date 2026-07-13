@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, createContext, useContext } from "react";
 import { useToggleBroadcast } from "./toggle-frame-provider";
 
 type Props = {
@@ -9,6 +9,12 @@ type Props = {
   defaultOpen?: boolean;
 };
 
+/* ---------- Auto layerCount Context ---------- */
+/* Outermost starts at 20px, every nested frame moves 4px towards the content */
+
+const ToggleOffsetContext = createContext(0);
+const OutermostOffset = 60;
+const OFFSET_STEP = 10;
 
 // Next 2 lines are switching between "defaultOpen = true" Vs "defaultOpen = false" for quick open_all, close_all
 export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
@@ -17,6 +23,7 @@ export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
   const ctx = useToggleBroadcast();
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const ref = useRef<HTMLDivElement>(null);
+  const layerCount = useContext(ToggleOffsetContext);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -63,41 +70,73 @@ export function ToggleFrame({ label, children, defaultOpen = true }: Props) {
     setTimeout(() => setIsOpen(false), 150);
   };
 
+  const displayOffset = OutermostOffset - (layerCount * OFFSET_STEP);
+
+  const opacity = Math.max(0.2, 0.8 - layerCount * 0.3);
+
   return (
-    <div
-      ref={ref}
-      tabIndex={-1}
-      className="shadow-sm hover:shadow-sm hover:shadow-blue-900/85 dark:shadow-sky-900/50 hover:dark:shadow-yellow-100/85 py-3 px-4"
-    >
-      <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
-
-      {/* TOP TOGGLE */}
-      <button
-        type="button"
-        onClick={handleToggle}
-        className="text-left text-xs font-semibold underline text-blue-800 dark:text-blue-300 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
+    <ToggleOffsetContext.Provider value={layerCount + 1}>
+      <div
+        ref={ref}
+        tabIndex={-1}
+        className="
+        relative
+        py-3
+        "
       >
-        {label}&nbsp;{isOpen ? "▼" : "▶"}
-      </button>
 
-      {isOpen && (
-        <div className="mt-4">
-          {children}
+        {/* Left translucent indicator */}
+        <div
+          aria-hidden="true"
+          className="
+            pointer-events-none
+            absolute
+            top-0
+            h-full
+            w-1
+            rounded-r
+            mix-blend-screen
+          bg-emerald-400
+          "
+          style={{
+            left: `-${displayOffset}px`,
+            opacity
+          }}
+        />
 
-          {/* BOTTOM TOGGLE */}
-          <div className="mt-6 text-right">
-            <button
-              type="button"
-              onClick={scrollToTopAndClose}
-              className="text-xs font-semibold underline text-blue-800 dark:text-blue-300 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
-            >
-              Collapse ▲
-            </button>
+        <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
+        
+
+
+        {/* TOP TOGGLE */}
+        <button
+          type="button"
+          onClick={handleToggle}
+          className="text-left text-xs font-semibold underline text-blue-800 dark:text-blue-300 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
+        >
+          {label}&nbsp;{isOpen ? "▼" : "▶"}
+        </button>
+
+        {isOpen && (
+          <div className="mt-4">
+            {children}
+
+            {/* BOTTOM TOGGLE */}
+            <div className="mt-6 text-right">
+              <button
+                type="button"
+                onClick={scrollToTopAndClose}
+                className="text-xs font-semibold underline text-blue-800 dark:text-blue-300 hover:text-tkokhing-blue hover:dark:text-tkokhing-dark transition"
+              >
+                Collapse ▲
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
-    </div>
+        <hr className="my-0 w-full border-zinc-200 dark:border-zinc-800" />
+
+      </div>
+    </ToggleOffsetContext.Provider>
   );
 }

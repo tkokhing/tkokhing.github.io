@@ -1,6 +1,8 @@
 .alert, .note, .tip {
   padding: 1em;
   margin: 1.5em 0;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   border-left: 8px solid;
   border-top: 0.5px solid;
   border-bottom: 0.5px solid;
@@ -34,7 +36,31 @@
 
 /* for < pre > < code > block codes render IP and file_timing suffix */
 .prose pre{
-  @apply bg-[#24292E];
+  @apply bg-[#24292D];
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* Normal fenced block code: allow syntax highlighter colours */
+.prose pre code {
+  @apply bg-transparent;
+}
+
+/* Normal inline code only*/
+.prose :not(pre) > code {
+  @apply bg-[#24292D];
+}
+
+/* OSCP-important block code */
+.prose pre code[data-kind] {
+  @apply text-tkokhing-dark;  
+}
+
+/* OSCP-important inline code */
+.prose :not(pre) > code[data-kind] {
+  @apply text-tkokhing-dark;
+  padding: 0.15em 0.4em;
+  border-radius: 0.325rem;
 }
 
 .prose pre::-webkit-scrollbar-track {
@@ -56,33 +82,14 @@
 .dark .prose pre::-webkit-scrollbar-thumb:hover {
   background: rgb(120, 120, 120);
 }
-/* for future if need to split */
-/* .prose pre.language-bash code, */
-/* .prose pre.language-powershell code { */
-  /* @apply bg-transparent;} */
-
-/* for future if need to split */
-/* .prose pre.language-bash code{ */
-  /* @apply bg-transparent text-green-600;} */
-
-.prose pre[class^="language-"] code {
-  @apply bg-transparent text-blue-500;
-}
-
-/* for command that (i) having user-input IPs/Ports or (ii) output to a file */
-.prose code[data-kind] {
-  @apply text-tkokhing-dark;
-  padding: 0.15em 0.4em;
-  border-radius: 0.125rem;
-}
 
 /* Prevent tables from breaking container */
 .prose table {   
   display: block;
-  margin-left: auto;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   table-layout: auto;
-  margin-right: auto;
-  max-width: 100%;
+  max-width:calc(100% - 1em);
   overflow-x: auto;
   white-space: nowrap;
   background: rgba(0,0,0,0.13);
@@ -100,7 +107,7 @@
 
 /* Chrome / Edge / Safari */
 .prose table::-webkit-scrollbar {
-  height: 6px;
+  height: 6px;  
 }
 
 .prose table::-webkit-scrollbar-track {

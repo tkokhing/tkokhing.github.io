@@ -20,7 +20,7 @@ export default function PostBodyClient({ children }: { children: React.ReactNode
       prose-table:text-zinc-700 dark:prose-table:text-zinc-300
       prose-code:before:content-[''] prose-code:after:content-['']
 
-      prose-code:bg-[#24292E] prose-code:text-[#d9e3ee]
+      prose-code:bg-[#24292E] prose-code:text-[#77cbf2]
       prose-code:rounded-md prose-code:px-1.5
       prose-code:py-0.5 prose-code:font-thin
       prose-code:text-sm prose-code:inline-block
