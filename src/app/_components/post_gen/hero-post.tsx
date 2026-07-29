@@ -37,13 +37,13 @@ export function HeroPost(
           <h3 className="mb-4 text-adaptive_fs_l leading-tight">
             <Link href={`/${subPath}/${slug}`} className="hover:underline">
               {title}
-              <p className="mb-4 md:mb-0 text-adaptive_fs_xs italic">
+              <p className="mb-4 md:mb-0 text-adaptive_fs_xxs italic">
                 {postStatus} < DateFormatter dateString={date} />
               </p>
             </Link>
           </h3>
         </div>
-        <div className="text-adaptive_fs_sm shadow-sm w-full dark:shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4">
+        <div className="text-adaptive_fs_xs shadow-sm w-full dark:shadow-sky-900/50 hover:shadow-2xl hover:dark:shadow-zinc-50/100 hover:dark:shadow-lg py-3 px-4">
           <Link href={`/${subPath}/${slug}`}>
             <h4
             className="font-semibold italic  hover:underline text-sky-950 dark:text-slate-100"> 

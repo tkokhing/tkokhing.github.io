@@ -44,11 +44,13 @@ const config: Config = {
         tighter: "-.04em",
       },
       fontSize: {
-        'adaptive_fs_xl': 'clamp(2rem, calc(5.5vw), 4.5rem)',
-        'adaptive_fs_l': 'clamp(1.7rem, calc(4.2vw), 3.5rem)',
-        'adaptive_fs_base': 'clamp(1.2rem, calc(3vw), 3rem)',
-        'adaptive_fs_sm': 'clamp(0.875rem, calc(2vw), 2rem)',
-        'adaptive_fs_xs': 'clamp(0.625rem, calc(1vw), 2rem)',
+        // expanded gradient, incorporate line-height to prevent unnec gaps
+        'adaptive_fs_xl': ['clamp(2.0rem, 1.571rem + 2.143vw, 3.5rem)', { lineHeight: '1.2' }],
+        'adaptive_fs_l': ['clamp(1.625rem, 1.268rem + 1.786vw, 2.875rem)', { lineHeight: '1.25' }],
+        'adaptive_fs_base': ['clamp(1.125rem, 0.946rem + 0.893vw, 1.75rem)', { lineHeight: '1.5' }],
+        'adaptive_fs_sm': 'clamp(0.875rem, 0.732rem + 0.714vw, 1.375rem)',
+        'adaptive_fs_xs': 'clamp(0.688rem, 0.599rem + 0.446vw, 1.0rem)',
+        'adaptive_fs_xxs': 'clamp(0.5rem, 0.411rem + 0.446vw, 0.813rem)',
       },
       boxShadow: {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
@@ -62,12 +64,28 @@ const config: Config = {
   safelist: [
     'prose-sm',
     'prose-base',
-    'prose-lg',
+    'prose-lg',   
     'prose-xl',
     'prose-2xl',
     {
-      pattern: /text-(red|blue|green|yellow|purple|pink|gray)-(100|200|300|400|500|600|700|800|900)/,
+      // 1. Matches both bg and text utilities
+      pattern: /(bg|text)-(red|blue|green|yellow|purple|pink|gray)-(100|200|300|400|500|600|700|800|900)/,
+      
+      // 2. Cross-multiplies utilities
+      variants: [
+        'hover', 
+        'focus', 
+        'md', 
+        'dark', 
+        'dark:hover', 
+        'dark:focus'
+      ], 
     },
+    // {
+      // 3. dedicated font-size utilities matches text-[any_number_or_decimal_here_em]
+      // pattern: /text-\[\d+(\.\d+)?em\]/, // e.g. text-1em, text-0.8em
+      // variants: ['md', 'dark'], 
+    // }
   ],
 };
 export default config;

@@ -23,8 +23,8 @@ export function TitlePreview({
       <Link href={`/${subPath}/${slug}`}>
         <h3 className="text-adaptive_fs_base font-medium hover:underline">{title}</h3>
       </Link>
-      <p className="text-pretty text-adaptive_fs_sm mb-1 italic">{excerpt}</p>
-      <p className="text-right text-adaptive_fs_xs italic">
+      <p className="text-pretty text-adaptive_fs_xs mb-1 italic">{excerpt}</p>
+      <p className="text-right text-adaptive_fs_xxs italic">
         {postStatus} <DateFormatter dateString={date} />
       </p>
     </div>

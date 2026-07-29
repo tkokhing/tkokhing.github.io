@@ -35,6 +35,7 @@
 }
 
 /* for < pre > < code > block codes render IP and file_timing suffix */
+/* <pre> tags tells the browser to display whitespace, spaces, and actual keyboard tabs exactly type out. */
 .prose pre{
   @apply bg-[#24292D];
   margin-left: 0.5em;

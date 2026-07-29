@@ -122,7 +122,7 @@ const SubpageHeader = () => {
   return (
     <div className="sticky top-0 z-30 bg-inherit/40 dark:bg-transparent backdrop-blur-md">
       <Container>
-        <h2 className="uppercase text-adaptive_fs_sm md:text-adaptive_fs_xs text-tkokhing-blue dark:text-tkokhing-dark font-light tracking-tight md:tracking-tighter leading-tight py-1 flex items-center">
+        <h2 className="uppercase text-adaptive_fs_xs md:text-adaptive_fs_xxs text-tkokhing-blue dark:text-tkokhing-dark font-light tracking-tight md:tracking-tighter leading-tight py-1 flex items-center">
           <div className="truncate">{generateBreadcrumbs()}</div>
         </h2>
 
