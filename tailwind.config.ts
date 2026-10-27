@@ -68,24 +68,35 @@ const config: Config = {
     'prose-xl',
     'prose-2xl',
     {
-      // 1. Matches both bg and text utilities
-      pattern: /(bg|text)-(red|blue|green|yellow|purple|pink|gray)-(100|200|300|400|500|600|700|800|900)/,
+      // 1. Matches colouring (incl plain black / white) utilities
+      pattern: /(bg|text|divide)-(black|white|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|100|200|300|400|500|600|700|800|900|950)|(bg|text|divide)-(black|white)/,
       
       // 2. Cross-multiplies utilities
       variants: [
         'hover', 
         'focus', 
+        'sm', 
         'md', 
+        'lg', 
         'dark', 
         'dark:hover', 
         'dark:focus'
       ], 
     },
-    // {
-      // 3. dedicated font-size utilities matches text-[any_number_or_decimal_here_em]
-      // pattern: /text-\[\d+(\.\d+)?em\]/, // e.g. text-1em, text-0.8em
-      // variants: ['md', 'dark'], 
-    // }
+    {
+      // 3. Beautify divider lines
+      pattern: /(divide)-(x|y)-(0|2|4|6|8|reverse)|(divide)-(x|y)/,
+      variants: [
+        'hover', 
+        'focus', 
+        'sm', 
+        'md', 
+        'lg', 
+        'dark', 
+        'dark:hover', 
+        'dark:focus'
+      ], 
+    },
   ],
 };
 export default config;

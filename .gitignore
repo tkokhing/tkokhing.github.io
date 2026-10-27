@@ -19,6 +19,8 @@ src/lib/.gitattributes
 src/lib/.gitignore
 src/lib/README.md
 /_frontier_post/record_star.txt
+src/app/blog/posts.ipynb
+src/app/topics/topics.ipynb
 
 # next.js
 /.next/
@@ -32,6 +34,7 @@ tkokhing.github.io.code-workspace
 /_topic_post
 /_linux_post
 /_heptagoning
+/_testerer
 /public
 push_record.md
 

@@ -1,4 +1,4 @@
-// ToggleBroadcastContext.tsx  // ToggleFrameContext.tsx || toggle-frame-provider.tsx
+// toggle-frame-provider.tsx
 
 "use client";
 
@@ -6,10 +6,19 @@ import { createContext, useContext, useRef } from "react";
 
 type ToggleHandler = (open: boolean) => void;
 
+type ToggleRegistration = {
+  handler: ToggleHandler;
+  firstload: boolean;
+};
+
 type ToggleContextType = {
   openAll: () => void;
   closeAll: () => void;
-  register: (handler: ToggleHandler) => () => void;
+  resetAll: () => void;
+  register: (
+    handler: ToggleHandler,
+    firstload: boolean
+  ) => () => void;
 };
 
 const ToggleContext = createContext<ToggleContextType | null>(null);
@@ -19,26 +28,57 @@ export function ToggleFrameProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const handlersRef = useRef<Set<ToggleHandler>>(new Set());
+  const registrationsRef = useRef<Set<ToggleRegistration>>(new Set());
 
-  const register = (handler: ToggleHandler) => {
-    handlersRef.current.add(handler);
-    return () => handlersRef.current.delete(handler);
+  const register = (
+    handler: ToggleHandler,
+    firstload: boolean
+  ) => {
+    const registration: ToggleRegistration = {
+      handler,
+      firstload,
+    };
+
+    registrationsRef.current.add(registration);
+
+    return () => {
+      registrationsRef.current.delete(registration);
+    };
   };
 
   const openAll = () => {
-    handlersRef.current.forEach((h) => h(true));
+    registrationsRef.current.forEach(({ handler }) => {
+      handler(true);
+    });
   };
 
   const closeAll = () => {
-    handlersRef.current.forEach((h) => h(false));
+    registrationsRef.current.forEach(({ handler }) => {
+      handler(false);
+    });
+  };
+
+  const resetAll = () => {
+    registrationsRef.current.forEach(
+      ({ handler, firstload }) => {
+        handler(firstload);
+      }
+    );
   };
 
   return (
-    <ToggleContext.Provider value={{ openAll, closeAll, register }}>
+    <ToggleContext.Provider
+      value={{
+        openAll,
+        closeAll,
+        resetAll,
+        register,
+      }}
+    >
       {children}
     </ToggleContext.Provider>
   );
 }
 
-export const useToggleBroadcast = () => useContext(ToggleContext);
+export const useToggleBroadcast = () =>
+  useContext(ToggleContext);  

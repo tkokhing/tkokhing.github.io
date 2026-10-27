@@ -33,7 +33,7 @@ export const ATTACKER_PORT = "22";
 // ---------------------------- AD Domain Name  ----------------------------
 // export const AD_DOMAIN_NAME = "OSCP.EXAM" //updated
 export const AD_DOMAIN_NAME = "CAR.TOON" //mine
-export const BOX_DOMAIN_NAME = "futurevera.thm" //mine
+export const BOX_DOMAIN_NAME = "ultimateweapon.org" //mine theillusionistheultimateweapon.org
 
 // ---------------------------- Client01  aka MS01  ----------------------------
 
@@ -46,11 +46,13 @@ export const MS01_password = "his_password"; //updated
 
 // export const MS01_IP_EXT = "192.168.123.206";  //updated
 // export const MS01_IP_INT = "172.16.123.206"; // updated
-export const MS01_IP_EXT = "192.168.118.173"; //Vixx
+// export const MS01_IP_EXT = "10.66.173.0"; //Vixx
+
+export const MS01_IP_EXT = "10.200.180.200"; //Wreath BOX
 export const MS01_IP_INT = "172.16.242.173";  //Vixx
 
 export const MS01_FORWARD_PORT_1 = "80";   // To download <u>PowerCat</u>
-export const MS01_FORWARD_PORT_2 = "4444"; // To open <u>reverse shell</u>
+export const MS01_FORWARD_PORT_2 = "8080"; // To open <u>reverse shell</u>
 
 
 // ---------------------------- WEB01  aka MS02  ----------------------------

@@ -6,5 +6,5 @@
 .icon-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: justify-start;
 }

@@ -1,16 +1,22 @@
 import Container from "@/app/_components/preference/container";
-// import MyTest from "@/app/_components/mytest";
-// import MyTest2 from "@/app/_components/mytest2";
+import { PostBody } from "@/app/_components/post_gen/post-body";
 
 export default function Index() {
 
   return (
     <main>
       <Container>
-        <h1> This page is for logic testing only...</h1>
-        {/* <MyTest />
-        <MyTest2 /> */}
+        <PostBody
+          content={`          
+          # THIS IS FOR LOGIC TESTING
+          
+          **Tests**:
 
+          1. Test 1a. 
+          2. Test 2a. 
+          3. Test 2b & 2c). 
+          `}
+        />
       </Container>
     </main>
   );

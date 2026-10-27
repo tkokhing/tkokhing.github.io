@@ -127,7 +127,7 @@ const SubpageHeader = () => {
         </h2>
 
         <div
-          className="h-1 bg-sky-500 transition-all"
+          className="h-1 bg-sky-500 dark:bg-emerald-300 transition-all"
           style={{ width: `${scroll}%` }}
         />
 

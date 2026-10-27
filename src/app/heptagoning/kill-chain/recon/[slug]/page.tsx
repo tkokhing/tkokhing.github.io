@@ -8,7 +8,7 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { RECON_Site, NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP, RUSTSCAN_Overview, GOBUSTER_Overview, GOBUSTER_Outsmart_301,GOBUSTER_Advanced, GOBUSTER_Check6, SQLI_Overview, SQLI_Ph_1, SQLI_Ph_2, SQLI_Ph_3, SQLI_Ph_4a_union_based, SQLI_Ph_4b_blind_auth_bypass, SQLI_Ph_4c_blind_boolean_based, SQLI_Ph_4d_blind_time_based, SQLI_Ph_4e_search_bar } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
+import { RECON_Site, NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_Scan_Compare, NMAP_TCP_Vs_UDP, NMAP_Attack_Strategy, RUSTSCAN_Overview, GOBUSTER_Overview, GOBUSTER_Outsmart_301,GOBUSTER_Advanced, GOBUSTER_Check6, SQLI_Overview, SQLI_Ph_1, SQLI_Ph_2, SQLI_Ph_3, SQLI_Ph_4a_union_based, SQLI_Ph_4b_blind_auth_bypass, SQLI_Ph_4c_blind_boolean_based, SQLI_Ph_4d_blind_time_based, SQLI_Ph_4e_search_bar } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 
 
 import { ToggleAllFrame } from "@/app/_components/preference/toggle-frame-display";
@@ -25,11 +25,13 @@ const MDX_FOLDER = "_heptagoning/_kill-chain/_recon";
 export default async function Post(props: Params) {
   const params = await props.params;
   const ImportComponents = {
-    RECON_Site,  //  render by [slug]page recon_site.mdx as <RECON_Site /> || will not have impact inside mdx-components.tsx
+    RECON_Site,  //  render by [slug]page recon_site.mdx as <RECON_Site /> || will not have impact inside mdx-components.tsxNMAP_TCP_Vs_UDP
     NMAP_Overview,
     NMAP_Vuln_Scan,
     NMAP_SMB_Enum,
-    NMAP_TCP_vs_UDP,
+    NMAP_TCP_Scan_Compare,
+    NMAP_TCP_Vs_UDP,
+    NMAP_Attack_Strategy,
     RUSTSCAN_Overview,
     GOBUSTER_Overview,
     GOBUSTER_Outsmart_301,

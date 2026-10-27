@@ -7,17 +7,23 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
+import Mermaid from "@/app/_components/post_gen/render-mermaid";
+import Diagram from "@/lib/_data_exporter/diagrams/diagrams_exporter";
 
 const MDX_FOLDER = "_topic_post/_topics"; 
 
 type Params = {
   params: Promise<{
-    slug: string;
+    slug: string; 
   }>;
 };
 
 export default async function Post(props: Params) {
   const params = await props.params;  
+  const ImportComponents = {
+    Mermaid,
+    Diagram,
+  };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'topics/AtoZ') return notFound();
  
@@ -33,7 +39,7 @@ export default async function Post(props: Params) {
             subPath={post.subPath}
             postStatus={post.postStatus}
           />
-          <PostBody content={post.content} />
+          <PostBody content={post.content} components={{...ImportComponents}}/>
         </article>
       </Container>
     </main>

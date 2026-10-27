@@ -7,7 +7,7 @@ import { PostBody } from "@/app/_components/post_gen/post-body";
 import { getPostBySlug } from "@/lib/share/api";
 import { generatePageMetadata } from "@/lib/share/generatePageMetadata";
 import { generatePageStaticParams } from "@/lib/share/generatePageStaticParams";
-import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_vs_UDP } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
+import { NMAP_Overview, NMAP_Vuln_Scan, NMAP_SMB_Enum, NMAP_TCP_Vs_UDP } from "@/lib/_data_exporter/data_kiil-chain/kill-chain_exporter";
 
 // import Alert from "@/app/_components/blog_frame/alert";
 // import Note from "@/app/_components/blog_frame/note";
@@ -28,7 +28,7 @@ export default async function Post(props: Params) {
     NMAP_Overview,
     NMAP_Vuln_Scan,
     NMAP_SMB_Enum,
-    NMAP_TCP_vs_UDP,
+    NMAP_TCP_Vs_UDP,
     };
   const post = getPostBySlug(params.slug, MDX_FOLDER);
   if (!post || post.subPath != 'heptagoning/kill-chain/delivery') return notFound();

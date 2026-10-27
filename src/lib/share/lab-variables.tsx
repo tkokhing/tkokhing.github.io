@@ -6,7 +6,7 @@ export const LAB = {
 // ---------------------------- AD Domain Name  ----------------------------
 // export const AD_DOMAIN_NAME = "OSCP.EXAM" //updated
   AD_DOMAIN_NAME:"CAR.TOON", //mine
-  BOX_DOMAIN_NAME:"futurevera.thm", //mine
+  BOX_DOMAIN_NAME:"ultimateweapon.org", //mine theillusionistheultimateweapon.org
 
 // ---------------------------- Client01  aka MS01  ----------------------------
 
@@ -19,11 +19,13 @@ export const LAB = {
 
 // export const MS01_IP_EXT = "192.168.123.206";  //updated
 // export const MS01_IP_INT = "172.16.123.206"; // updated
-  MS01_IP_EXT:"192.168.118.173",//Vixx
+  // MS01_IP_EXT:"10.66.173.0",//Vixx
+
+  MS01_IP_EXT:"10.200.180.200",//Wreath BOX
   MS01_IP_INT:"172.16.242.173", //Vixx
 
   MS01_FORWARD_PORT_1:"80",  // To download <u>PowerCat</u>
-  MS01_FORWARD_PORT_2:"4444",// To open <u>reverse shell</u>
+  MS01_FORWARD_PORT_2:"8080",// To open <u>reverse shell</u>
 
 
 // ---------------------------- WEB01  aka MS02  ----------------------------
@@ -64,6 +66,7 @@ export const LAB = {
 
 
 // ---------------------------- VICTIM  ----------------------------
+// For reuse, if VICTIM1 equals to MS01 
 // For all sites VICTIM TAGGING  192.168.123.110
 // export const VICTIM1_IP = MS01_IP_EXT;
 // export const VICTIM1_IP = "192.168.123.110";
